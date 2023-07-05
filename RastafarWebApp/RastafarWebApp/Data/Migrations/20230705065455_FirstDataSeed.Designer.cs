@@ -12,8 +12,8 @@ using RastafarWebApp.Data;
 namespace RastafarWebApp.Data.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    [Migration("20230704193949_DbPosts")]
-    partial class DbPosts
+    [Migration("20230705065455_FirstDataSeed")]
+    partial class FirstDataSeed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -257,6 +257,17 @@ namespace RastafarWebApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
+                            Destination = "Sinemorec",
+                            Name = "Camping in Sinemorets",
+                            campType = 1,
+                            travelType = 1
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

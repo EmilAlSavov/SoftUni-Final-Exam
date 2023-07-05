@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
+using RastafarWebApp.Data.Models.Enums;
 
 namespace RastafarWebApp.Data.Models
 {
@@ -28,5 +30,13 @@ namespace RastafarWebApp.Data.Models
 
         [Required]
         public TravelType travelType { get; set; }
+
+        [Required]
+        public string OwnerId { get; set; } = null!;
+
+        [Required]
+        public IdentityUser Owner { get; set; }
+
+        public List<IdentityUserPosts> Participants { get; set; }
     }
 }

@@ -1,0 +1,35 @@
+destinacii, vidove cumpinguvane, nachin za putuvane
+
+OBQVA
+- Name - string(100)
+- Description - string(2000)
+- photos - 4mb,
+- destinaciq - Map
+- camping type FK
+- Nachin na putuvane FK
+
+Nachin na putuvane
+- None
+- Vlak
+- Avtobus
+- Samolet
+- Spodeleno Putuvane
+- Chat
+
+User
+- Username - string(20)
+- Rating - 1 - 5 int
+- Password
+- Number
+- Age
+- List<OBQVA> Liked obqva
+- List<OBQvA> My obqvas
+- List<OBQVA> Already Bil Sum
+- List<User> Friends
+
+
+Camping Type
+- palatking
+- hamaking
+- caravaning
+- bungaling

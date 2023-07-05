@@ -10,7 +10,7 @@ using RastafarWebApp.Data;
 
 namespace RastafarWebApp.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(RastafarContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -224,6 +224,21 @@ namespace RastafarWebApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("RastafarWebApp.Data.Models.IdentityUserPosts", b =>
+                {
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ParticipantId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PostId", "ParticipantId");
+
+                    b.HasIndex("ParticipantId");
+
+                    b.ToTable("UsersPosts");
+                });
+
             modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -246,6 +261,10 @@ namespace RastafarWebApp.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("OwnerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("campType")
                         .HasColumnType("int");
 
@@ -254,7 +273,21 @@ namespace RastafarWebApp.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OwnerId");
+
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
+                            Destination = "Sinemorec",
+                            Name = "Camping in Sinemorets",
+                            OwnerId = "cd98eb91-adb9-43f2-9e74-3c201e04b4d3",
+                            campType = 1,
+                            travelType = 1
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -306,6 +339,41 @@ namespace RastafarWebApp.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.IdentityUserPosts", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Participant")
+                        .WithMany()
+                        .HasForeignKey("ParticipantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RastafarWebApp.Data.Models.Post", "Post")
+                        .WithMany("Participants")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Participant");
+
+                    b.Navigation("Post");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
+                {
+                    b.Navigation("Participants");
                 });
 #pragma warning restore 612, 618
         }
