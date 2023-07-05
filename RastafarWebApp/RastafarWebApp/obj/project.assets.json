@@ -951,6 +951,39 @@
             "rid": "win"
           }
         }
+      },
+      "RastafarAppData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.16",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
+          "Microsoft.AspNetCore.Identity.UI": "6.0.16",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
+        },
+        "compile": {
+          "bin/placeholder/RastafarAppData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RastafarAppData.dll": {}
+        }
+      },
+      "RastafarAppServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.16",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.16",
+          "Microsoft.AspNetCore.Identity.UI": "6.0.16",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
+          "RastafarAppData": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RastafarAppServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RastafarAppServices.dll": {}
+        }
       }
     }
   },
@@ -2442,6 +2475,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "RastafarAppData/1.0.0": {
+      "type": "project",
+      "path": "../RastafarAppData/RastafarAppData.csproj",
+      "msbuildProject": "../RastafarAppData/RastafarAppData.csproj"
+    },
+    "RastafarAppServices/1.0.0": {
+      "type": "project",
+      "path": "../RastafarAppServices/RastafarAppServices.csproj",
+      "msbuildProject": "../RastafarAppServices/RastafarAppServices.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2450,7 +2493,8 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.16",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.16",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.16"
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.16",
+      "RastafarAppServices >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2480,7 +2524,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\RastafarAppServices.csproj": {
+              "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\RastafarAppServices.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

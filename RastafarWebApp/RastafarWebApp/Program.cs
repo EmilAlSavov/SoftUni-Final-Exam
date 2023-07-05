@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RastafarWebApp.Data;
+using RastafarAppServices.Services;
+using RastafarAppServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequiredLength = 8;
 }).AddEntityFrameworkStores<RastafarContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IPostService, PostService>();
 
 var app = builder.Build();
 

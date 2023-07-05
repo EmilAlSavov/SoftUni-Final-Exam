@@ -1,0 +1,14 @@
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.csproj.AssemblyReference.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.AssemblyInfoInputs.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.AssemblyInfo.cs
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.csproj.CoreCompileInputs.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\RastafarAppData.deps.json
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\RastafarAppData.runtimeconfig.json
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\RastafarAppData.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\RastafarAppData.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\refint\RastafarAppData.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\RastafarAppData.genruntimeconfig.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\ref\RastafarAppData.dll

@@ -75,3 +75,7 @@ D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\obj\Debug\net6.0
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\obj\Debug\net6.0\RastafarWebApp.pdb
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\obj\Debug\net6.0\RastafarWebApp.genruntimeconfig.cache
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\obj\Debug\net6.0\ref\RastafarWebApp.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppData.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppServices.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppServices.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppData.pdb

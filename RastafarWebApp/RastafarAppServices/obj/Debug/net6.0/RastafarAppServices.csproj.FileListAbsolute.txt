@@ -1,0 +1,17 @@
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.csproj.AssemblyReference.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.AssemblyInfoInputs.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.AssemblyInfo.cs
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.csproj.CoreCompileInputs.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\RastafarAppServices.deps.json
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\RastafarAppServices.runtimeconfig.json
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\RastafarAppServices.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\RastafarAppServices.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\RastafarAppData.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\RastafarAppData.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.csproj.CopyComplete
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\refint\RastafarAppServices.dll
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\RastafarAppServices.genruntimeconfig.cache
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\ref\RastafarAppServices.dll
