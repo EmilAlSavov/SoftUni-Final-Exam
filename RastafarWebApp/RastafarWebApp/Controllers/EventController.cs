@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices;
 using RastafarAppServices.Services;
+using RastafarAppServices.ViewModels.Export;
+using RastafarWebApp.Data.Models.Enums;
 
 namespace RastafarWebApp.Controllers
 {
@@ -15,11 +18,16 @@ namespace RastafarWebApp.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult All()
+        public IActionResult All(AllPostQueryModel allPostQueryModel)
         {
-            var models = postService.All();
 
-            return View(models);
+            var models = postService.All(allPostQueryModel.CampType.ToString(), allPostQueryModel.SearchingTerm, allPostQueryModel.Sort, allPostQueryModel.CurrentPage, AllPostQueryModel.PostsPerPages);
+
+            allPostQueryModel.TotalEventCount = models.TotalEventCount;
+            allPostQueryModel.Posts = models.Posts;
+            allPostQueryModel.CampTypes = postService.GetEnumList<CampType>();
+            allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
+            return View(allPostQueryModel);
         }
     }
 }

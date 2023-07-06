@@ -1,17 +1,10 @@
-﻿@model List<PostPreviewViewModel>
+﻿@model AllPostQueryModel
 
-<ul>
-	@foreach (var post in Model)
+<partial name="Partials/_FilterPartial" model="@Model" />
+
+<<div class="row">
+	@foreach (var post in Model.Posts)
 	{
-		<li>
-			<img src="@post.Image">
-			<p>@post.Name</p>
-			<p>@post.Description</p>
-			<p>@post.CampType</p>
-			<p>@post.TravelType</p>
-			<p>@post.Destination</p>
-			<p>@post.OwnerName</p>
-			<p>@post.ParticipantCount</p>
-		</li>
+		<partial name="Partials/_PostPartial" model="@post" />
 	}
-</ul>
+</div>

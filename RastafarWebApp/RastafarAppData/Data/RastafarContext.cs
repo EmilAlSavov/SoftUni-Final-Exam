@@ -43,7 +43,8 @@ namespace RastafarWebApp.Data
                 travelType = (TravelType)1,
                 Destination = "Sinemorec",
                 OwnerId = "cd98eb91-adb9-43f2-9e74-3c201e04b4d3",
-                ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg"
+                ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg",
+                CreatedOn = DateTime.Now
             };
         }
     }

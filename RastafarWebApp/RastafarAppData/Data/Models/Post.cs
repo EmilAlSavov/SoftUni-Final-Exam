@@ -33,6 +33,9 @@ namespace RastafarWebApp.Data.Models
         public TravelType travelType { get; set; }
 
         [Required]
+        public DateTime CreatedOn { get; set; }
+
+        [Required]
         [ForeignKey(nameof(Owner))]
         public string OwnerId { get; set; } = null!;
 

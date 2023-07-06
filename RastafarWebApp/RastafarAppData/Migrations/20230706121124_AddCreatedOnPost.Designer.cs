@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RastafarWebApp.Data;
 
@@ -11,9 +12,10 @@ using RastafarWebApp.Data;
 namespace RastafarAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    partial class RastafarContextModelSnapshot : ModelSnapshot
+    [Migration("20230706121124_AddCreatedOnPost")]
+    partial class AddCreatedOnPost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -289,7 +291,7 @@ namespace RastafarAppData.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2023, 7, 6, 15, 12, 48, 320, DateTimeKind.Local).AddTicks(9924),
+                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
                             Destination = "Sinemorec",
                             ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg",
