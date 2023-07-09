@@ -53,9 +53,16 @@ namespace RastafarAppServices
             context.SaveChanges();
         }
 
-        public void Edit(AddPostViewModel model, int Id)
+        public void Edit(AddPostViewModel model, int Id, string currUserId)
         {
             var realPost = this.GetPostById(Id);
+
+            if (currUserId != realPost.OwnerId)
+            {
+                var ex =  new UnauthorizedAccessException("401");
+                ex.Data.Add("401", "dadasdas");
+                throw ex;
+            }
 
             realPost.Name = model.Name;
             realPost.Description = model.Description;

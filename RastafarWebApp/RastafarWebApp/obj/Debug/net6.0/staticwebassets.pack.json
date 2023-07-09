@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\RastafarWebApp.bundle.scp.css"
     },
     {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\Error.css",
+      "PackagePath": "staticwebassets\\css\\Error.css"
+    },
+    {
       "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

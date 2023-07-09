@@ -21,7 +21,7 @@ namespace RastafarAppServices.Services
 
         public void Add(AddPostViewModel model, string id);
 
-        public void Edit(AddPostViewModel model, int Id);
+        public void Edit(AddPostViewModel model, int Id, string currUserId);
 
         public void Delete(int id);
 

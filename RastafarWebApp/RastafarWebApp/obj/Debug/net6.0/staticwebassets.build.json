@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h2ezT1rBtN6fW45E3uBK0tqu+s1t/+0s8WZIjLBWSDQ=",
+  "Hash": "Cnv1KM8Op7Hy1+2Ep+uvKL08zi0ZO9qhXbIULkb/GLU=",
   "Source": "RastafarWebApp",
   "BasePath": "_content/RastafarWebApp",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RastafarWebApp.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\Error.css",
+      "SourceId": "RastafarWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\",
+      "BasePath": "_content/RastafarWebApp",
+      "RelativePath": "css/Error.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Error.css"
     },
     {
       "Identity": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\site.css",

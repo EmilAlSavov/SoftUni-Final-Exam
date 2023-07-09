@@ -6,6 +6,7 @@ using RastafarAppServices.Services;
 using RastafarAppServices.ViewModels.Export;
 using RastafarAppServices.ViewModels.Import;
 using RastafarWebApp.Data.Models.Enums;
+using System.ComponentModel;
 using System.Security.Claims;
 
 namespace RastafarWebApp.Controllers
@@ -56,34 +57,61 @@ namespace RastafarWebApp.Controllers
         [HttpGet]
         public IActionResult Edit(int Id)
         {
-            var post = postService.GetPostById(Id);
-
-            var model = new AddPostViewModel()
+            try
             {
-                Name = post.Name,
-                Description = post.Description,
-                Destination = post.Destination,
-                ImgsUrl = post.ImgsUrl,
-                campType = post.campType,
-                travelType = post.travelType
-            };
+				var post = postService.GetPostById(Id);
 
-            return View(model);
+				if (post.OwnerId != GetUserId())
+				{
+					var ex = new UnauthorizedAccessException("401");
+					ex.Data.Add("401", "dadasdas");
+					throw ex;
+				}
+
+				var model = new AddPostViewModel()
+				{
+					Name = post.Name,
+					Description = post.Description,
+					Destination = post.Destination,
+					ImgsUrl = post.ImgsUrl,
+					campType = post.campType,
+					travelType = post.travelType
+				};
+
+				return View(model);
+			}
+            catch (Exception e)
+			{
+				var statusCode = e.Data.Keys.Cast<string>().Single();
+
+				return RedirectToAction("Index", "Error", new { statusCode });
+			}
+           
         }
 
         [HttpPost]
         public IActionResult Edit(AddPostViewModel model, int Id)
         {
-            if (ModelState.IsValid)
+            try
             {
-                postService.Edit(model, Id);
+                if (ModelState.IsValid)
+                {
+                    postService.Edit(model, Id, GetUserId());
+                }
+                else
+                {
+                    return View(model);
+                }
+                    return RedirectToAction("All", "Event");
             }
-            else
+            catch (Exception ex)
             {
-                return View(model);
+                var statusCode = ex.Data.Keys.Cast<string>().Single();
+
+				return RedirectToAction("Index", "Error", new { statusCode });
             }
 
-            return RedirectToAction("All", "Event");
+
         }
 
         public IActionResult Delete(int Id)

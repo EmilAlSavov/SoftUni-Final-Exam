@@ -20,6 +20,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Error401.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Error404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
