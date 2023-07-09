@@ -21,8 +21,4 @@
     <ProjectReference Include="..\RastafarAppData\RastafarAppData.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\Import\" />
-  </ItemGroup>
-
 </Project>

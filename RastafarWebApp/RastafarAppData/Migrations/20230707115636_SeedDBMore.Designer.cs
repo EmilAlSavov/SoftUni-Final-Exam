@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RastafarWebApp.Data;
 
@@ -11,9 +12,10 @@ using RastafarWebApp.Data;
 namespace RastafarAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    partial class RastafarContextModelSnapshot : ModelSnapshot
+    [Migration("20230707115636_SeedDBMore")]
+    partial class SeedDBMore
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -236,7 +238,7 @@ namespace RastafarAppData.Migrations
 
                     b.HasIndex("ParticipantId");
 
-                    b.ToTable("UsersPosts", (string)null);
+                    b.ToTable("UsersPosts");
                 });
 
             modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
@@ -283,7 +285,7 @@ namespace RastafarAppData.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Posts", (string)null);
+                    b.ToTable("Posts");
 
                     b.HasData(
                         new

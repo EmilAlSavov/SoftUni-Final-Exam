@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,9 @@ namespace RastafarAppServices.ViewModels.Export
         public string TravelType { get; set; }
 
         public int ParticipantCount { get; set; }
+
+        public List<UserPostsViewModel> Participants { get; set; }
+
+
     }
 }

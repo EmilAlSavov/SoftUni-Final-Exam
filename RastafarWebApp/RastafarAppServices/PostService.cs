@@ -1,8 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.Services;
 using RastafarAppServices.ViewModels.Export;
+using RastafarAppServices.ViewModels.Import;
 using RastafarWebApp.Data;
 using RastafarWebApp.Data.Models;
 using RastafarWebApp.Data.Models.Enums;
@@ -23,19 +26,45 @@ namespace RastafarAppServices
                 this.context = context;
         }
 
-        public void Add()
+        public void Add(AddPostViewModel model, string id)
         {
-            throw new NotImplementedException();
+            context.Posts.Add(new Post()
+            {
+                Name = model.Name,
+                Description = model.Description,
+                Destination = model.Destination,
+                campType = (CampType)model.campType,
+                travelType = (TravelType)model.travelType,
+                CreatedOn = DateTime.Now,
+                ImgsUrl = model.ImgsUrl,
+                OwnerId = id,
+                Participants = new List<IdentityUserPosts>()
+            });
+
+            context.SaveChanges();
         }
 
-        public void Delete()
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var post = this.GetPostById(id);
+
+            context.Posts.Remove(post);
+
+            context.SaveChanges();
         }
 
-        public void Edit()
+        public void Edit(AddPostViewModel model, int Id)
         {
-            throw new NotImplementedException();
+            var realPost = this.GetPostById(Id);
+
+            realPost.Name = model.Name;
+            realPost.Description = model.Description;
+            realPost.Destination = model.Destination;
+            realPost.ImgsUrl = model.ImgsUrl;
+            realPost.campType = model.campType;
+            realPost.travelType = model.travelType;
+
+            context.SaveChanges();
         }
 
         public List<PostPreviewViewModel> Fauvorite()
@@ -48,8 +77,9 @@ namespace RastafarAppServices
             throw new NotImplementedException();
         }
 
-		public AllPostQueryModel All(string campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
+		public AllPostQueryModel All(CampType campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
 		{
+            int totalEvents = context.Posts.Count();
             var postsQuery = context.Posts.Where(p => true);
 
             postsQuery = FilterPosts(postsQuery, campType, searchTerm, sort);
@@ -68,22 +98,30 @@ namespace RastafarAppServices
                                     CampType = p.campType.ToString(),
                                     OwnerName = p.Owner.UserName,
                                     TravelType = p.travelType.ToString(),
-                                    ParticipantCount = p.Participants.Count()
+                                    ParticipantCount = p.Participants.Count(),
+                                    Participants = p.Participants.Select(up => new UserPostsViewModel()
+                                    {
+                                        PostId = up.PostId,
+                                        UserId = up.ParticipantId,
+                                        UserName = up.Participant.UserName
+                                    }).ToList()
                                 }).ToList();
 
 
             return new AllPostQueryModel()
             {
                 Posts = posts,
+                TotalEventCount = totalEvents,
+                CurrentPage = currentPage
             };
         }
 
-        private IQueryable<Post> FilterPosts(IQueryable<Post> postsQuery, string campType, string searchTerm, EventSort sort)
+        private IQueryable<Post> FilterPosts(IQueryable<Post> postsQuery, CampType campType, string searchTerm, EventSort sort)
         {
-			if (campType != "All")
+			if ((int)campType != 0)
 			{
 				postsQuery = postsQuery
-				.Where(p => p.campType.ToString() == campType);
+				.Where(p => p.campType == campType);
 			}
 
 			if (searchTerm != null)
@@ -97,7 +135,7 @@ namespace RastafarAppServices
 
 			if ((int)sort == 0)
 			{
-				postsQuery = postsQuery.OrderBy(p => p.CreatedOn);
+				postsQuery = postsQuery.OrderByDescending(p => p.CreatedOn);
 			}
 			else if ((int)sort == 1)
 			{
@@ -107,7 +145,7 @@ namespace RastafarAppServices
 			{
 				postsQuery = postsQuery
 					.Include(p => p.Participants)
-					.OrderBy(p => p.Participants.Count());
+					.OrderByDescending(p => p.Participants.Count());
 
 			}
 
@@ -120,5 +158,37 @@ namespace RastafarAppServices
 				   .Select(s => s).ToList();
 		}
 
+		public void Join(int postId, string userId)
+		{
+            var userPost = new IdentityUserPosts()
+            {
+                PostId = postId,
+                ParticipantId = userId
+            };
+
+            var post = GetPostById(postId);
+
+            context.UsersPosts.Add(userPost);
+            post.Participants.Add(userPost);
+
+            context.SaveChanges();
+		}
+
+		public void Leave(int postId, string userId)
+		{
+            Post post = GetPostById(postId);
+            
+            var userPost = context.UsersPosts.FirstOrDefault(p => p.PostId == postId && p.ParticipantId == userId);
+
+            post.Participants.Remove(userPost);
+            context.UsersPosts.Remove(userPost);
+
+            context.SaveChanges();
+		}
+
+		public Post GetPostById(int id)
+		{
+            return context.Posts.Find(id);
+		}
 	}
 }

@@ -1,0 +1,63 @@
+﻿@model AddPostViewModel
+@using RastafarAppServices.Services
+@using RastafarWebApp.Data.Models.Enums;
+@using RastafarWebApp.Data.Models;
+@inject IPostService service
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="Name"></label>
+				<input asp-for="Name" class="form-control" placeholder="Name..." value="@Model.Name">
+				<span asp-validation-for="Name" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Description"></label>
+				<textarea asp-for="Description" rows="4" class="form-control"
+						  placeholder="Description...">@Model.Description</textarea>
+				<span asp-validation-for="Description" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Destination"></label>
+				<input asp-for="Destination" class="form-control" placeholder="destination..." value="@Model.Destination">
+				<span asp-validation-for="Destination" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ImgsUrl"></label>
+				<input asp-for="ImgsUrl" class="form-control" placeholder="Your
+fine URL here..." value="@Model.ImgsUrl">
+				<span asp-validation-for="ImgsUrl" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="campType"></label>
+				<select asp-for="campType" class="form-control">
+					<option value="@Model.campType">@Model.campType</option>
+					@foreach (var camptype in service.GetEnumList<CampType>())
+					{
+						if (camptype == "All")
+						{
+							continue;
+						}
+						<option value="@camptype">@camptype</option>
+					}
+				</select>
+				<span asp-validation-for="campType" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="travelType"></label>
+				<select asp-for="travelType" class="form-control">
+					<option value="@Model.travelType">@Model.travelType</option>
+					@foreach (var traveltype in service.GetEnumList<TravelType>())
+					{
+						<option value="@traveltype">@traveltype</option>
+					}
+				</select>
+				<span asp-validation-for="travelType" class="small textdanger"></span>
+			</div>
+			<div class="text-center">
+				<input class="btn btn-primary mt-3" type="submit" value="Save" />
+			</div>
+		</form>
+	</div>
+</div>

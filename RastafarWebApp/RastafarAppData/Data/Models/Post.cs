@@ -15,7 +15,7 @@ namespace RastafarWebApp.Data.Models
         [Required]
         public string Name { get; set; } = null!;
 
-        [StringLength(2000, MinimumLength = 50)]
+        [StringLength(2000, MinimumLength = 20)]
         [Required]
         public string Description { get; set; } = null!;
 
@@ -23,7 +23,7 @@ namespace RastafarWebApp.Data.Models
         public string ImgsUrl { get; set; } = null!;
 
         [Required]
-        [StringLength(100, MinimumLength = 10)]
+        [StringLength(100)]
         public string Destination { get; set; } = null!;
 
         [Required]
@@ -42,6 +42,6 @@ namespace RastafarWebApp.Data.Models
         [Required]
         public IdentityUser Owner { get; set; }
 
-        public List<IdentityUserPosts> Participants { get; set; }
+        public List<IdentityUserPosts> Participants { get; set; } = new List<IdentityUserPosts>();
     }
 }
