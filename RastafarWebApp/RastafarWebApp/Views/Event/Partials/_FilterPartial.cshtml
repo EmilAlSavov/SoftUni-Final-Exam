@@ -72,35 +72,42 @@ string.Empty)"
 	</div>
 </div>*@
 
-<div>
-	<link href="~/css/allpage/component.css" rel="stylesheet" />
-	<div style="display:table; margin: 0 auto; padding-top: 50px	" class="component-container">
+<link href="~/css/allpage/component.css" rel="stylesheet" />
+
+<div style="display:table; margin: 0 auto; padding-top: 50px	">
+	<link href="./component.css" rel="stylesheet" />
+	<div class="component-container">
 		<form class="component-form">
 			<div class="component-container1">
 				<div class="component-container2">
-					<input asp-for="SearchingTerm"
+					<input style="margin-left: 20px;" "" asp-for="SearchingTerm"
 						   type="text"
 						   placeholder="Search..."
 						   class="component-textinput input" />
-					<select asp-for="CampType" class="component-select">
-						@foreach (var campType in Model.CampTypes)
-						{
-							<option value="@campType">@campType</option>
-						}
-					</select>
-					<select asp-for="Sort" class="component-select1">
+					<div class="component-container3">
+						<select asp-for="CampType" class="component-select btn btn-secondary dropdown-toggle">
+							@foreach (var campType in Model.CampTypes)
+							{
+								<option value="@campType">@campType</option>
+							}
+						</select>
+					</div>
+				</div>
+				<div class="component-container4">
+					<select asp-for="Sort" class="component-select1 btn btn-secondary dropdown-toggle">
 						@foreach (var sort in Model.Sorts)
 						{
 							<option value="@sort">@sort</option>
 						}
 					</select>
-					<button type="submit" class="component-button button">
+					<button type="button" class="component-button button">
 						<span>
 							<span>Search</span>
 							<br />
 						</span>
 					</button>
 				</div>
+				<div class="component-container5"></div>
 			</div>
 		</form>
 	</div>

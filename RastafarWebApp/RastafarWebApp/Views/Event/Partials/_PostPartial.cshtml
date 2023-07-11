@@ -20,16 +20,22 @@
 <!-- Section-->
 
 <div class="col mb-5">
-	<div class="card h-100">
+	<div style="margin-top: 100px;" class="card">
 		<!-- Product image-->
 		<img class="card-img-top" src="@Model.Image" alt="..." />
 		<!-- Product details-->
 		<div class="card-body p-4">
 			<div class="text-center">
 				<!-- Product name-->
-				<h5 class="fw-bolder">@Model.Name</h5>
+				<h5 style="padding-bottom: 20px;" class="fw-bolder">@Model.Name</h5>
 				<!-- Product price-->
-				Participants: @Model.ParticipantCount
+				
+			</div>
+			<div>
+				<div class="row"><p class="col-6">Place:</p> <p style="text-align:end" class="col-6">@Model.Destination</p></div>
+				<div class="row"><p class="col-6">Camp:</p> <p style="text-align:end" class="col-6">@Model.CampType</p></div>
+				<div class="row"><p class="col-6">Travel by:</p> <p style="text-align:end" class="col-6">@Model.TravelType</p></div>
+				<p style="text-align:center">Participants: @Model.ParticipantCount</p>
 			</div>
 		</div>
 		<!-- Product actions-->

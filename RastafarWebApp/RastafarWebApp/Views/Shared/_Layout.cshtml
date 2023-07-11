@@ -20,14 +20,16 @@
 	<link href="~/css/homepage/style.css" rel="stylesheet" />
     <title>Shop Homepage - Start Bootstrap Template</title>
 </head>
-<body>
+<body style="background-color: gainsboro">
     <header style="margin-right: 100%" data-role="Header" class="header-header">
         <img alt="logo"
              src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
              class="header-image" />
         <div class="header-nav">
             <nav class="navigation-links1-nav navigation-links1-root-class-name10">
-                <a class="navigation-links1-text" asp-controller="Event" asp-action="All"><span>All Events</span></a>
+                <span class="navigation-links1-text1">
+                    <a style="color: black; text-decoration: none;" class="navigation-links1-text" asp-controller="Event" asp-action="All"><span>All Events</span></a>
+                </span>
                   @if (this.User.Identity.IsAuthenticated == true)
                   {
                         <span class="navigation-links1-text1">
@@ -96,7 +98,7 @@
     </footer>*@
 
     <!-- Footer-->
-    <footer class="home-footer">
+    <footer style="" class="home-footer">
         <img alt="logo"
              src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
              class="home-image" />

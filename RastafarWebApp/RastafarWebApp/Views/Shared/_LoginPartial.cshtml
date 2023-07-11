@@ -4,7 +4,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <button class="button">
+    <button class="button" style="margin-right: 10px;">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </button>
     @*<button class="button">*@
@@ -15,7 +15,7 @@
 }
 else
 {
-    <button class="button">
+    <button class="button" style="margin-right: 10px;">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
     </button>
     <button class="header-login button">
