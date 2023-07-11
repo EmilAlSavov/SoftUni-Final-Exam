@@ -1,7 +1,6 @@
 ﻿@model PostPreviewViewModel
-@*<div class="col-md-4">
-	<div class="card mb-3">*@
-		<img class="card-img-top" src="@Model.Image" alt="Event Image">
+
+		@*<img class="card-img-top" src="@Model.Image" alt="Event Image">
 		<div class="card-body text-center">
 			<h4>@Model.Name</h4>
 			<h6>Description: <b>@Model.Description</b></h6>
@@ -16,32 +15,26 @@
 			<br />
 			<a asp-controller="Event" asp-action="Details" asp-route-id="@Model.Id"
 			   class="btn btn-success">Details</a>
-			@*@if (this.User.Identity.IsAuthenticated && this.User.Identity.Name == Model.OwnerName)
-			{
-				<a asp-controller="Event" asp-action="Edit" asp-route-id="@Model.Id"
-				   class="btn btn-warning">Edit</a>
-				<a asp-controller="Event" asp-action="Delete" asp-routeid="@Model.Id"
-				   class="btn btn-danger">Delete</a>
-				<p></p>
-				
-			} else if(this.User.Identity.IsAuthenticated)
-			{
-				@if (!Model.Participants.Any(p => p.UserName == this.User.Identity.Name))
-				{
-					<form class="input-group-sm" asp-controller="Event"
-						  asp-action="Join" asp-route-id="@Model.Id" method="post">
-						<input class="btn btn-primary" type="submit" value="Join" />
-					</form>
-				}
-				else
-				{
-					<form asp-controller="Event" asp-action="Leave"
-						  asp-route-id="@Model.Id" method="post">
-						<input class="btn btn-primary" type="submit" value="Leave" />
-					</form>
-				}
-			}*@
+		</div>*@
+
+<!-- Section-->
+
+<div class="col mb-5">
+	<div class="card h-100">
+		<!-- Product image-->
+		<img class="card-img-top" src="@Model.Image" alt="..." />
+		<!-- Product details-->
+		<div class="card-body p-4">
+			<div class="text-center">
+				<!-- Product name-->
+				<h5 class="fw-bolder">@Model.Name</h5>
+				<!-- Product price-->
+				Participants: @Model.ParticipantCount
+			</div>
 		</div>
-	@*</div>
+		<!-- Product actions-->
+		<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+			<div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-controller="Event" asp-action="Detail" asp-route-id="@Model.Id">View options</a></div>
+		</div>
+	</div>
 </div>
-*@

@@ -1,45 +1,64 @@
 ﻿@model AllPostQueryModel
 
-	<partial name="Partials/_FilterPartial" model="@Model" />
 
+<!-- Header-->
+<header class="bg-dark py-5">
+	<div class="container px-4 px-lg-5 my-5">
+		<div class="text-center text-white">
+			<h1 class="display-4 fw-bolder">All Events</h1>
+			<p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+		</div>
+	</div>
+</header>
+
+<partial name="Partials/_FilterPartial" model="@Model" />
 
 <div class="row">
-	@foreach (var post in Model.Posts)
-	{
-		<div class="col-md-4">
-			<div class="card mb-3">
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 mt-5">
+			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				@foreach (var post in Model.Posts)
+				{
+					@*<div class="col-md-4">
+						<div class="card mb-3">*@
 
-				<partial name="Partials/_PostPartial" model="@post" />
+							<partial name="Partials/_PostPartial" model="@post" />
 
-				<div class=" card-body text-center">
-					@if (this.User.Identity.IsAuthenticated && this.User.Identity.Name == post.OwnerName)
-					{
-						<a asp-controller="Event" asp-action="Edit" asp-route-id="@post.Id"
-						   class="btn btn-warning">Edit</a>
-						<a asp-controller="Event" asp-action="Delete" asp-route-id="@post.Id"
-						   class="btn btn-danger">Delete</a>
-						<p></p>
+							@*<div class=" card-body text-center">
+								@if (this.User.Identity.IsAuthenticated && this.User.Identity.Name == post.OwnerName)
+								{
+									<a asp-controller="Event" asp-action="Edit" asp-route-id="@post.Id"
+									   class="btn btn-warning">Edit</a>
+									<a asp-controller="Event" asp-action="Delete" asp-route-id="@post.Id"
+									   class="btn btn-danger">Delete</a>
+									<p></p>
 
-					}
-					else if (this.User.Identity.IsAuthenticated)
-					{
-						@if (!post.Participants.Any(p => p.UserName == this.User.Identity.Name))
-						{
-							<form class="input-group-sm" asp-controller="Event"
-								  asp-action="Join" asp-route-id="@post.Id" method="post">
-								<input class="btn btn-primary" type="submit" value="Join" />
-							</form>
-						}
-						else
-						{
-							<form asp-controller="Event" asp-action="Leave"
-								  asp-route-id="@post.Id" method="post">
-								<input class="btn btn-primary" type="submit" value="Leave" />
-							</form>
-						}
-					}
-				</div>
+								}
+								else if (this.User.Identity.IsAuthenticated)
+								{
+									@if (!post.Participants.Any(p => p.UserName == this.User.Identity.Name))
+									{
+										<form class="input-group-sm" asp-controller="Event"
+											  asp-action="Join" asp-route-id="@post.Id" method="post">
+											<input class="btn btn-primary" type="submit" value="Join" />
+										</form>
+									}
+									else
+									{
+										<form asp-controller="Event" asp-action="Leave"
+											  asp-route-id="@post.Id" method="post">
+											<input class="btn btn-primary" type="submit" value="Leave" />
+										</form>
+									}
+								}
+							</div>*@
+						@*</div>
+					</div>*@
+				}
 			</div>
 		</div>
-	}
+	</section>
 </div>
+
+
+

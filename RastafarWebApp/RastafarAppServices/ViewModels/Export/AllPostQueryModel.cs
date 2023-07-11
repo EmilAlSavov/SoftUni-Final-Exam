@@ -11,7 +11,7 @@ namespace RastafarAppServices.ViewModels.Export
 {
 	public class AllPostQueryModel
 	{
-		public const int PostsPerPages = 3;
+		public const int PostsPerPages = 8;
 
         public CampType CampType { get; set; }
 

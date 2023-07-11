@@ -13,12 +13,14 @@
           "Microsoft.AspNetCore.Identity.UI": "6.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.16",
-          "RastafarAppServices": "1.0.0"
+          "RastafarAppServices": "1.0.0",
+          "bootstrap": "5.3.0"
         },
         "runtime": {
           "RastafarWebApp.dll": {}
         }
       },
+      "bootstrap/5.3.0": {},
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -574,6 +576,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Glct0CeNsN5ETcAmV4IsIGa8VEvnWphT4Wb+IaF7/4KAMaZjxpr0eZ8Uf6H/gWKPcUB2p235/3alyhmYBbU6FQ==",
+      "path": "bootstrap/5.3.0",
+      "hashPath": "bootstrap.5.3.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
