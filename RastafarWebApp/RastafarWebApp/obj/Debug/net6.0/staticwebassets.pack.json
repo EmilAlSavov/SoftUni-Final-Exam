@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\css\\AllPage\\component.css"
     },
     {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\DetailsPage\\details.css",
+      "PackagePath": "staticwebassets\\css\\DetailsPage\\details.css"
+    },
+    {
       "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\Error.css",
       "PackagePath": "staticwebassets\\css\\Error.css"
     },

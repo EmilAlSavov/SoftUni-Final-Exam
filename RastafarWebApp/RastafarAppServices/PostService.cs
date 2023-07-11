@@ -224,5 +224,25 @@ namespace RastafarAppServices
 				Name = ct.Name
 			}).ToList();
 		}
+
+		public PostPreviewViewModel Detail(int postId)
+		{
+            var post = this.GetPostById(postId);
+
+            var model = new PostPreviewViewModel()
+            {
+                Id = post.Id,
+                Name = post.Name,
+                Description = post.Description,
+                Destination = post.Destination,
+                CampType = this.GetCampTypesAsViewModels().FirstOrDefault(ct => ct.Id == post.CampTypeId).Name,
+                TravelType = this.GetTravelTypesAsViewModels().FirstOrDefault(ct => ct.Id == post.TravelTypeId).Name,
+                Image = post.ImgsUrl,
+                ParticipantCount = context.UsersPosts.Where(up => up.PostId == postId).Count(),
+                OwnerName = context.Users.FirstOrDefault(u => u.Id == post.OwnerId).UserName
+            };
+
+            return model;
+		}
 	}
 }

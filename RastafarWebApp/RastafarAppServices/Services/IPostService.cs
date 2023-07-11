@@ -29,6 +29,8 @@ namespace RastafarAppServices.Services
 
         public void Leave(int postId, string userId);
 
+        public PostPreviewViewModel Detail(int postId);
+
 		public List<string> GetEnumList<T>();
 		public Post GetPostById(int id);
 

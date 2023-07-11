@@ -35,6 +35,15 @@ namespace RastafarWebApp.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Detail(int Id)
+        {
+            var post = postService.Detail(Id);
+
+            return View(post);
+        }
+
+        [HttpGet]
         public IActionResult Add()
         {
             return View();
