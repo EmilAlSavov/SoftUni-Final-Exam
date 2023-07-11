@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RastafarAppData.Data.Models;
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices;
 using RastafarAppServices.Services;
+using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
 using RastafarAppServices.ViewModels.Import;
-using RastafarWebApp.Data.Models.Enums;
 using System.ComponentModel;
 using System.Security.Claims;
 
@@ -28,7 +29,7 @@ namespace RastafarWebApp.Controllers
 
             allPostQueryModel.TotalEventCount = models.TotalEventCount;
             allPostQueryModel.Posts = models.Posts;
-            allPostQueryModel.CampTypes = postService.GetEnumList<CampType>();
+            allPostQueryModel.CampTypes = postService.GetCampTypesAsViewModels();
             allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
             return View(allPostQueryModel);
         }
@@ -74,8 +75,16 @@ namespace RastafarWebApp.Controllers
 					Description = post.Description,
 					Destination = post.Destination,
 					ImgsUrl = post.ImgsUrl,
-					campType = post.campType,
-					travelType = post.travelType
+					campType = new CampTypeViewModel()
+                    {
+                       Id = post.CampTypeId,
+                       Name = postService.GetCampTypesAsViewModels().FirstOrDefault(ct => ct.Id == post.CampTypeId).Name
+                    },
+					travelType = new TravelTypeViewModel()
+                    {
+                        Id = post.TravelTypeId,
+                        Name = postService.GetTravelTypesAsViewModels().FirstOrDefault(ct => ct.Id == post.TravelTypeId).Name
+					}
 				};
 
 				return View(model);

@@ -80,15 +80,16 @@ string.Empty)"
 		<form class="component-form">
 			<div class="component-container1">
 				<div class="component-container2">
-					<input style="margin-left: 20px;" "" asp-for="SearchingTerm"
+					<input style="margin-left: 20px;" asp-for="SearchingTerm"
 						   type="text"
 						   placeholder="Search..."
 						   class="component-textinput input" />
 					<div class="component-container3">
-						<select asp-for="CampType" class="component-select btn btn-secondary dropdown-toggle">
+						<select asp-for="CampType.Id" class="component-select btn btn-secondary dropdown-toggle">
+							<option value="0">All</option>
 							@foreach (var campType in Model.CampTypes)
 							{
-								<option value="@campType">@campType</option>
+								<option value="@campType.Id">@campType.Name</option>
 							}
 						</select>
 					</div>
@@ -100,7 +101,7 @@ string.Empty)"
 							<option value="@sort">@sort</option>
 						}
 					</select>
-					<button type="button" class="component-button button">
+					<button type="submit" class="component-button button">
 						<span>
 							<span>Search</span>
 							<br />

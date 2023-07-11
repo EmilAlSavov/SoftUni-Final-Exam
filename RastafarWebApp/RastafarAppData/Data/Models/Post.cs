@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
-using RastafarWebApp.Data.Models.Enums;
+using RastafarAppData.Data.Models;
 
 namespace RastafarWebApp.Data.Models
 {
@@ -27,10 +27,17 @@ namespace RastafarWebApp.Data.Models
         public string Destination { get; set; } = null!;
 
         [Required]
-        public CampType campType { get; set; }
+        [ForeignKey(nameof(CampTypeId))]
+        public CampType CampType { get; set; }
 
         [Required]
-        public TravelType travelType { get; set; }
+        public int CampTypeId { get; set; }
+
+        [Required]
+        [ForeignKey(nameof(TravelTypeId))]
+        public TravelType TravelType { get; set; }
+
+        public int TravelTypeId { get; set; }
 
         [Required]
         public DateTime CreatedOn { get; set; }

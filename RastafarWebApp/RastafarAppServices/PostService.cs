@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.Services;
+using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
 using RastafarAppServices.ViewModels.Import;
 using RastafarWebApp.Data;
 using RastafarWebApp.Data.Models;
-using RastafarWebApp.Data.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,8 +33,8 @@ namespace RastafarAppServices
                 Name = model.Name,
                 Description = model.Description,
                 Destination = model.Destination,
-                campType = (CampType)model.campType,
-                travelType = (TravelType)model.travelType,
+                CampTypeId = model.campType.Id,
+                TravelTypeId = model.travelType.Id,
                 CreatedOn = DateTime.Now,
                 ImgsUrl = model.ImgsUrl,
                 OwnerId = id,
@@ -68,8 +68,8 @@ namespace RastafarAppServices
             realPost.Description = model.Description;
             realPost.Destination = model.Destination;
             realPost.ImgsUrl = model.ImgsUrl;
-            realPost.campType = model.campType;
-            realPost.travelType = model.travelType;
+            realPost.CampTypeId = model.campType.Id;
+            realPost.TravelTypeId = model.travelType.Id;
 
             context.SaveChanges();
         }
@@ -84,7 +84,7 @@ namespace RastafarAppServices
             throw new NotImplementedException();
         }
 
-		public AllPostQueryModel All(CampType campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
+		public AllPostQueryModel All(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
 		{
             int totalEvents = context.Posts.Count();
             var postsQuery = context.Posts.Where(p => true);
@@ -102,9 +102,9 @@ namespace RastafarAppServices
                                     Image = p.ImgsUrl,
                                     Description = p.Description,
                                     Destination = p.Destination,
-                                    CampType = p.campType.ToString(),
+                                    CampType = p.CampType.Name,
                                     OwnerName = p.Owner.UserName,
-                                    TravelType = p.travelType.ToString(),
+                                    TravelType = p.TravelType.Name,
                                     ParticipantCount = p.Participants.Count(),
                                     Participants = p.Participants.Select(up => new UserPostsViewModel()
                                     {
@@ -123,13 +123,17 @@ namespace RastafarAppServices
             };
         }
 
-        private IQueryable<Post> FilterPosts(IQueryable<Post> postsQuery, CampType campType, string searchTerm, EventSort sort)
+        private IQueryable<Post> FilterPosts(IQueryable<Post> postsQuery, CampTypeViewModel campType, string searchTerm, EventSort sort)
         {
-			if ((int)campType != 0)
-			{
-				postsQuery = postsQuery
-				.Where(p => p.campType == campType);
+            if (campType != null)
+            {
+				if (campType.Id != 0)
+				{
+					postsQuery = postsQuery
+					.Where(p => p.CampTypeId == campType.Id);
+				}
 			}
+           
 
 			if (searchTerm != null)
 			{
@@ -161,9 +165,23 @@ namespace RastafarAppServices
 
 		public List<string> GetEnumList<T>()
 		{
+			if (typeof(T).Name == "CampType")
+			{
+				return context.CampTypes.Select(ct => ct.Name).ToList();
+			}
+
 			return Enum.GetNames(typeof(T))
 				   .Select(s => s).ToList();
 		}
+
+        public List<CampTypeViewModel> GetCampTypesAsViewModels()
+        {
+             return context.CampTypes.Select(ct => new CampTypeViewModel()
+                    {
+                        Id = ct.Id,
+                        Name = ct.Name
+                    }).ToList();
+        }
 
 		public void Join(int postId, string userId)
 		{
@@ -196,6 +214,15 @@ namespace RastafarAppServices
 		public Post GetPostById(int id)
 		{
             return context.Posts.Find(id);
+		}
+
+		public List<TravelTypeViewModel> GetTravelTypesAsViewModels()
+		{
+			return context.TravelTypes.Select(ct => new TravelTypeViewModel()
+			{
+				Id = ct.Id,
+				Name = ct.Name
+			}).ToList();
 		}
 	}
 }

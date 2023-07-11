@@ -17,12 +17,13 @@ Nachin na putuvane
 - Chat
 
 User
+String ID
+String userId FK
 - Username - string(20)
 - Rating - 1 - 5 int
-- Password
 - Number
 - Age
-- List<OBQVA> Liked obqva
+- List<OBQVA> Joined obqva
 - List<OBQvA> My obqvas
 - List<OBQVA> Already Bil Sum
 - List<User> Friends
@@ -33,3 +34,17 @@ Camping Type
 - hamaking
 - caravaning
 - bungaling
+
+
+None = 0,
+        Train = 1,
+        Bus = 2,
+        Plain = 3,
+        ShareTravel = 4
+
+All = 0,
+        Tent = 1,
+        Hammok = 2,
+        Caravan = 3,
+        Camper = 4,
+        Bungalow = 5

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using RastafarWebApp.Data.Models.Enums;
 using RastafarWebApp.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -33,11 +32,11 @@ namespace RastafarAppServices.ViewModels.Import
 
 		[Required]
 		[ValidateNever]
-		public CampType campType { get; set; }
+		public CampTypeViewModel campType { get; set; }
 
 		[Required]
 		[ValidateNever]
-		public TravelType travelType { get; set; }
+		public TravelTypeViewModel travelType { get; set; }
 
     }
 }

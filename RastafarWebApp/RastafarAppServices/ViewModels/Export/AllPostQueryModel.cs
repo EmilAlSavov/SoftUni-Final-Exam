@@ -1,5 +1,4 @@
 ﻿using RastafarAppData.Data.Models.Enums;
-using RastafarWebApp.Data.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +12,9 @@ namespace RastafarAppServices.ViewModels.Export
 	{
 		public const int PostsPerPages = 8;
 
-        public CampType CampType { get; set; }
+        public CampTypeViewModel CampType { get; set; }
 
-        public List<string> CampTypes { get; set; }
+        public List<CampTypeViewModel> CampTypes { get; set; }
 
         [DisplayName("Search by text")]
         public string SearchingTerm { get; set; }
