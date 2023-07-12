@@ -67,8 +67,8 @@ namespace RastafarWebApp.Controllers
         [HttpGet]
         public IActionResult Edit(int Id)
         {
-            try
-            {
+            //try
+            //{
 				var post = postService.GetPostById(Id);
 
 				if (post.OwnerId != GetUserId())
@@ -97,13 +97,13 @@ namespace RastafarWebApp.Controllers
 				};
 
 				return View(model);
-			}
-            catch (Exception e)
-			{
-				var statusCode = e.Data.Keys.Cast<string>().Single();
+			//}
+   //         catch (Exception e)
+			//{
+			//	var statusCode = e.Data.Keys.Cast<string>().Single();
 
-				return RedirectToAction("Index", "Error", new { statusCode });
-			}
+			//	return RedirectToAction("Index", "Error", new { statusCode });
+			//}
            
         }
 

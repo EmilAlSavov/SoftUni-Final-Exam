@@ -2,7 +2,8 @@
 @using RastafarAppData.Data.Models;
 @using RastafarAppServices.Services
 @using RastafarWebApp.Data.Models;
-@inject IPostService service
+@inject IPostService postService
+@inject ICampService campService
 
 <div class="row">
 	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
@@ -32,7 +33,7 @@ fine URL here...">
 			<div class="form-group">
 				<label asp-for="campType.Id"></label>
 				<select asp-for="campType.Id" class="form-control">
-					@foreach (var camptype in service.GetCampTypesAsViewModels())
+					@foreach (var camptype in postService.GetCampTypesAsViewModels())
 					{
 						<option value="@camptype.Id">@camptype.Name</option>
 					}
@@ -42,9 +43,20 @@ fine URL here...">
 			<div class="form-group">
 				<label asp-for="travelType.Id"></label>
 				<select asp-for="travelType.Id" class="form-control">
-					@foreach (var traveltype in service.GetTravelTypesAsViewModels())
+					@foreach (var traveltype in postService.GetTravelTypesAsViewModels())
 					{
 						<option value="@traveltype.Id">@traveltype.Name</option>
+					}
+				</select>
+				<span asp-validation-for="travelType" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="camp.Id"></label>
+				<select asp-for="camp.Id" class="form-control">
+					<option value="0">None</option>
+					@foreach (var camp in campService.GetCampsAsViewModels())
+					{
+						<option value="@camp.Id">@camp.Name</option>
 					}
 				</select>
 				<span asp-validation-for="travelType" class="small textdanger"></span>

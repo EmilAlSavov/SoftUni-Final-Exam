@@ -28,18 +28,28 @@ namespace RastafarAppServices
 
         public void Add(AddPostViewModel model, string id)
         {
-            context.Posts.Add(new Post()
-            {
-                Name = model.Name,
-                Description = model.Description,
-                Destination = model.Destination,
-                CampTypeId = model.campType.Id,
-                TravelTypeId = model.travelType.Id,
-                CreatedOn = DateTime.Now,
-                ImgsUrl = model.ImgsUrl,
-                OwnerId = id,
-                Participants = new List<IdentityUserPosts>()
-            });
+            var post = new Post()
+			{
+				Name = model.Name,
+				Description = model.Description,
+				Destination = model.Destination,
+				CampTypeId = model.campType.Id,
+				TravelTypeId = model.travelType.Id,
+				CreatedOn = DateTime.Now,
+				ImgsUrl = model.ImgsUrl,
+				OwnerId = id,
+				Participants = new List<IdentityUserPosts>()
+
+            };
+
+			if (model.camp != null)
+			{
+				if (model.camp.Id != 0)
+				{
+					post.CampId = model.camp.Id;
+				}
+			}
+			context.Posts.Add(post);
 
             context.SaveChanges();
         }
@@ -70,6 +80,14 @@ namespace RastafarAppServices
             realPost.ImgsUrl = model.ImgsUrl;
             realPost.CampTypeId = model.campType.Id;
             realPost.TravelTypeId = model.travelType.Id;
+
+            if (model.camp != null)
+            {
+                if (model.camp.Id != 0)
+                {
+                    realPost.CampId = model.camp.Id;
+                }
+            }
 
             context.SaveChanges();
         }
@@ -213,7 +231,7 @@ namespace RastafarAppServices
 
 		public Post GetPostById(int id)
 		{
-            return context.Posts.Find(id);
+            return context.Posts.FirstOrDefault(p => p.Id == id);
 		}
 
 		public List<TravelTypeViewModel> GetTravelTypesAsViewModels()

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RastafarAppServices.Services;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using RastafarAppServices.ViewModels.Export;
 
 namespace RastafarAppServices.ViewModels.Import
 {
@@ -37,6 +38,9 @@ namespace RastafarAppServices.ViewModels.Import
 		[Required]
 		[ValidateNever]
 		public TravelTypeViewModel travelType { get; set; }
+
+		[ValidateNever]
+		public CampViewModel? camp { get; set; }
 
     }
 }

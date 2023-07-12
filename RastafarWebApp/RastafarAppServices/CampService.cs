@@ -48,14 +48,6 @@ namespace RastafarAppServices
 								Posts = c.Posts.Select(p => new PostPreviewViewModel()
 								{
 									Id = p.Id,
-									Name = p.Name,
-									Description = p.Description,
-									Destination = p.Destination,
-									CampType = p.CampType.Name,
-									TravelType = p.TravelType.Name,
-									Image = p.ImgsUrl,
-									OwnerName = p.Owner.UserName,
-									ParticipantCount = p.Participants.Count(),
 								}).ToList()
 							}).ToList();
 
@@ -95,6 +87,15 @@ namespace RastafarAppServices
 			{
 				Id = ct.Id,
                 Name = ct.Name,
+			}).ToList();
+		}
+
+		public List<CampViewModel> GetCampsAsViewModels()
+		{
+			return context.Camps.Select(ct => new CampViewModel()
+			{
+				Id = ct.Id,
+				Name = ct.Name,
 			}).ToList();
 		}
 

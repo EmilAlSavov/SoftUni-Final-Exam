@@ -19,6 +19,7 @@ namespace RastafarAppServices.Services
 
         public List<string> GetEnumList<T>();
         public List<CountryViewModel> GetCountriesTypesAsViewModels();
+        public List<CampViewModel> GetCampsAsViewModels();
 
 	}
 }

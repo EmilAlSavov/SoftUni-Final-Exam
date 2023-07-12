@@ -36,6 +36,7 @@ namespace RastafarWebApp.Data.Models
         [ForeignKey(nameof(TravelTypeId))]
         public TravelType TravelType { get; set; }
 
+        [Required]
         public int TravelTypeId { get; set; }
 
         [Required]
@@ -49,9 +50,9 @@ namespace RastafarWebApp.Data.Models
         public IdentityUser Owner { get; set; }
 
         [ForeignKey(nameof(CampId))]
-        public Camp Camp { get; set; }
+        public Camp? Camp { get; set; }
 
-        public int CampId { get; set; }
+        public int? CampId { get; set; }
 
         public List<IdentityUserPosts> Participants { get; set; } = new List<IdentityUserPosts>();
     }

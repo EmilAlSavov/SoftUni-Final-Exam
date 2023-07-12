@@ -146,6 +146,7 @@ namespace RastafarWebApp.Data
 
         private void SeedCamps()
         {
+
             gradina = new Camp()
             {
                 Id = 1,
