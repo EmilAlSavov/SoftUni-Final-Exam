@@ -19,6 +19,9 @@ namespace RastafarAppData.Data.Models
         public string Name { get; set; }
 
         [Required]
+        public string Image { get; set; }
+
+        [Required]
         [ForeignKey(nameof(CountryId))]
         public Country Country { get; set; } = null!;
 

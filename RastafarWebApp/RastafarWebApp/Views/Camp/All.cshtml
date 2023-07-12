@@ -1,5 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model AllCampQueryModel
+
+
+<!-- Header-->
+<header class="bg-dark py-5">
+	<div class="container px-4 px-lg-5 my-5">
+		<div class="text-center text-white">
+			<h1 class="display-4 fw-bolder">All Camps</h1>
+			<p class="lead fw-normal text-white-50 mb-0">Find adventures through out the world.</p>
+		</div>
+	</div>
+</header>
+
+<partial name="Partials/_FilterPartial" model="@Model" />
+
+<div class="row">
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 mt-5">
+			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+				@foreach (var camp in Model.Camps)
+				{
+
+					<partial name="Partials/_CampPartial" model="@camp" />
+				}
+			</div>
+		</div>
+	</section>
+</div>
+
+
+

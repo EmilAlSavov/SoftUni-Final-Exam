@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace RastafarAppServices.ViewModels.Export
 {
-    public class CampViewModel
+    public class CountryViewModel
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public CountryViewModel Country { get; set; }
-
-        public string Image { get; set; }
-
-        public List<PostPreviewViewModel> Posts { get; set; }
+        public List<CampViewModel> Camps { get; set; } = new List<CampViewModel>();
     }
 }

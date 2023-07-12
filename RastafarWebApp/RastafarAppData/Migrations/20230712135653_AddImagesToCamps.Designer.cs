@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RastafarWebApp.Data;
 
@@ -11,9 +12,10 @@ using RastafarWebApp.Data;
 namespace RastafarAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    partial class RastafarContextModelSnapshot : ModelSnapshot
+    [Migration("20230712135653_AddImagesToCamps")]
+    partial class AddImagesToCamps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

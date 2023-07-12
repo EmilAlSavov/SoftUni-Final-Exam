@@ -1,0 +1,44 @@
+﻿@model CampViewModel
+
+@*<img class="card-img-top" src="@Model.Image" alt="Event Image">
+		<div class="card-body text-center">
+			<h4>@Model.Name</h4>
+			<h6>Description: <b>@Model.Description</b></h6>
+			<h6>Camp Type: <b>@Model.CampType</b></h6>
+			<h6>Destination: <b>@Model.Destination</b></h6>
+			<h6>Travel Type: <b>@Model.TravelType</b></h6>
+			<h6>
+				Creator:
+				<b>@Model.OwnerName</b>
+			</h6>
+			<h6>(@(Model.ParticipantCount))</h6>
+			<br />
+			<a asp-controller="Event" asp-action="Details" asp-route-id="@Model.Id"
+			   class="btn btn-success">Details</a>
+		</div>*@
+
+<!-- Section-->
+
+<div class="col mb-5">
+	<div style="margin-top: 100px;" class="card">
+		<!-- Product image-->
+		<img class="card-img-top" src="@Model.Image" alt="..." />
+		<!-- Product details-->
+		<div class="card-body p-4">
+			<div class="text-center">
+				<!-- Product name-->
+				<h5 style="padding-bottom: 20px;" class="fw-bolder">@Model.Name</h5>
+				<!-- Product price-->
+
+			</div>
+			<div>
+				<div class="row"><p class="col-6">Country:</p> <p style="text-align:end" class="col-6">@Model.Country.Name</p></div>
+				<p style="text-align:center">Events: @Model.Posts.Count()</p>
+			</div>
+		</div>
+		<!-- Product actions-->
+		<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+			<div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-controller="Event" asp-action="Detail" asp-route-id="@Model.Id">View options</a></div>
+		</div>
+	</div>
+</div>

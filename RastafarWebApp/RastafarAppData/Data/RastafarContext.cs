@@ -151,7 +151,9 @@ namespace RastafarWebApp.Data
                 Id = 1,
                 CountryId = 1,
                 Name = "Gradina",
-                Posts = new List<Post>()
+                Image = "https://camping-gradina-sozopol.booked.net/data/Photos/OriginalPhoto/8480/848032/848032307/Camping-Gradina-Hotel-Sozopol-Exterior.JPEG",
+
+				Posts = new List<Post>()
             };
 
             saravari = new Camp()
@@ -159,15 +161,17 @@ namespace RastafarWebApp.Data
                 Id = 2,
                 CountryId = 2,
                 Name = "Saravari",
-                Posts = new List<Post>()
+                Image = "https://clubvertical.net/wp-content/uploads/2022/05/20545293_1675421585825456_6037428918988778764_o.jpg",
+				Posts = new List<Post>()
             };
 
             boshkaada = new Camp()
             {
                 Id = 3,
                 CountryId = 3,
-                Name = "Boshkaada",
-                Posts = new List<Post>()
+                Name = "Bozcaada",
+                Image = "https://www.karavanhayati.com/wp-content/uploads/2021/03/bozcaada-karavan-kamp-alanlari-3.jpg",
+				Posts = new List<Post>()
             };
         }
 
