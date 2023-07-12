@@ -227,20 +227,25 @@ namespace RastafarAppServices
 
 		public PostPreviewViewModel Detail(int postId)
 		{
-            var post = this.GetPostById(postId);
 
-            var model = new PostPreviewViewModel()
+            var model = context.Posts.Where(p => p.Id == postId ).Select( post => new PostPreviewViewModel()
             {
                 Id = post.Id,
                 Name = post.Name,
                 Description = post.Description,
                 Destination = post.Destination,
-                CampType = this.GetCampTypesAsViewModels().FirstOrDefault(ct => ct.Id == post.CampTypeId).Name,
-                TravelType = this.GetTravelTypesAsViewModels().FirstOrDefault(ct => ct.Id == post.TravelTypeId).Name,
+                CampType = post.CampType.Name,
+                TravelType = post.TravelType.Name,
                 Image = post.ImgsUrl,
                 ParticipantCount = context.UsersPosts.Where(up => up.PostId == postId).Count(),
+                Participants = post.Participants.Select(p => new UserPostsViewModel()
+                {
+                    PostId = p.PostId,
+                    UserId = p.ParticipantId,
+                    UserName = p.Participant.UserName
+                }).ToList(),
                 OwnerName = context.Users.FirstOrDefault(u => u.Id == post.OwnerId).UserName
-            };
+            }).First();
 
             return model;
 		}

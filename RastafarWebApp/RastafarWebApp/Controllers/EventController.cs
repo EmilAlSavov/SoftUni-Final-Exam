@@ -145,7 +145,7 @@ namespace RastafarWebApp.Controllers
 
             postService.Join(Id, userId);
 
-            return RedirectToAction("All", "Event");
+            return RedirectToAction("Detail", "Event", new { Id });
         }
 
         public IActionResult Leave(int Id)
@@ -154,7 +154,7 @@ namespace RastafarWebApp.Controllers
 
             postService.Leave(Id, userId);
 
-            return RedirectToAction("All", "Event");
+            return RedirectToAction("Detail", "Event", new {Id});
         }
 
 		private string GetUserId()

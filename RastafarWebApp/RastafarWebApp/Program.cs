@@ -22,6 +22,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ICampService, CampService>();
 
 var app = builder.Build();
 

@@ -224,6 +224,49 @@ namespace RastafarAppData.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("RastafarAppData.Data.Models.Camp", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("Camps");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            Name = "Gradina"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 2,
+                            Name = "Saravari"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 3,
+                            Name = "Boshkaada"
+                        });
+                });
+
             modelBuilder.Entity("RastafarAppData.Data.Models.CampType", b =>
                 {
                     b.Property<int>("Id")
@@ -265,6 +308,104 @@ namespace RastafarAppData.Migrations
                         {
                             Id = 5,
                             Name = "Bungalow"
+                        });
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Bulgaria"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Greece"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Turkey"
+                        });
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedOn = new DateTime(2023, 7, 12, 15, 42, 37, 107, DateTimeKind.Local).AddTicks(2106),
+                            Description = "Perfect Hammok for the summer and wild camping or just to put it in the yard to chill.",
+                            ImgUrl = "https://www.hammockuniverse.com/cdn/shop/articles/Hammock-Universe-Blog-Featured-Image-YOUR-ULTIMATE-GUIDE-ON-HANGING-HAMMOCKS-OUTDOORS_1600x.jpg?v=1678807426",
+                            Name = "Summar Hammok",
+                            Price = 20.00m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedOn = new DateTime(2023, 7, 12, 15, 42, 37, 107, DateTimeKind.Local).AddTicks(2113),
+                            Description = "Perfect cup for campers. Just sit, take a sip and enjoy your trip. Perfect for all types of adventurers",
+                            ImgUrl = "https://i.etsystatic.com/8120420/r/il/2b9ef1/2889698655/il_570xN.2889698655_6kgg.jpg",
+                            Name = "Camping Cup",
+                            Price = 15.99m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedOn = new DateTime(2023, 7, 12, 15, 42, 37, 107, DateTimeKind.Local).AddTicks(2118),
+                            Description = "Pocket Ashtray for wild smokers. Dont be dirty, get one of our pocket ashtray's and leave your done cigaretes there. Save nature!!!",
+                            ImgUrl = "https://i5.walmartimages.com/asr/54a3ba02-3177-4aac-82dd-a6462dfb8d6a.7ece51e52d3dffaf8c8582c0c60c327d.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff",
+                            Name = "Pocket Ashtray",
+                            Price = 10m
                         });
                 });
 
@@ -335,6 +476,9 @@ namespace RastafarAppData.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("CampId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CampTypeId")
                         .HasColumnType("int");
 
@@ -369,6 +513,8 @@ namespace RastafarAppData.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CampId");
+
                     b.HasIndex("CampTypeId");
 
                     b.HasIndex("OwnerId");
@@ -381,8 +527,9 @@ namespace RastafarAppData.Migrations
                         new
                         {
                             Id = 1,
+                            CampId = 0,
                             CampTypeId = 1,
-                            CreatedOn = new DateTime(2023, 7, 11, 13, 35, 3, 473, DateTimeKind.Local).AddTicks(1007),
+                            CreatedOn = new DateTime(2023, 7, 12, 15, 42, 37, 107, DateTimeKind.Local).AddTicks(1804),
                             Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
                             Destination = "Sinemorec",
                             ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg",
@@ -393,8 +540,9 @@ namespace RastafarAppData.Migrations
                         new
                         {
                             Id = 2,
+                            CampId = 0,
                             CampTypeId = 3,
-                            CreatedOn = new DateTime(2023, 7, 11, 13, 35, 3, 473, DateTimeKind.Local).AddTicks(1065),
+                            CreatedOn = new DateTime(2023, 7, 12, 15, 42, 37, 107, DateTimeKind.Local).AddTicks(1849),
                             Description = "We are going to camp on the beach in one of the biggest camps in bulgaria.",
                             Destination = "Gradina",
                             ImgsUrl = "https://camping.bg/root/f/gallery/1/c01db28c234b15fe958af37bedb1b67c.jpg",
@@ -405,6 +553,7 @@ namespace RastafarAppData.Migrations
                         new
                         {
                             Id = 3,
+                            CampId = 0,
                             CampTypeId = 4,
                             CreatedOn = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "We are going to travel and camp from Varna to Burgas then to Sozopol, Carevo and Ahtopol",
@@ -467,6 +616,17 @@ namespace RastafarAppData.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("RastafarAppData.Data.Models.Camp", b =>
+                {
+                    b.HasOne("RastafarAppData.Data.Models.Country", "Country")
+                        .WithMany("Camps")
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
             modelBuilder.Entity("RastafarWebApp.Data.Models.IdentityUserPosts", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Participant")
@@ -488,6 +648,12 @@ namespace RastafarAppData.Migrations
 
             modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
                 {
+                    b.HasOne("RastafarAppData.Data.Models.Camp", "Camp")
+                        .WithMany("Posts")
+                        .HasForeignKey("CampId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RastafarAppData.Data.Models.CampType", "CampType")
                         .WithMany("Posts")
                         .HasForeignKey("CampTypeId")
@@ -506,6 +672,8 @@ namespace RastafarAppData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Camp");
+
                     b.Navigation("CampType");
 
                     b.Navigation("Owner");
@@ -513,9 +681,19 @@ namespace RastafarAppData.Migrations
                     b.Navigation("TravelType");
                 });
 
+            modelBuilder.Entity("RastafarAppData.Data.Models.Camp", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
             modelBuilder.Entity("RastafarAppData.Data.Models.CampType", b =>
                 {
                     b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Country", b =>
+                {
+                    b.Navigation("Camps");
                 });
 
             modelBuilder.Entity("RastafarAppData.Data.Models.TravelType", b =>

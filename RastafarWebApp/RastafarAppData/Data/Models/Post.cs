@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using RastafarAppData.Data.Models;
@@ -48,6 +47,11 @@ namespace RastafarWebApp.Data.Models
 
         [Required]
         public IdentityUser Owner { get; set; }
+
+        [ForeignKey(nameof(CampId))]
+        public Camp Camp { get; set; }
+
+        public int CampId { get; set; }
 
         public List<IdentityUserPosts> Participants { get; set; } = new List<IdentityUserPosts>();
     }
