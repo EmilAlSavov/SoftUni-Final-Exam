@@ -7,6 +7,7 @@ using RastafarAppServices.Services;
 using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
 using RastafarAppServices.ViewModels.Import;
+using RastafarWebApp.Data.Models;
 using System.ComponentModel;
 using System.Security.Claims;
 
@@ -73,9 +74,7 @@ namespace RastafarWebApp.Controllers
 
 				if (post.OwnerId != GetUserId())
 				{
-					var ex = new UnauthorizedAccessException("401");
-					ex.Data.Add("401", "dadasdas");
-					throw ex;
+                    throw new UnauthorizedAccessException();
 				}
 
 				var model = new AddPostViewModel()
@@ -134,7 +133,13 @@ namespace RastafarWebApp.Controllers
 
         public IActionResult Delete(Guid Id)
         {
-            postService.Delete(Id);
+            var post = postService.GetPostById(Id);
+			if (post.OwnerId != GetUserId())
+			{
+				throw new UnauthorizedAccessException();
+			}
+
+			postService.Delete(Id);
 
             return RedirectToAction("All", "Event");
         }

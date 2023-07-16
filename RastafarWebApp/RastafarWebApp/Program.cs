@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using RastafarWebApp.Data;
 using RastafarAppServices.Services;
 using RastafarAppServices;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICampService, CampService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+});
 
 builder.Services.AddCors(options =>
 {
