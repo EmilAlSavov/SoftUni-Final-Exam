@@ -77,7 +77,7 @@ string.Empty)"
 <div style="display:table; margin: 0 auto; padding-top: 50px	">
 	<link href="./component.css" rel="stylesheet" />
 	<div class="component-container">
-		<form class="component-form">
+		<form id="filter-form" class="component-form">
 			<div class="component-container1">
 				<div class="component-container2">
 					<input style="margin-left: 20px;" asp-for="SearchingTerm"
@@ -101,7 +101,7 @@ string.Empty)"
 							<option value="@sort">@sort</option>
 						}
 					</select>
-					<button type="submit" class="component-button button">
+					<button id="filterSearch" @*type="submit"*@ class="component-button button">
 						<span>
 							<span>Search</span>
 							<br />

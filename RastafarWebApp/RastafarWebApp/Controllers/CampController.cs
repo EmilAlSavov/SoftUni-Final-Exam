@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RastafarAppData.Data.Models;
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices;
 using RastafarAppServices.Services;
@@ -29,6 +30,13 @@ namespace RastafarWebApp.Controllers
 			campQueryModel.Sorts = campService.GetEnumList<CampSort>();
 
 			return View(campQueryModel);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            CampViewModel campViewModel = campService.Detail(id);
+
+            return View(campViewModel);
         }
     }
 }

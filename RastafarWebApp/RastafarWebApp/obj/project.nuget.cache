@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1XbukRglha1+2bzVdVW2fzQa3hqlOm4tmhnRVrVWRXgDOLcaq7fPWf0SZe6I5uPmlAPlaIVAz+RRFEOkOX9MLg==",
+  "dgSpecHash": "cQKXg7D/jlc/lMA+y+YOEkoYImvw4MM4ol4tnftFAdFfc2uHgDsc2mb0X34K1n4IuAiC3O43Y3f8uCzg3zLaQw==",
   "success": true,
   "projectFilePath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\RastafarWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mariyana\\.nuget\\packages\\bootstrap\\5.3.0\\bootstrap.5.3.0.nupkg.sha512",
     "C:\\Users\\Mariyana\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Mariyana\\.nuget\\packages\\jquery\\3.7.0\\jquery.3.7.0.nupkg.sha512",
     "C:\\Users\\Mariyana\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.16\\microsoft.aspnetcore.cryptography.internal.6.0.16.nupkg.sha512",
     "C:\\Users\\Mariyana\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.16\\microsoft.aspnetcore.cryptography.keyderivation.6.0.16.nupkg.sha512",
     "C:\\Users\\Mariyana\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.16\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.16.nupkg.sha512",

@@ -1,4 +1,4 @@
-﻿@model CampViewModel
+﻿@model ProductViewModel
 
 @*<img class="card-img-top" src="@Model.Image" alt="Event Image">
 		<div class="card-body text-center">
@@ -32,13 +32,12 @@
 
 			</div>
 			<div>
-				<div class="row"><p class="col-6">Country:</p> <p style="text-align:end" class="col-6">@Model.Country.Name</p></div>
-				<p style="text-align:center">Events: @Model.Posts.Count()</p>
+				<p style="text-align:center">Price: @Model.Price</p>
 			</div>
 		</div>
 		<!-- Product actions-->
 		<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-			<div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-controller="Camp" asp-action="Detail" asp-route-id="@Model.Id">View</a></div>
+			<div class="text-center"><a class="btn btn-outline-dark mt-auto" asp-controller="Shop" asp-action="Detail" asp-route-id="@Model.Id">View</a></div>
 		</div>
 	</div>
 </div>

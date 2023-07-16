@@ -23,6 +23,16 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICampService, CampService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy(name: "JqueryApi",
+					  builder =>
+					  {
+						  builder.WithOrigins("/*");
+					  });
+});
 
 var app = builder.Build();
 
@@ -52,5 +62,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+app.UseCors("JqueryApi");
 
 app.Run();

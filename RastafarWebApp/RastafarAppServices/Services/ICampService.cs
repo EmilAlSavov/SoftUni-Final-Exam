@@ -1,4 +1,5 @@
-﻿using RastafarAppData.Data.Models.Enums;
+﻿using RastafarAppData.Data.Models;
+using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
 using System;
@@ -13,13 +14,13 @@ namespace RastafarAppServices.Services
     {
         public AllCampQueryModel All(CountryViewModel country, string searchTerm, CampSort sort, int currentPage, int eventsPerPage);
 
-        public PostPreviewViewModel Detail(int postId);
+        public CampViewModel Detail(int id);
 
         public AllPostQueryModel Events(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage);
 
         public List<string> GetEnumList<T>();
         public List<CountryViewModel> GetCountriesTypesAsViewModels();
         public List<CampViewModel> GetCampsAsViewModels();
-
-	}
+        public Camp GetCampById(int id);
+    }
 }

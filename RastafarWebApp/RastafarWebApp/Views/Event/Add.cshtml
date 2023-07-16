@@ -31,7 +31,7 @@ fine URL here...">
 				<span asp-validation-for="ImgsUrl" class="small textdanger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="campType.Id"></label>
+				<label asp-for="campType.Id">Select Camp Type</label>
 				<select asp-for="campType.Id" class="form-control">
 					@foreach (var camptype in postService.GetCampTypesAsViewModels())
 					{
@@ -41,7 +41,7 @@ fine URL here...">
 				<span asp-validation-for="campType" class="small textdanger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="travelType.Id"></label>
+				<label asp-for="travelType.Id">Select Travel Type</label>
 				<select asp-for="travelType.Id" class="form-control">
 					@foreach (var traveltype in postService.GetTravelTypesAsViewModels())
 					{
@@ -51,7 +51,7 @@ fine URL here...">
 				<span asp-validation-for="travelType" class="small textdanger"></span>
 			</div>
 			<div class="form-group">
-				<label asp-for="camp.Id"></label>
+				<label asp-for="camp.Id">Select Camp</label>
 				<select asp-for="camp.Id" class="form-control">
 					<option value="0">None</option>
 					@foreach (var camp in campService.GetCampsAsViewModels())

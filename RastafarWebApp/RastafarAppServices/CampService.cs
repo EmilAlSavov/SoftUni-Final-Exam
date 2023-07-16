@@ -48,7 +48,7 @@ namespace RastafarAppServices
 								Posts = c.Posts.Select(p => new PostPreviewViewModel()
 								{
 									Id = p.Id,
-								}).ToList()
+								}).ToList(),
 							}).ToList();
 
 
@@ -60,9 +60,30 @@ namespace RastafarAppServices
 			};
 		}
 
-        public PostPreviewViewModel Detail(int postId)
+        public CampViewModel Detail(int id)
         {
-            throw new NotImplementedException();
+            var realCamp = context.Camps.Find(id);
+
+            var model = new CampViewModel()
+            {
+                Id = id,
+                Name = realCamp.Name,
+                Country = new CountryViewModel()
+                {
+                    Id = realCamp.Id,
+                    Name = context.Countries.FirstOrDefault(ct => ct.Id == id).Name,
+                },
+                Image = realCamp.Image,
+                Posts = context.Posts.Where(p => p.CampId == id).Select(p => new PostPreviewViewModel()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Image = p.ImgsUrl,
+                    ParticipantCount = p.Participants.Count()
+                }).ToList()
+            };
+
+            return model;
         }
 
         public AllPostQueryModel Events(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
@@ -128,5 +149,10 @@ namespace RastafarAppServices
 
 			return campQuary;
 		}
-	}
+
+        public Camp GetCampById(int id)
+        {
+			return context.Camps.Find(id);
+        }
+    }
 }
