@@ -36,7 +36,7 @@ namespace RastafarWebApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Detail(int Id)
+        public IActionResult Detail(Guid Id)
         {
             var post = postService.Detail(Id);
 
@@ -65,7 +65,7 @@ namespace RastafarWebApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int Id)
+        public IActionResult Edit(Guid Id)
         {
             //try
             //{
@@ -108,7 +108,7 @@ namespace RastafarWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(AddPostViewModel model, int Id)
+        public IActionResult Edit(AddPostViewModel model, Guid Id)
         {
             try
             {
@@ -132,14 +132,14 @@ namespace RastafarWebApp.Controllers
 
         }
 
-        public IActionResult Delete(int Id)
+        public IActionResult Delete(Guid Id)
         {
             postService.Delete(Id);
 
             return RedirectToAction("All", "Event");
         }
 
-        public IActionResult Join(int Id)
+        public IActionResult Join(Guid Id)
         {
             var userId = GetUserId();
 
@@ -148,7 +148,7 @@ namespace RastafarWebApp.Controllers
             return RedirectToAction("Detail", "Event", new { Id });
         }
 
-        public IActionResult Leave(int Id)
+        public IActionResult Leave(Guid Id)
         {
             string userId = GetUserId();
 

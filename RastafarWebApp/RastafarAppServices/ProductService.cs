@@ -77,7 +77,7 @@ namespace RastafarAppServices
 				   .Select(s => s).ToList();
 		}
 
-        public ProductViewModel Detail(int id)
+        public ProductViewModel Detail(Guid id)
         {
 			var realProduct = context.Products.Find(id);
 

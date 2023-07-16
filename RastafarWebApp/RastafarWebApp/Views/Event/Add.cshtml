@@ -53,7 +53,7 @@ fine URL here...">
 			<div class="form-group">
 				<label asp-for="camp.Id">Select Camp</label>
 				<select asp-for="camp.Id" class="form-control">
-					<option value="0">None</option>
+					<option value="@Guid.Empty">None</option>
 					@foreach (var camp in campService.GetCampsAsViewModels())
 					{
 						<option value="@camp.Id">@camp.Name</option>

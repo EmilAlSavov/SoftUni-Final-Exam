@@ -21,18 +21,18 @@ namespace RastafarAppServices.Services
 
         public void Add(AddPostViewModel model, string id);
 
-        public void Edit(AddPostViewModel model, int Id, string currUserId);
+        public void Edit(AddPostViewModel model, Guid Id, string currUserId);
 
-        public void Delete(int id);
+        public void Delete(Guid id);
 
-        public void Join(int postId, string userId);
+        public void Join(Guid postId, string userId);
 
-        public void Leave(int postId, string userId);
+        public void Leave(Guid postId, string userId);
 
-        public PostPreviewViewModel Detail(int postId);
+        public PostPreviewViewModel Detail(Guid postId);
 
 		public List<string> GetEnumList<T>();
-		public Post GetPostById(int id);
+		public Post GetPostById(Guid id);
 
         public List<CampTypeViewModel> GetCampTypesAsViewModels();
 

@@ -8,7 +8,7 @@ namespace RastafarWebApp.Data.Models
     public class Post
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [StringLength(100, MinimumLength = 10)]
         [Required]
@@ -30,14 +30,14 @@ namespace RastafarWebApp.Data.Models
         public CampType CampType { get; set; }
 
         [Required]
-        public int CampTypeId { get; set; }
+        public Guid CampTypeId { get; set; }
 
         [Required]
         [ForeignKey(nameof(TravelTypeId))]
         public TravelType TravelType { get; set; }
 
         [Required]
-        public int TravelTypeId { get; set; }
+        public Guid TravelTypeId { get; set; }
 
         [Required]
         public DateTime CreatedOn { get; set; }
@@ -52,7 +52,7 @@ namespace RastafarWebApp.Data.Models
         [ForeignKey(nameof(CampId))]
         public Camp? Camp { get; set; }
 
-        public int? CampId { get; set; }
+        public Guid? CampId { get; set; }
 
         public List<IdentityUserPosts> Participants { get; set; } = new List<IdentityUserPosts>();
     }

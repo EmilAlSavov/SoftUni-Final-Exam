@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RastafarWebApp.Data;
 
@@ -11,9 +12,10 @@ using RastafarWebApp.Data;
 namespace RastafarAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    partial class RastafarContextModelSnapshot : ModelSnapshot
+    [Migration("20230716115137_ChangeIdsToGuids")]
+    partial class ChangeIdsToGuids
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -251,22 +253,22 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1a8c2b9c-61d8-40b3-b805-48d6980b0d11"),
-                            CountryId = new Guid("f9b5ecad-b7f4-46c9-b7c4-861f4da5a79e"),
+                            Id = new Guid("ca575d4d-3bdd-4617-af8b-3697e530931a"),
+                            CountryId = new Guid("40e209ff-596f-4256-8059-fc430ee66146"),
                             Image = "https://camping-gradina-sozopol.booked.net/data/Photos/OriginalPhoto/8480/848032/848032307/Camping-Gradina-Hotel-Sozopol-Exterior.JPEG",
                             Name = "Gradina"
                         },
                         new
                         {
-                            Id = new Guid("d587acc6-499a-4aed-8851-ea2bd507ff39"),
-                            CountryId = new Guid("21280d70-e055-4367-9e39-99e7651a9a99"),
+                            Id = new Guid("af351011-87e8-4a41-b71d-563e43bf0ab6"),
+                            CountryId = new Guid("0132a7a6-25c2-4bcc-b0a7-5304ea02d36b"),
                             Image = "https://clubvertical.net/wp-content/uploads/2022/05/20545293_1675421585825456_6037428918988778764_o.jpg",
                             Name = "Saravari"
                         },
                         new
                         {
-                            Id = new Guid("5860e207-25e6-49c0-b587-5ab07fd53cb1"),
-                            CountryId = new Guid("095ae6f5-ef2d-40a5-88d1-712b15c09d3a"),
+                            Id = new Guid("4a79fcd8-56ba-4041-ab4f-7245cdda8f37"),
+                            CountryId = new Guid("6fa7c81f-4b8b-43b7-ba69-b9362641871a"),
                             Image = "https://www.karavanhayati.com/wp-content/uploads/2021/03/bozcaada-karavan-kamp-alanlari-3.jpg",
                             Name = "Bozcaada"
                         });
@@ -289,27 +291,27 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b09b8704-8385-4b73-981c-96e2f9d59919"),
+                            Id = new Guid("1ceb85b7-ff4a-4bd3-befe-067e3a7688ae"),
                             Name = "Tent"
                         },
                         new
                         {
-                            Id = new Guid("a7c5b466-c9fc-4136-ac5e-d5c43d4398bc"),
+                            Id = new Guid("453055e3-7958-4926-824e-815666d68149"),
                             Name = "Hammok"
                         },
                         new
                         {
-                            Id = new Guid("ef2cd45d-eb25-40ea-b4cb-50413fb3c2c7"),
+                            Id = new Guid("f4622d97-e7c8-477f-aedd-993ecd8d7cb3"),
                             Name = "Caravan"
                         },
                         new
                         {
-                            Id = new Guid("a6dda9a8-5784-4fc5-b0b9-45ba637d685a"),
+                            Id = new Guid("34f8783d-b4dd-4ae4-bb3d-d47c6728a2de"),
                             Name = "Camper"
                         },
                         new
                         {
-                            Id = new Guid("23c0377d-f21a-4bd3-bda3-626e55bf8e1a"),
+                            Id = new Guid("10acb856-f9b1-416c-a422-094b351111da"),
                             Name = "Bungalow"
                         });
                 });
@@ -332,17 +334,17 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f9b5ecad-b7f4-46c9-b7c4-861f4da5a79e"),
+                            Id = new Guid("40e209ff-596f-4256-8059-fc430ee66146"),
                             Name = "Bulgaria"
                         },
                         new
                         {
-                            Id = new Guid("21280d70-e055-4367-9e39-99e7651a9a99"),
+                            Id = new Guid("0132a7a6-25c2-4bcc-b0a7-5304ea02d36b"),
                             Name = "Greece"
                         },
                         new
                         {
-                            Id = new Guid("095ae6f5-ef2d-40a5-88d1-712b15c09d3a"),
+                            Id = new Guid("6fa7c81f-4b8b-43b7-ba69-b9362641871a"),
                             Name = "Turkey"
                         });
                 });
@@ -381,8 +383,8 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dff3a8df-c1cc-45aa-b7a6-f78eedc397a4"),
-                            CreatedOn = new DateTime(2023, 7, 16, 15, 12, 42, 3, DateTimeKind.Local).AddTicks(8486),
+                            Id = new Guid("8bd7c7d5-1046-4f86-9d91-025eb9ce780c"),
+                            CreatedOn = new DateTime(2023, 7, 16, 14, 51, 36, 908, DateTimeKind.Local).AddTicks(4856),
                             Description = "Perfect Hammok for the summer and wild camping or just to put it in the yard to chill.",
                             ImgUrl = "https://www.hammockuniverse.com/cdn/shop/articles/Hammock-Universe-Blog-Featured-Image-YOUR-ULTIMATE-GUIDE-ON-HANGING-HAMMOCKS-OUTDOORS_1600x.jpg?v=1678807426",
                             Name = "Summar Hammok",
@@ -390,8 +392,8 @@ namespace RastafarAppData.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c26d9633-fc2e-45ef-8ebe-4701ccb1c2a8"),
-                            CreatedOn = new DateTime(2023, 7, 16, 15, 12, 42, 3, DateTimeKind.Local).AddTicks(8495),
+                            Id = new Guid("ad6ae157-ff89-4feb-99ed-aaadcd564c4c"),
+                            CreatedOn = new DateTime(2023, 7, 16, 14, 51, 36, 908, DateTimeKind.Local).AddTicks(4864),
                             Description = "Perfect cup for campers. Just sit, take a sip and enjoy your trip. Perfect for all types of adventurers",
                             ImgUrl = "https://i.etsystatic.com/8120420/r/il/2b9ef1/2889698655/il_570xN.2889698655_6kgg.jpg",
                             Name = "Camping Cup",
@@ -399,8 +401,8 @@ namespace RastafarAppData.Migrations
                         },
                         new
                         {
-                            Id = new Guid("21b9e812-d013-41c2-b947-5a7151327834"),
-                            CreatedOn = new DateTime(2023, 7, 16, 15, 12, 42, 3, DateTimeKind.Local).AddTicks(8501),
+                            Id = new Guid("2d14d2bb-f8dc-496b-b322-0ad1d994ab61"),
+                            CreatedOn = new DateTime(2023, 7, 16, 14, 51, 36, 908, DateTimeKind.Local).AddTicks(4877),
                             Description = "Pocket Ashtray for wild smokers. Dont be dirty, get one of our pocket ashtray's and leave your done cigaretes there. Save nature!!!",
                             ImgUrl = "https://i5.walmartimages.com/asr/54a3ba02-3177-4aac-82dd-a6462dfb8d6a.7ece51e52d3dffaf8c8582c0c60c327d.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff",
                             Name = "Pocket Ashtray",
@@ -425,27 +427,27 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("09a1f534-323c-4263-a1c4-0188a09944e7"),
+                            Id = new Guid("8fe54c2b-b2bd-4a17-9616-fc06ccc1c6b9"),
                             Name = "None"
                         },
                         new
                         {
-                            Id = new Guid("5c21be1f-683d-4b6b-8ff1-0551af732c2c"),
+                            Id = new Guid("b398d39e-489b-40c8-8159-f16705da934e"),
                             Name = "Train"
                         },
                         new
                         {
-                            Id = new Guid("89bc198d-c72d-47d5-a49e-ae84e7fc7d8b"),
+                            Id = new Guid("1f32b3af-7440-4b6d-95c7-b0cc71c0d93d"),
                             Name = "Bus"
                         },
                         new
                         {
-                            Id = new Guid("f4477931-51f6-4f82-b04d-c1e77ba7fe51"),
+                            Id = new Guid("f1eff442-fedf-4e9c-b991-fe1d7dcc5623"),
                             Name = "Plain"
                         },
                         new
                         {
-                            Id = new Guid("6a2b2824-b724-452f-9656-eb6ffc641f5b"),
+                            Id = new Guid("a4aedb8c-a41d-4df8-b013-86b6f742a541"),
                             Name = "Share Travel"
                         });
                 });
@@ -521,39 +523,39 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0db50be4-33fa-4019-b9f7-f2397c4846fe"),
-                            CampTypeId = new Guid("b09b8704-8385-4b73-981c-96e2f9d59919"),
-                            CreatedOn = new DateTime(2023, 7, 16, 15, 12, 42, 3, DateTimeKind.Local).AddTicks(8140),
+                            Id = new Guid("6b11959e-5f0f-4579-be3e-943eef22dfdd"),
+                            CampTypeId = new Guid("1ceb85b7-ff4a-4bd3-befe-067e3a7688ae"),
+                            CreatedOn = new DateTime(2023, 7, 16, 14, 51, 36, 908, DateTimeKind.Local).AddTicks(4524),
                             Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
                             Destination = "Sinemorec",
                             ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg",
                             Name = "Camping in Sinemorets",
-                            OwnerId = "cb1ce3ef-745b-46b5-bfbb-b3ea605acc84",
-                            TravelTypeId = new Guid("09a1f534-323c-4263-a1c4-0188a09944e7")
+                            OwnerId = "7540a0ae-e992-4280-af31-14df7178f178",
+                            TravelTypeId = new Guid("8fe54c2b-b2bd-4a17-9616-fc06ccc1c6b9")
                         },
                         new
                         {
-                            Id = new Guid("77899d7a-53a3-498c-b422-b7f591629064"),
-                            CampTypeId = new Guid("ef2cd45d-eb25-40ea-b4cb-50413fb3c2c7"),
-                            CreatedOn = new DateTime(2023, 7, 16, 15, 12, 42, 3, DateTimeKind.Local).AddTicks(8195),
+                            Id = new Guid("55023207-ba7b-4860-b8e5-96a5619a8b28"),
+                            CampTypeId = new Guid("f4622d97-e7c8-477f-aedd-993ecd8d7cb3"),
+                            CreatedOn = new DateTime(2023, 7, 16, 14, 51, 36, 908, DateTimeKind.Local).AddTicks(4572),
                             Description = "We are going to camp on the beach in one of the biggest camps in bulgaria.",
                             Destination = "Gradina",
                             ImgsUrl = "https://camping.bg/root/f/gallery/1/c01db28c234b15fe958af37bedb1b67c.jpg",
                             Name = "Campers and chill in Gradina",
-                            OwnerId = "cb1ce3ef-745b-46b5-bfbb-b3ea605acc84",
-                            TravelTypeId = new Guid("f4477931-51f6-4f82-b04d-c1e77ba7fe51")
+                            OwnerId = "7540a0ae-e992-4280-af31-14df7178f178",
+                            TravelTypeId = new Guid("f1eff442-fedf-4e9c-b991-fe1d7dcc5623")
                         },
                         new
                         {
-                            Id = new Guid("473901c6-2ccf-4bd2-9912-ffa34ecb853d"),
-                            CampTypeId = new Guid("a6dda9a8-5784-4fc5-b0b9-45ba637d685a"),
+                            Id = new Guid("0b6a58ab-d0f7-4300-9018-43aea2b18d84"),
+                            CampTypeId = new Guid("34f8783d-b4dd-4ae4-bb3d-d47c6728a2de"),
                             CreatedOn = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "We are going to travel and camp from Varna to Burgas then to Sozopol, Carevo and Ahtopol",
                             Destination = "BlackSea",
                             ImgsUrl = "https://www.racq.com.au/-/media/project/racqgroup/racq/articles/rvs/2018/10/campervan-on-beach.jpg?h=667&iar=0&w=1000&rev=95fea142fe794fb0b6c98c2f8312e097&hash=E8405B2E92C7EFE24947186EEF7DE597",
                             Name = "Travel trough black sea",
-                            OwnerId = "a2590202-2ca7-4878-8903-65c6d9e02a12",
-                            TravelTypeId = new Guid("f4477931-51f6-4f82-b04d-c1e77ba7fe51")
+                            OwnerId = "c8a9d004-fa89-4b96-9e40-7b58b5e5d8e8",
+                            TravelTypeId = new Guid("f1eff442-fedf-4e9c-b991-fe1d7dcc5623")
                         });
                 });
 

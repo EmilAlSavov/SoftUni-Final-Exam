@@ -44,7 +44,7 @@ namespace RastafarAppServices
 
 			if (model.camp != null)
 			{
-				if (model.camp.Id != 0)
+				if (model.camp.Id != Guid.Empty)
 				{
 					post.CampId = model.camp.Id;
 				}
@@ -54,7 +54,7 @@ namespace RastafarAppServices
             context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             var post = this.GetPostById(id);
 
@@ -63,7 +63,7 @@ namespace RastafarAppServices
             context.SaveChanges();
         }
 
-        public void Edit(AddPostViewModel model, int Id, string currUserId)
+        public void Edit(AddPostViewModel model, Guid Id, string currUserId)
         {
             var realPost = this.GetPostById(Id);
 
@@ -83,7 +83,7 @@ namespace RastafarAppServices
 
             if (model.camp != null)
             {
-                if (model.camp.Id != 0)
+                if (model.camp.Id != Guid.Empty)
                 {
                     realPost.CampId = model.camp.Id;
                 }
@@ -145,7 +145,7 @@ namespace RastafarAppServices
         {
             if (campType != null)
             {
-				if (campType.Id != 0)
+				if (campType.Id != Guid.Empty)
 				{
 					postsQuery = postsQuery
 					.Where(p => p.CampTypeId == campType.Id);
@@ -201,7 +201,7 @@ namespace RastafarAppServices
                     }).ToList();
         }
 
-		public void Join(int postId, string userId)
+		public void Join(Guid postId, string userId)
 		{
             var userPost = new IdentityUserPosts()
             {
@@ -217,7 +217,7 @@ namespace RastafarAppServices
             context.SaveChanges();
 		}
 
-		public void Leave(int postId, string userId)
+		public void Leave(Guid postId, string userId)
 		{
             Post post = GetPostById(postId);
             
@@ -229,7 +229,7 @@ namespace RastafarAppServices
             context.SaveChanges();
 		}
 
-		public Post GetPostById(int id)
+		public Post GetPostById(Guid id)
 		{
             return context.Posts.FirstOrDefault(p => p.Id == id);
 		}
@@ -243,7 +243,7 @@ namespace RastafarAppServices
 			}).ToList();
 		}
 
-		public PostPreviewViewModel Detail(int postId)
+		public PostPreviewViewModel Detail(Guid postId)
 		{
 
             var model = context.Posts.Where(p => p.Id == postId ).Select( post => new PostPreviewViewModel()

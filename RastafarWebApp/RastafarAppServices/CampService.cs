@@ -60,28 +60,27 @@ namespace RastafarAppServices
 			};
 		}
 
-        public CampViewModel Detail(int id)
+        public CampViewModel Detail(Guid id)
         {
-            var realCamp = context.Camps.Find(id);
-
-            var model = new CampViewModel()
-            {
-                Id = id,
-                Name = realCamp.Name,
-                Country = new CountryViewModel()
-                {
-                    Id = realCamp.Id,
-                    Name = context.Countries.FirstOrDefault(ct => ct.Id == id).Name,
-                },
-                Image = realCamp.Image,
-                Posts = context.Posts.Where(p => p.CampId == id).Select(p => new PostPreviewViewModel()
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Image = p.ImgsUrl,
-                    ParticipantCount = p.Participants.Count()
-                }).ToList()
-            };
+			var model = context.Camps.Where(c => c.Id == id)
+				.Select(c => new CampViewModel()
+				{
+					Id = c.Id,
+					Name = c.Name,
+					Country = new CountryViewModel()
+					{
+						Id = c.CountryId,
+						Name = c.Country.Name
+					},
+					Image = c.Image,
+					Posts = c.Posts.Select(p => new PostPreviewViewModel()
+					{
+						Id = p.Id,
+						Name = p.Name,
+						Image = p.ImgsUrl,
+						ParticipantCount = p.Participants.Count()
+					}).ToList()
+				}).First();
 
             return model;
         }
@@ -124,7 +123,7 @@ namespace RastafarAppServices
 		{
 			if (country != null)
 			{
-				if (country.Id != 0)
+				if (country.Id != Guid.Empty)
 				{
 					campQuary = campQuary
 					.Where(c => c.CountryId == country.Id);
@@ -150,7 +149,7 @@ namespace RastafarAppServices
 			return campQuary;
 		}
 
-        public Camp GetCampById(int id)
+        public Camp GetCampById(Guid id)
         {
 			return context.Camps.Find(id);
         }

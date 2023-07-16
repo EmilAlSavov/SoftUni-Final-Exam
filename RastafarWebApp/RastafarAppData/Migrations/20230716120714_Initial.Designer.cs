@@ -9,11 +9,11 @@ using RastafarWebApp.Data;
 
 #nullable disable
 
-namespace RastafarWebApp.Data.Migrations
+namespace RastafarAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    [Migration("20230704193949_DbPosts")]
-    partial class DbPosts
+    [Migration("20230716120714_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -226,20 +226,16 @@ namespace RastafarWebApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
+            modelBuilder.Entity("RastafarAppData.Data.Models.Camp", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<Guid>("CountryId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
-
-                    b.Property<string>("Destination")
+                    b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -248,13 +244,156 @@ namespace RastafarWebApp.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("campType")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<int>("travelType")
-                        .HasColumnType("int");
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("Camps");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.CampType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.ToTable("CampTypes");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Country", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.TravelType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TravelTypes");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.IdentityUserPosts", b =>
+                {
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ParticipantId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("PostId", "ParticipantId");
+
+                    b.HasIndex("ParticipantId");
+
+                    b.ToTable("UsersPosts");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CampId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CampTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("Destination")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ImgsUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("OwnerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("TravelTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CampId");
+
+                    b.HasIndex("CampTypeId");
+
+                    b.HasIndex("OwnerId");
+
+                    b.HasIndex("TravelTypeId");
 
                     b.ToTable("Posts");
                 });
@@ -308,6 +447,94 @@ namespace RastafarWebApp.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Camp", b =>
+                {
+                    b.HasOne("RastafarAppData.Data.Models.Country", "Country")
+                        .WithMany("Camps")
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.IdentityUserPosts", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Participant")
+                        .WithMany()
+                        .HasForeignKey("ParticipantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RastafarWebApp.Data.Models.Post", "Post")
+                        .WithMany("Participants")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Participant");
+
+                    b.Navigation("Post");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
+                {
+                    b.HasOne("RastafarAppData.Data.Models.Camp", "Camp")
+                        .WithMany("Posts")
+                        .HasForeignKey("CampId");
+
+                    b.HasOne("RastafarAppData.Data.Models.CampType", "CampType")
+                        .WithMany("Posts")
+                        .HasForeignKey("CampTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RastafarAppData.Data.Models.TravelType", "TravelType")
+                        .WithMany("Posts")
+                        .HasForeignKey("TravelTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Camp");
+
+                    b.Navigation("CampType");
+
+                    b.Navigation("Owner");
+
+                    b.Navigation("TravelType");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Camp", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.CampType", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.Country", b =>
+                {
+                    b.Navigation("Camps");
+                });
+
+            modelBuilder.Entity("RastafarAppData.Data.Models.TravelType", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("RastafarWebApp.Data.Models.Post", b =>
+                {
+                    b.Navigation("Participants");
                 });
 #pragma warning restore 612, 618
         }

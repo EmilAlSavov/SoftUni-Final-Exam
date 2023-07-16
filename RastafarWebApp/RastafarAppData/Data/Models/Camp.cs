@@ -12,7 +12,7 @@ namespace RastafarAppData.Data.Models
     public class Camp
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [StringLength(100, MinimumLength = 10)]
         [Required]
@@ -25,7 +25,7 @@ namespace RastafarAppData.Data.Models
         [ForeignKey(nameof(CountryId))]
         public Country Country { get; set; } = null!;
 
-        public int CountryId { get; set; }
+        public Guid CountryId { get; set; }
 
         public List<Post> Posts { get; set; } = new List<Post>();
     }

@@ -11,7 +11,7 @@ namespace RastafarAppData.Data.Models
     public class Product
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 10)]

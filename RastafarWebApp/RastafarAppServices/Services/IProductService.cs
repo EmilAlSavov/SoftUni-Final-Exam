@@ -12,7 +12,7 @@ namespace RastafarAppServices.Services
 	{
 		public AllProductQueryModel All(string searchTerm, ProductSort sort, int currentPage, int eventsPerPage);
 
-		public ProductViewModel Detail(int id);
+		public ProductViewModel Detail(Guid id);
 
 		public List<string> GetEnumList<T>();
 

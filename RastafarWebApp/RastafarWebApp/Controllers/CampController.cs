@@ -32,7 +32,7 @@ namespace RastafarWebApp.Controllers
 			return View(campQueryModel);
         }
 
-        public IActionResult Detail(int id)
+        public IActionResult Detail(Guid id)
         {
             CampViewModel campViewModel = campService.Detail(id);
 

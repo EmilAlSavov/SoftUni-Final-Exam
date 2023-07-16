@@ -8,7 +8,7 @@ namespace RastafarWebApp.Data.Models
     {
         [Required]
         [ForeignKey(nameof(Post))]
-        public int PostId { get; set; }
+        public Guid PostId { get; set; }
 
         [Required]
         public Post Post { get; set; }

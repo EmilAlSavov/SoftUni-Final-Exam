@@ -29,7 +29,7 @@ namespace RastafarWebApp.Controllers
 			return View(productQueryModel);
 		}
 
-        public IActionResult Detail(int id)
+        public IActionResult Detail(Guid id)
         {
             var model = productService.Detail(id);
 
