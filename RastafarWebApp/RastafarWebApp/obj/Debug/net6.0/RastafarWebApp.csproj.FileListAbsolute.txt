@@ -79,3 +79,4 @@ D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppServices.dll
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppServices.pdb
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\RastafarAppData.pdb
+D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll

@@ -2,6 +2,7 @@
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
+using RastafarAppServices.ViewModels.Import;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,9 @@ namespace RastafarAppServices.Services
 
         public AllPostQueryModel Events(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage);
 
-        public List<string> GetEnumList<T>();
+		public Task AddAsync(AddCampViewModel model);
+
+		public List<string> GetEnumList<T>();
         public List<CountryViewModel> GetCountriesTypesAsViewModels();
         public List<CampViewModel> GetCampsAsViewModels();
         public Camp GetCampById(Guid id);

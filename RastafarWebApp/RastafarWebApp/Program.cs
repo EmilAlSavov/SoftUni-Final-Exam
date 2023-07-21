@@ -4,6 +4,7 @@ using RastafarWebApp.Data;
 using RastafarAppServices.Services;
 using RastafarAppServices;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +20,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
     options.Password.RequiredLength = 8;
-}).AddEntityFrameworkStores<RastafarContext>();
+})
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<RastafarContext>();
 builder.Services.AddControllersWithViews();
+
 
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICampService, CampService>();

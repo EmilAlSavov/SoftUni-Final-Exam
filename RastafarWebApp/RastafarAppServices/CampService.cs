@@ -5,6 +5,7 @@ using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.Services;
 using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
+using RastafarAppServices.ViewModels.Import;
 using RastafarWebApp.Data;
 using RastafarWebApp.Data.Models;
 using System;
@@ -62,6 +63,7 @@ namespace RastafarAppServices
 
         public CampViewModel Detail(Guid id)
         {
+			var test = context.Camps.Find(id);
 			var model = context.Camps.Where(c => c.Id == id)
 				.Select(c => new CampViewModel()
 				{
@@ -153,5 +155,21 @@ namespace RastafarAppServices
         {
 			return context.Camps.Find(id);
         }
-    }
+
+		public async Task AddAsync(AddCampViewModel model)
+		{
+			var camp = new Camp()
+			{
+				Id = Guid.NewGuid(),
+				Name = model.Name,
+				CountryId = model.CountryId,
+				Image = model.Image,
+				Posts = new List<Post>()
+			};
+
+			await context.Camps.AddAsync(camp);
+			await context.SaveChangesAsync();
+			return;
+		}
+	}
 }

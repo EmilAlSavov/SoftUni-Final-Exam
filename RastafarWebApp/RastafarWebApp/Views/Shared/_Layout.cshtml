@@ -51,6 +51,27 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Add">Add Event</a>
                         </li>
                     }
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="CreateRole">Create Role</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="GiveRole">Give Role</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="">Add Category Type</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="">Add Camp Type</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="">Add Travel Type</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="">Add Country</a>
+                        </li>
+                    }
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

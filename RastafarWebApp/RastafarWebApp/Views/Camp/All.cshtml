@@ -27,5 +27,13 @@
 	</section>
 </div>
 
+@if (this.User.IsInRole("Admin"))
+{
+	<div class="text-center pb-4">
+		<a class="btn btn-primary mt-3" type="submit" asp-controller="Camp" asp-action="Add">Add Camp</a>
+	</div>
+}
+
+
 
 

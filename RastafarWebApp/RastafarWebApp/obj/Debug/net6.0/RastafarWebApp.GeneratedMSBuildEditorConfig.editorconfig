@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,6 +82,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Role/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxDcmVhdGVSb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Role/GiveRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxHaXZlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/Error.cshtml]

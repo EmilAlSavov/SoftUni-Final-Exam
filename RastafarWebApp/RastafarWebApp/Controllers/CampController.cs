@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RastafarAppData.Data.Models;
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices;
 using RastafarAppServices.Services;
 using RastafarAppServices.ViewModels.Export;
+using RastafarAppServices.ViewModels.Import;
 
 namespace RastafarWebApp.Controllers
 {
@@ -38,5 +40,20 @@ namespace RastafarWebApp.Controllers
 
             return View(campViewModel);
         }
-    }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Add()
+        {
+            return View();
+        }
+
+		[HttpPost]
+		[Authorize(Roles = "Admin")]
+		public async Task<IActionResult> Add(AddCampViewModel campModel)
+		{
+            await campService.AddAsync(campModel);
+			return View();
+		}
+	}
 }
