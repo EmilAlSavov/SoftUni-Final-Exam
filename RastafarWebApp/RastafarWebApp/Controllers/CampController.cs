@@ -55,5 +55,37 @@ namespace RastafarWebApp.Controllers
             await campService.AddAsync(campModel);
 			return View();
 		}
-	}
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Edit(Guid Id)
+        {
+            var camp = campService.GetCampById(Id);
+
+            var model = new AddCampViewModel()
+            {
+                Name = camp.Name,
+                CountryId = camp.CountryId,
+                Image = camp.Image
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Edit(Guid Id, AddCampViewModel model)
+        {
+            await campService.EditAsync(Id, model);
+
+            return RedirectToAction("All", "Camp");
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(Guid Id)
+        {
+            await campService.DeleteAsync(Id);
+            return RedirectToAction("All", "Camp");
+        }
+    }
 }

@@ -1,0 +1,17 @@
+﻿@using RastafarAppServices.ViewModels
+@model List<CampTypeViewModel>
+
+<ul>
+	@foreach (var campType in Model)
+	{
+		<li>
+			<div>@campType.Name</div>
+			<a asp-controller="Camptype" asp-action="Delete" asp-route-id="@campType.Id"
+			   class="btn btn-outline-dark flex-shrink-0 btn-danger">Delete</a>
+		</li>
+	}
+</ul>
+
+<div class="text-center pb-4">
+	<a class="btn btn-primary mt-3" type="submit" asp-controller="Camptype" asp-action="Add">Add CampType</a>
+</div>

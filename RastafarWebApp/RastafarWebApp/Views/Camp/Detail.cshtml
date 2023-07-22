@@ -25,37 +25,17 @@
                     <div class="fs-5 mb-5">
                         <span>Total Events: @Model.Posts.Count()</span>
                     </div>
-                    @*<div class="d-flex" style="justify-content: space-around;">
-                        @if (this.User.Identity.IsAuthenticated && this.User.Identity.Name == Model.OwnerName)
+                    <div class="d-flex" style="justify-content: space-around;">
+                        @if (this.User.IsInRole("Admin"))
                         {
-                            <a asp-controller="Event" asp-action="Edit" asp-route-id="@Model.Id"
+                            <a asp-controller="Camp" asp-action="Edit" asp-route-id="@Model.Id"
                                class="btn btn-outline-dark flex-shrink-0 btn-warning">Edit</a>
-                            <a asp-controller="Event" asp-action="Delete" asp-route-id="@Model.Id"
+                            <a asp-controller="Camp" asp-action="Delete" asp-route-id="@Model.Id"
                                class="btn btn-outline-dark flex-shrink-0 btn-danger">Delete</a>
                             <p></p>
 
                         }
-                        else if (this.User.Identity.IsAuthenticated)
-                        {
-                            @if (!Model.Participants.Any(p => p.UserName == this.User.Identity.Name))
-                            {
-                                <form class="" asp-controller="Event"
-                                      asp-action="Join" asp-route-id="@Model.Id" method="post">
-                                    <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Join" />
-                                </form>
-                                <button asp-controller="Event" asp-action="Join" class="btn btn-outline-dark flex-shrink-0" type="submit">
-                        Join
-                        </button>
-                            }
-                            else
-                            {
-                                <form class="" asp-controller="Event"
-                                      asp-action="Leave" asp-route-id="@Model.Id" method="post">
-                                    <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Leave" />
-                                </form>
-                            }
-                        }
-                    </div>*@
+                    </div>
                 </div>
             </div>
         </div>

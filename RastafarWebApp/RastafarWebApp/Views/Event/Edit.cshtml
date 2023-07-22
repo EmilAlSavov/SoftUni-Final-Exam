@@ -33,7 +33,6 @@ fine URL here..." value="@Model.ImgsUrl">
 			<div class="form-group">
 				<label asp-for="campType.Id">Select Camp Type</label>
 				<select asp-for="campType.Id" class="form-control">
-					<option value="@Model.campType">@Model.campType</option>
 					@foreach (var camptype in postService.GetCampTypesAsViewModels())
 					{
 						<option value="@camptype.Id">@camptype.Name</option>

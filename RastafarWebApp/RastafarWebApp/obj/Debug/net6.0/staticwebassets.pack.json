@@ -177,8 +177,8 @@
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RastafarWebApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\RastafarWebApp.bundle.scp.css"
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\HiparWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HiparWebApp.bundle.scp.css"
     },
     {
       "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\AllPage\\component.css",
@@ -453,20 +453,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.RastafarWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.HiparWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.RastafarWebApp.props",
-      "PackagePath": "build\\RastafarWebApp.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.HiparWebApp.props",
+      "PackagePath": "build\\HiparWebApp.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.RastafarWebApp.props",
-      "PackagePath": "buildMultiTargeting\\RastafarWebApp.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.HiparWebApp.props",
+      "PackagePath": "buildMultiTargeting\\HiparWebApp.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.RastafarWebApp.props",
-      "PackagePath": "buildTransitive\\RastafarWebApp.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.HiparWebApp.props",
+      "PackagePath": "buildTransitive\\HiparWebApp.props"
     }
   ],
   "ElementsToRemove": []

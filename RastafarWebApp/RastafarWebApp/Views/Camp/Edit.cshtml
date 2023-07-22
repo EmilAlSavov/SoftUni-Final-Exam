@@ -1,0 +1,37 @@
+﻿@model AddCampViewModel
+@using RastafarAppData.Data.Models;
+@using RastafarAppServices.Services
+@using RastafarWebApp.Data.Models;
+@inject IPostService postService
+@inject ICampService campService
+
+<div class="row">
+	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="Name"></label>
+				<input asp-for="Name" class="form-control" placeholder="Name..." value="@Model.Name">
+				<span asp-validation-for="Name" class="small text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Image"></label>
+				<input asp-for="Image" class="form-control" placeholder="Your
+fine URL here..." value="@Model.Image">
+				<span asp-validation-for="Image" class="small textdanger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="CountryId">Select Camp Type</label>
+				<select asp-for="CountryId" class="form-control">
+					@foreach (var country in campService.GetCountriesTypesAsViewModels())
+					{
+						<option value="@country.Id">@country.Name</option>
+					}
+				</select>
+				<span asp-validation-for="CountryId" class="small textdanger"></span>
+			</div>
+			<div class="text-center">
+				<input class="btn btn-primary mt-3" type="submit" value="Save" />
+			</div>
+		</form>
+	</div>
+</div>

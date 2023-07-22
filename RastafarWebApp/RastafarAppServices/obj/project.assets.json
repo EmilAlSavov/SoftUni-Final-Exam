@@ -952,7 +952,7 @@
           }
         }
       },
-      "RastafarAppData/1.0.0": {
+      "HiparAppData/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -962,10 +962,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16"
         },
         "compile": {
-          "bin/placeholder/RastafarAppData.dll": {}
+          "bin/placeholder/HiparAppData.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RastafarAppData.dll": {}
+          "bin/placeholder/HiparAppData.dll": {}
         }
       }
     }
@@ -2459,20 +2459,20 @@
         "version.txt"
       ]
     },
-    "RastafarAppData/1.0.0": {
+    "HiparAppData/1.0.0": {
       "type": "project",
-      "path": "../RastafarAppData/RastafarAppData.csproj",
-      "msbuildProject": "../RastafarAppData/RastafarAppData.csproj"
+      "path": "../RastafarAppData/HiparAppData.csproj",
+      "msbuildProject": "../RastafarAppData/HiparAppData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "HiparAppData >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.16",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.16",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.16",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.16",
-      "RastafarAppData >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.16"
     ]
   },
   "packageFolders": {
@@ -2481,9 +2481,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\RastafarAppServices.csproj",
-      "projectName": "RastafarAppServices",
-      "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\RastafarAppServices.csproj",
+      "projectUniqueName": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj",
+      "projectName": "HiparAppServices",
+      "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj",
       "packagesPath": "C:\\Users\\Mariyana\\.nuget\\packages\\",
       "outputPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\obj\\",
       "projectStyle": "PackageReference",
@@ -2502,8 +2502,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppData\\RastafarAppData.csproj": {
-              "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppData\\RastafarAppData.csproj"
+            "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppData\\HiparAppData.csproj": {
+              "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppData\\HiparAppData.csproj"
             }
           }
         }

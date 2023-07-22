@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/WIe6JxMoEv9O3rdYbKj3TQwk+yf0lAATwRxFLaUcZZWfyUiI1ox+wsSTJshqVa7ZaXJ68K8R0rNl4C3kICOwA==",
+  "dgSpecHash": "H6xIcm4hNF/GembqCbJ3DNXUJgR0FREKUp58OPBa6n7kRCBYvFvvZRAmlXYddtv+8QizpFy8zZK8vd3yoY5UaA==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\RastafarWebApp.csproj",
+  "projectFilePath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mariyana\\.nuget\\packages\\bootstrap\\5.3.0\\bootstrap.5.3.0.nupkg.sha512",
     "C:\\Users\\Mariyana\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

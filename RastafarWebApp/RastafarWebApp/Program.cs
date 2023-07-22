@@ -5,6 +5,8 @@ using RastafarAppServices.Services;
 using RastafarAppServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using HiparAppServices.Services.Admin;
+using HiparAppServices.Admin;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICampService, CampService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICampTypeService, CampTypeService>();
 builder.Services.AddControllersWithViews(options =>
 {
     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();

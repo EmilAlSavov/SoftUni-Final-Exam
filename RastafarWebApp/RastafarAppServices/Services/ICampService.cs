@@ -21,6 +21,10 @@ namespace RastafarAppServices.Services
 
 		public Task AddAsync(AddCampViewModel model);
 
+        public Task EditAsync(Guid Id, AddCampViewModel model);
+
+        public Task DeleteAsync(Guid Id);
+
 		public List<string> GetEnumList<T>();
         public List<CountryViewModel> GetCountriesTypesAsViewModels();
         public List<CampViewModel> GetCampsAsViewModels();

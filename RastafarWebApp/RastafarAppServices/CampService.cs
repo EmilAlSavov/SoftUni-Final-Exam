@@ -171,5 +171,29 @@ namespace RastafarAppServices
 			await context.SaveChangesAsync();
 			return;
 		}
-	}
+
+        public async Task EditAsync(Guid Id, AddCampViewModel model)
+        {
+			var camp = GetCampById(Id);
+
+			camp.Name = model.Name;
+			camp.Image = model.Image;
+			camp.CountryId = model.CountryId;
+
+			await context.SaveChangesAsync();
+
+			return;
+        }
+
+        public async Task DeleteAsync(Guid Id)
+        {
+			var camp = GetCampById(Id);
+
+			context.Camps.Remove(camp);
+
+			await context.SaveChangesAsync();
+
+			return;
+        }
+    }
 }

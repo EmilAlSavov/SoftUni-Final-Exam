@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mVdQbnSYzOi7B212nIiDMhm7Jy4HUuRcuVGxIyP7HJ4YTK7zIVpZiMHxUegGMt/ccNjL/IAhsg5Ldfwzb8+iKg==",
+  "dgSpecHash": "4JwHu5YvpcGCTEqgEQKQ0BLNppMV3Eft6QgRUbxlMLAgrmBXMMlO66qGaFq5mb6xq1jjPamG6cAfATuCgMtO4g==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\RastafarAppServices.csproj",
+  "projectFilePath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mariyana\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Mariyana\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.16\\microsoft.aspnetcore.cryptography.internal.6.0.16.nupkg.sha512",

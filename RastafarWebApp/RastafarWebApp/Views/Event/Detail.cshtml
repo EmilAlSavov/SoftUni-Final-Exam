@@ -27,7 +27,7 @@
                     </div>
                     <p class="lead">@Model.Description</p>
                     <div class="d-flex" style="justify-content: space-around;">
-                        @if (this.User.Identity.IsAuthenticated && this.User.Identity.Name == Model.OwnerName)
+                        @if (this.User.Identity.IsAuthenticated && this.User.Identity.Name == Model.OwnerName || this.User.IsInRole("Admin"))
                         {
                             <a asp-controller="Event" asp-action="Edit" asp-route-id="@Model.Id"
                             class="btn btn-outline-dark flex-shrink-0 btn-warning">Edit</a>
