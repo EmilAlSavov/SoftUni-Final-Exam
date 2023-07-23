@@ -18,34 +18,55 @@ namespace HiparAppServices.Admin
         {
 			this.context = context;
         }
-        public Task AddAsync(CountryViewModel model)
+        public async Task AddAsync(CountryViewModel model)
 		{
-			throw new NotImplementedException();
+			await context.Countries.AddAsync(new Country()
+			{
+				Id = Guid.NewGuid(),
+				Name = model.Name,
+			});
+
+			await context.SaveChangesAsync();
+
+			return;
 		}
 
 		public List<CountryViewModel> All()
 		{
 			var models = context.Countries.Select(c => new CountryViewModel()
 			{
+				Id = c.Id,
 				Name = c.Name,
 			}).ToList();
 
 			return models;
 		}
 
-		public Task DeleteAsync(Guid Id)
+		public async Task DeleteAsync(Guid Id)
 		{
-			throw new NotImplementedException();
+			var country = await this.GetCountryAsync(Id);
+
+			context.Countries.Remove(country);
+
+			await context.SaveChangesAsync();
+
+			return;
 		}
 
-		public Task EditAsync(Guid Id, CountryViewModel model)
+		public async Task EditAsync(Guid Id, CountryViewModel model)
 		{
-			throw new NotImplementedException();
+			var campType = await GetCountryAsync(Id);
+
+			campType.Name = model.Name;
+
+			await context.SaveChangesAsync();
+
+			return;
 		}
 
-		public Task<CampType> GetCampTypeByIdAsync(Guid id)
+		public async Task<Country> GetCountryAsync(Guid id)
 		{
-			throw new NotImplementedException();
+			return await context.Countries.FindAsync(id);
 		}
 	}
 }

@@ -36,24 +36,24 @@ namespace HiparWebApp.Controllers.Admin
 		public async Task<IActionResult> Add(CountryViewModel model)
 		{
 			await countryService.AddAsync(model);
-			return RedirectToAction("All", "Camptype");
+			return RedirectToAction("All", "Country");
 		}
 
 		public async Task<IActionResult> Delete(Guid Id)
 		{
 			await countryService.DeleteAsync(Id);
 
-			return RedirectToAction("All", "Camptype");
+			return RedirectToAction("All", "Country");
 		}
 
 		[HttpGet]
 		public async Task<IActionResult> Edit(Guid Id)
 		{
-			var campType = await countryService.GetCampTypeByIdAsync(Id);
+			var country = await countryService.GetCountryAsync(Id);
 
 			var model = new CountryViewModel()
 			{
-				Name = campType.Name
+				Name = country.Name
 			};
 
 			return View(model);
@@ -63,7 +63,7 @@ namespace HiparWebApp.Controllers.Admin
 		public async Task<IActionResult> Edit(Guid Id, CountryViewModel model)
 		{
 			await countryService.EditAsync(Id, model);
-			return RedirectToAction("All", "Camptype");
+			return RedirectToAction("All", "Country");
 		}
 	}
 }

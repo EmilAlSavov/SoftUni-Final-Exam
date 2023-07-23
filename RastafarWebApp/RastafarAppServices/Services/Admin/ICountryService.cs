@@ -19,6 +19,6 @@ namespace HiparAppServices.Services.Admin
 
 		public Task EditAsync(Guid Id, ViewModels.CountryViewModel model);
 
-		public Task<CampType> GetCampTypeByIdAsync(Guid id);
+		public Task<Country> GetCountryAsync(Guid id);
 	}
 }
