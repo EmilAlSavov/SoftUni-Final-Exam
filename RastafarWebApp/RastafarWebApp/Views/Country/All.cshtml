@@ -1,14 +1,14 @@
-﻿@using RastafarAppServices.ViewModels
-@model List<CampTypeViewModel>
+﻿@using HiparAppServices.ViewModels;
+@model List<CountryViewModel>
 
 <ul>
 	@foreach (var campType in Model)
 	{
 		<li>
 			<div>@campType.Name</div>
-			<a asp-controller="Camptype" asp-action="Edit" asp-route-id="@campType.Id"
+			<a asp-controller="Country" asp-action="Edit" asp-route-id="@campType.Id"
 			   class="btn btn-outline-dark flex-shrink-0 btn-warning">Edit</a>
-			<a asp-controller="Camptype" asp-action="Delete" asp-route-id="@campType.Id"
+			<a asp-controller="Country" asp-action="Delete" asp-route-id="@campType.Id"
 			   class="btn btn-outline-dark flex-shrink-0 btn-danger">Delete</a>
 		</li>
 	}

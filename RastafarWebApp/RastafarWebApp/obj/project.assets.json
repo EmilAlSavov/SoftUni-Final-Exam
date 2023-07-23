@@ -2888,11 +2888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
+      "projectUniqueName": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
       "projectName": "HiparWebApp",
-      "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
+      "projectPath": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
       "packagesPath": "C:\\Users\\Mariyana\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\",
+      "outputPath": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mariyana\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2910,8 +2910,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj": {
-              "projectPath": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj"
+            "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj": {
+              "projectPath": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj"
             }
           }
         }

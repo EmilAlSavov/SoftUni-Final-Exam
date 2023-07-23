@@ -1,4 +1,5 @@
-﻿using RastafarAppData.Data.Models.Enums;
+﻿using HiparAppServices.ViewModels;
+using RastafarAppData.Data.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

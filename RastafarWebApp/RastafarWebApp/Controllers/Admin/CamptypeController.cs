@@ -45,5 +45,25 @@ namespace HiparWebApp.Controllers.Admin
 
             return RedirectToAction("All", "Camptype");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid Id)
+        {
+            var campType = await campTypeService.GetByIdAsync(Id);
+
+            var model = new CampTypeViewModel()
+            {
+                Name = campType.Name
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Guid Id, CampTypeViewModel model)
+        {
+            await campTypeService.EditAsync(Id, model);
+            return RedirectToAction("All", "Camptype");
+        }
     }
 }

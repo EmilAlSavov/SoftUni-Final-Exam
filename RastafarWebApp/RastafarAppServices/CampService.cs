@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HiparAppServices.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using RastafarAppData.Data.Models;
 using RastafarAppData.Data.Models.Enums;

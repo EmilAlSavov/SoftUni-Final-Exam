@@ -50,5 +50,20 @@ namespace HiparAppServices.Admin
 			await context.SaveChangesAsync();
 			return;
 		}
+
+		public async Task EditAsync(Guid Id, CampTypeViewModel model)
+		{
+			var campType = await context.CampTypes.FindAsync(Id);
+
+			campType.Name = model.Name;
+
+			await context.SaveChangesAsync();
+			return;
+		}
+
+		public async Task<CampType> GetByIdAsync(Guid Id)
+		{
+			return await context.CampTypes.FindAsync(Id);
+		}
 	}
 }

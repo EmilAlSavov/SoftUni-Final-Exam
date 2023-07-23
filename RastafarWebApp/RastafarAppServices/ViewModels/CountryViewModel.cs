@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RastafarAppServices.ViewModels.Export;
 
-namespace RastafarAppServices.ViewModels.Export
+namespace HiparAppServices.ViewModels
 {
     public class CountryViewModel
     {

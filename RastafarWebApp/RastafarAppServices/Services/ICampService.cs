@@ -1,4 +1,5 @@
-﻿using RastafarAppData.Data.Models;
+﻿using HiparAppServices.ViewModels;
+using RastafarAppData.Data.Models;
 using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;

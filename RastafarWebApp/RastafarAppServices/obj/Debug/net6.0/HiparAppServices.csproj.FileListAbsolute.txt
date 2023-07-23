@@ -15,3 +15,20 @@ D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\n
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.pdb
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.genruntimeconfig.cache
 D:\Programming\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\ref\HiparAppServices.dll
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\HiparAppServices.deps.json
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\HiparAppServices.runtimeconfig.json
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\HiparAppServices.dll
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\HiparAppServices.pdb
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\HiparAppData.dll
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\bin\Debug\net6.0\HiparAppData.pdb
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.csproj.AssemblyReference.cache
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.AssemblyInfoInputs.cache
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.AssemblyInfo.cs
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.csproj.CoreCompileInputs.cache
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.csproj.CopyComplete
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.dll
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\refint\HiparAppServices.dll
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.pdb
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\HiparAppServices.genruntimeconfig.cache
+D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppServices\obj\Debug\net6.0\ref\HiparAppServices.dll
