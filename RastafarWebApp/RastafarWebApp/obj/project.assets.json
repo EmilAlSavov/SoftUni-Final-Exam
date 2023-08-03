@@ -2883,19 +2883,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mariyana\\.nuget\\packages\\": {}
+    "C:\\Users\\Emil\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
+      "projectUniqueName": "D:\\Programing\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
       "projectName": "HiparWebApp",
-      "projectPath": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
-      "packagesPath": "C:\\Users\\Mariyana\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\",
+      "projectPath": "D:\\Programing\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\HiparWebApp.csproj",
+      "packagesPath": "C:\\Users\\Emil\\.nuget\\packages\\",
+      "outputPath": "D:\\Programing\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mariyana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2903,15 +2903,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj": {
-              "projectPath": "D:\\Programming\\New Final Exam\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj"
+            "D:\\Programing\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj": {
+              "projectPath": "D:\\Programing\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarAppServices\\HiparAppServices.csproj"
             }
           }
         }
@@ -2978,7 +2977,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -26,3 +26,17 @@ D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\
 D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.pdb
 D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.genruntimeconfig.cache
 D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\ref\HiparAppData.dll
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\HiparAppData.deps.json
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\HiparAppData.runtimeconfig.json
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\HiparAppData.dll
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\bin\Debug\net6.0\HiparAppData.pdb
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.csproj.AssemblyReference.cache
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.AssemblyInfoInputs.cache
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.AssemblyInfo.cs
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.csproj.CoreCompileInputs.cache
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.dll
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\refint\HiparAppData.dll
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.pdb
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\HiparAppData.genruntimeconfig.cache
+D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarAppData\obj\Debug\net6.0\ref\HiparAppData.dll

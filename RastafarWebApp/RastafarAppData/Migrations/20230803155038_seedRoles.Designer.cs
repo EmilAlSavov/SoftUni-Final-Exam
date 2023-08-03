@@ -9,11 +9,11 @@ using RastafarWebApp.Data;
 
 #nullable disable
 
-namespace RastafarAppData.Migrations
+namespace HiparAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
-    [Migration("20230716120714_Initial")]
-    partial class Initial
+    [Migration("20230803155038_seedRoles")]
+    partial class seedRoles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,15 @@ namespace RastafarAppData.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "85a28b32-cf73-4121-b4b6-a6488fd9895c",
+                            ConcurrencyStamp = "6689aadb-9d4b-4db9-8fe2-857703c5acec",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -139,6 +148,40 @@ namespace RastafarAppData.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ac85b4e0-4d38-4fda-abe8-15ec72c0b140",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "7720fc99-4308-4beb-87f7-377ab50ec3b7",
+                            Email = "embakks@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "embakks@gmail.com",
+                            NormalizedUserName = "embakks@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIo/uA6v9sNGZsqAvbdwO8B1ATWM0NQwLER7w5r6KCzkfk9DATJWPCHhfQKmYuPzxQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "bc1ad018-2ad5-42b2-bad6-5e701d63184a",
+                            TwoFactorEnabled = false,
+                            UserName = "embakks@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "e3dc6c8f-c59e-4d2d-b111-4b7152c5c090",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "de5f540a-54da-4c08-8ea1-376b0930afee",
+                            Email = "testuser@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "testuser@gmail.com",
+                            NormalizedUserName = "testuser@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBzO2j37D1LdLhoy21Xti/+utHE1urOKaeo6Q8pcDgkiaj67H6CtgDxFL9lvU54qRA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "baa80c4c-52b6-420e-bbfe-475c5cfe93cf",
+                            TwoFactorEnabled = false,
+                            UserName = "testuser@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -203,6 +246,13 @@ namespace RastafarAppData.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "ac85b4e0-4d38-4fda-abe8-15ec72c0b140",
+                            RoleId = "85a28b32-cf73-4121-b4b6-a6488fd9895c"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -249,6 +299,29 @@ namespace RastafarAppData.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Camps");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c500e129-83e8-459c-bf5a-c339f0670be3"),
+                            CountryId = new Guid("4e22d382-cfdd-477f-80d3-f0c3d54b6b3e"),
+                            Image = "https://camping-gradina-sozopol.booked.net/data/Photos/OriginalPhoto/8480/848032/848032307/Camping-Gradina-Hotel-Sozopol-Exterior.JPEG",
+                            Name = "Gradina"
+                        },
+                        new
+                        {
+                            Id = new Guid("afa0300f-222c-4ad4-bbc0-07f7d960afc4"),
+                            CountryId = new Guid("f135fd88-07fa-4c9e-b855-e66b0ad04c2b"),
+                            Image = "https://clubvertical.net/wp-content/uploads/2022/05/20545293_1675421585825456_6037428918988778764_o.jpg",
+                            Name = "Saravari"
+                        },
+                        new
+                        {
+                            Id = new Guid("6f0a718b-d80a-49c3-9cd2-fb32d4dc9a88"),
+                            CountryId = new Guid("b75f1143-eac3-4ec9-a0e8-0fb51d51219d"),
+                            Image = "https://www.karavanhayati.com/wp-content/uploads/2021/03/bozcaada-karavan-kamp-alanlari-3.jpg",
+                            Name = "Bozcaada"
+                        });
                 });
 
             modelBuilder.Entity("RastafarAppData.Data.Models.CampType", b =>
@@ -264,6 +337,33 @@ namespace RastafarAppData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CampTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8c425ec0-0dce-4173-867d-3f4bed362320"),
+                            Name = "Tent"
+                        },
+                        new
+                        {
+                            Id = new Guid("025e7ed2-ed13-411d-a87e-89ec78374b86"),
+                            Name = "Hammok"
+                        },
+                        new
+                        {
+                            Id = new Guid("e78e1dad-af8c-47f0-8d42-bb16d43a76b9"),
+                            Name = "Caravan"
+                        },
+                        new
+                        {
+                            Id = new Guid("aa8e23aa-2310-4b2b-873a-68931aee80ad"),
+                            Name = "Camper"
+                        },
+                        new
+                        {
+                            Id = new Guid("886a4d39-d7c7-4073-a633-161538ecd89a"),
+                            Name = "Bungalow"
+                        });
                 });
 
             modelBuilder.Entity("RastafarAppData.Data.Models.Country", b =>
@@ -280,6 +380,23 @@ namespace RastafarAppData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("4e22d382-cfdd-477f-80d3-f0c3d54b6b3e"),
+                            Name = "Bulgaria"
+                        },
+                        new
+                        {
+                            Id = new Guid("f135fd88-07fa-4c9e-b855-e66b0ad04c2b"),
+                            Name = "Greece"
+                        },
+                        new
+                        {
+                            Id = new Guid("b75f1143-eac3-4ec9-a0e8-0fb51d51219d"),
+                            Name = "Turkey"
+                        });
                 });
 
             modelBuilder.Entity("RastafarAppData.Data.Models.Product", b =>
@@ -312,6 +429,35 @@ namespace RastafarAppData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("48f61960-7011-49cf-8acf-bbc2c22eeb78"),
+                            CreatedOn = new DateTime(2023, 8, 3, 18, 50, 37, 509, DateTimeKind.Local).AddTicks(5602),
+                            Description = "Perfect Hammok for the summer and wild camping or just to put it in the yard to chill.",
+                            ImgUrl = "https://www.hammockuniverse.com/cdn/shop/articles/Hammock-Universe-Blog-Featured-Image-YOUR-ULTIMATE-GUIDE-ON-HANGING-HAMMOCKS-OUTDOORS_1600x.jpg?v=1678807426",
+                            Name = "Summar Hammok",
+                            Price = 20.00m
+                        },
+                        new
+                        {
+                            Id = new Guid("db3712c2-d00b-499a-aea2-1c75bd42639c"),
+                            CreatedOn = new DateTime(2023, 8, 3, 18, 50, 37, 509, DateTimeKind.Local).AddTicks(5608),
+                            Description = "Perfect cup for campers. Just sit, take a sip and enjoy your trip. Perfect for all types of adventurers",
+                            ImgUrl = "https://i.etsystatic.com/8120420/r/il/2b9ef1/2889698655/il_570xN.2889698655_6kgg.jpg",
+                            Name = "Camping Cup",
+                            Price = 15.99m
+                        },
+                        new
+                        {
+                            Id = new Guid("5de4dbcc-f5f0-414a-a77d-68b3c3ad4add"),
+                            CreatedOn = new DateTime(2023, 8, 3, 18, 50, 37, 509, DateTimeKind.Local).AddTicks(5614),
+                            Description = "Pocket Ashtray for wild smokers. Dont be dirty, get one of our pocket ashtray's and leave your done cigaretes there. Save nature!!!",
+                            ImgUrl = "https://i5.walmartimages.com/asr/54a3ba02-3177-4aac-82dd-a6462dfb8d6a.7ece51e52d3dffaf8c8582c0c60c327d.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff",
+                            Name = "Pocket Ashtray",
+                            Price = 10m
+                        });
                 });
 
             modelBuilder.Entity("RastafarAppData.Data.Models.TravelType", b =>
@@ -327,6 +473,33 @@ namespace RastafarAppData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TravelTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b65fff77-dbcd-4c3c-89ae-091e83b5d3a1"),
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = new Guid("6ebdfa94-5a18-4709-a60a-e80ea7da256b"),
+                            Name = "Train"
+                        },
+                        new
+                        {
+                            Id = new Guid("175df4cd-d24f-4a3e-92d1-7b0b346b1e2a"),
+                            Name = "Bus"
+                        },
+                        new
+                        {
+                            Id = new Guid("a947095c-d41b-4bed-9230-afccf99f8b40"),
+                            Name = "Plain"
+                        },
+                        new
+                        {
+                            Id = new Guid("e5445ff6-1a42-4e57-b2ac-5f7dcd8a02cf"),
+                            Name = "Share Travel"
+                        });
                 });
 
             modelBuilder.Entity("RastafarWebApp.Data.Models.IdentityUserPosts", b =>
@@ -396,6 +569,44 @@ namespace RastafarAppData.Migrations
                     b.HasIndex("TravelTypeId");
 
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b511b203-9799-4cd2-8700-ab0395fdf7d4"),
+                            CampTypeId = new Guid("8c425ec0-0dce-4173-867d-3f4bed362320"),
+                            CreatedOn = new DateTime(2023, 8, 3, 18, 50, 37, 509, DateTimeKind.Local).AddTicks(5285),
+                            Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
+                            Destination = "Sinemorec",
+                            ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg",
+                            Name = "Camping in Sinemorets",
+                            OwnerId = "ac85b4e0-4d38-4fda-abe8-15ec72c0b140",
+                            TravelTypeId = new Guid("b65fff77-dbcd-4c3c-89ae-091e83b5d3a1")
+                        },
+                        new
+                        {
+                            Id = new Guid("90fc8e80-c141-48ec-aa41-2ff936c9a509"),
+                            CampTypeId = new Guid("e78e1dad-af8c-47f0-8d42-bb16d43a76b9"),
+                            CreatedOn = new DateTime(2023, 8, 3, 18, 50, 37, 509, DateTimeKind.Local).AddTicks(5326),
+                            Description = "We are going to camp on the beach in one of the biggest camps in bulgaria.",
+                            Destination = "Gradina",
+                            ImgsUrl = "https://camping.bg/root/f/gallery/1/c01db28c234b15fe958af37bedb1b67c.jpg",
+                            Name = "Campers and chill in Gradina",
+                            OwnerId = "ac85b4e0-4d38-4fda-abe8-15ec72c0b140",
+                            TravelTypeId = new Guid("a947095c-d41b-4bed-9230-afccf99f8b40")
+                        },
+                        new
+                        {
+                            Id = new Guid("45960683-2229-4bc3-a8d0-1aa10f99b49e"),
+                            CampTypeId = new Guid("aa8e23aa-2310-4b2b-873a-68931aee80ad"),
+                            CreatedOn = new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "We are going to travel and camp from Varna to Burgas then to Sozopol, Carevo and Ahtopol",
+                            Destination = "BlackSea",
+                            ImgsUrl = "https://www.racq.com.au/-/media/project/racqgroup/racq/articles/rvs/2018/10/campervan-on-beach.jpg?h=667&iar=0&w=1000&rev=95fea142fe794fb0b6c98c2f8312e097&hash=E8405B2E92C7EFE24947186EEF7DE597",
+                            Name = "Travel trough black sea",
+                            OwnerId = "e3dc6c8f-c59e-4d2d-b111-4b7152c5c090",
+                            TravelTypeId = new Guid("a947095c-d41b-4bed-9230-afccf99f8b40")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

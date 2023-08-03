@@ -9,153 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HiparWebApp
 build_property.RootNamespace = HiparWebApp
-build_property.ProjectDir = D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\
+build_property.ProjectDir = D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Programming\New Final Exam\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp
+build_property.MSBuildProjectDirectory = D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/Add.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHR5cGVcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/All.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHR5cGVcQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/Edit.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHR5cGVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Add.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/All.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Detail.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Edit.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Partials/_CampPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Partials/_CampPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxQYXJ0aWFsc1xfQ2FtcFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Partials/_FilterPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camp/Partials/_FilterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcFxQYXJ0aWFsc1xfRmlsdGVyUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Country/Add.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Country/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Country/All.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Country/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Country/Edit.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Country/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Error401.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Error401.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Error404.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Error404.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3I0MDQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Index.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Error/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Add.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/All.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWxsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Detail.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Edit.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Partials/_FilterPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Partials/_FilterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcUGFydGlhbHNcX0ZpbHRlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Partials/_PostPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Partials/_PostPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcUGFydGlhbHNcX1Bvc3RQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Home/About.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Home/Index.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Role/CreateRole.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Role/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxDcmVhdGVSb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Role/GiveRole.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Role/GiveRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxHaXZlUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/Error.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/_LoginPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/All.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/Detail.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/Partials/_FilterPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/Partials/_FilterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQYXJ0aWFsc1xfRmlsdGVyUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/Partials/_ProductPartial.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shop/Partials/_ProductPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQYXJ0aWFsc1xfUHJvZHVjdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/_ViewImports.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/_ViewStart.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/New Final Exam/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/_Layout.cshtml]
+[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7j1f6795ak
