@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using HiparAppData.Data.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using RastafarAppData.Data.Models;
@@ -6,7 +7,7 @@ using RastafarWebApp.Data.Models;
 
 namespace RastafarWebApp.Data
 {
-    public class RastafarContext : IdentityDbContext
+    public class RastafarContext : IdentityDbContext<ApplicationUser>
     {
         private Post testPost1 { get; set; }
         private Post testPost2 { get; set; }
@@ -36,8 +37,8 @@ namespace RastafarWebApp.Data
         private Product product2 { get; set; }
         private Product product3 { get; set; }
 
-        private IdentityUser admin { get; set; }
-        private IdentityUser user1 { get; set; }
+        private ApplicationUser admin { get; set; }
+        private ApplicationUser user1 { get; set; }
 
         private IdentityRole adminRole { get; set; }
 
@@ -70,7 +71,7 @@ namespace RastafarWebApp.Data
                 .HasKey(ip => new { ip.PostId, ip.ParticipantId });
 
             SeedUsers();
-            builder.Entity<IdentityUser>()
+            builder.Entity<ApplicationUser>()
                 .HasData(admin, user1);
 
             SeedRoles();
@@ -109,12 +110,15 @@ namespace RastafarWebApp.Data
 
         private void SeedUsers()
         {
-            var hasher = new PasswordHasher<IdentityUser>();
+            var hasher = new PasswordHasher<ApplicationUser>();
 
-            admin = new IdentityUser()
+            admin = new ApplicationUser()
             {
+                FistName = "Emil",
+                LastName = "Savov",
+                UserName = "Car Hipar",
+                Age = 16,
                 Id = Guid.NewGuid().ToString(),
-                UserName = "embakks@gmail.com",
                 NormalizedUserName = "embakks@gmail.com",
                 Email = "embakks@gmail.com",
                 NormalizedEmail = "embakks@gmail.com"
@@ -122,8 +126,11 @@ namespace RastafarWebApp.Data
 
             admin.PasswordHash = hasher.HashPassword(admin, "admin123");
 
-            user1 = new IdentityUser()
+            user1 = new ApplicationUser()
             {
+                FistName = "Test",
+                LastName = "User",
+                Age = 20,
                 Id = Guid.NewGuid().ToString(),
                 UserName = "testuser@gmail.com",
                 NormalizedUserName = "testuser@gmail.com",

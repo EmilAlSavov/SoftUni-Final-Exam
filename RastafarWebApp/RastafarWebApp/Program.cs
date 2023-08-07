@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using HiparAppServices.Services.Admin;
 using HiparAppServices.Admin;
+using HiparAppData.Data.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
     options.Password.RequiredLength = 8;
-})
+})                                                                                                                  
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<RastafarContext>();
 builder.Services.AddControllersWithViews();
@@ -38,15 +39,14 @@ builder.Services.AddControllersWithViews(options =>
 {
     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
 });
-
-builder.Services.AddCors(options =>
-{
-	options.AddPolicy(name: "JqueryApi",
-					  builder =>
-					  {
-						  builder.WithOrigins("/*");
-					  });
-});
+//builder.Services.AddCors(options =>
+//{
+//	options.AddPolicy(name: "JqueryApi",
+//					  builder =>
+//					  {
+//						  builder.WithOrigins("/*");
+//					  });
+//});
 
 var app = builder.Build();
 

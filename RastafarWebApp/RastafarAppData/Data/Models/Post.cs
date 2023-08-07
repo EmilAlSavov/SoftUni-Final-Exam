@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using HiparAppData.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using RastafarAppData.Data.Models;
 
@@ -47,7 +48,7 @@ namespace RastafarWebApp.Data.Models
         public string OwnerId { get; set; } = null!;
 
         [Required]
-        public IdentityUser Owner { get; set; }
+        public ApplicationUser Owner { get; set; }
 
         [ForeignKey(nameof(CampId))]
         public Camp? Camp { get; set; }

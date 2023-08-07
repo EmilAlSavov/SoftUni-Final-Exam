@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using HiparAppData.Data.Models;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,6 +19,6 @@ namespace RastafarWebApp.Data.Models
         public string ParticipantId { get; set; }
 
         [Required]
-        public IdentityUser Participant { get; set; }
+        public ApplicationUser Participant { get; set; }
     }
 }

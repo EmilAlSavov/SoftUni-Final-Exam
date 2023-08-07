@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Programing\SoftUni-Final-Exam\RastafarWebApp\RastafarWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Programing/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Camptype/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtcHR5cGVcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
