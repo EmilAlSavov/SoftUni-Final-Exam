@@ -8,7 +8,7 @@ using RastafarWebApp.Data;
 
 #nullable disable
 
-namespace RastafarAppData.Migrations
+namespace HiparAppData.Migrations
 {
     [DbContext(typeof(RastafarContext))]
     partial class RastafarContextModelSnapshot : ModelSnapshot
@@ -17,73 +17,12 @@ namespace RastafarAppData.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.16")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "a11431d9-6e15-44c3-8600-8c64e3fdf3de",
-                            ConcurrencyStamp = "303872f0-8de3-4c87-9fb1-89c1e4c0873b",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        });
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("HiparAppData.Data.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -91,12 +30,11 @@ namespace RastafarAppData.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -105,6 +43,16 @@ namespace RastafarAppData.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FistName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -151,7 +99,106 @@ namespace RastafarAppData.Migrations
 
                     b.ToTable("AspNetUsers", (string)null);
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+                    b.HasData(
+                        new
+                        {
+                            Id = "faea5eb5-a96a-4472-b6d1-5ee8a6bff7dd",
+                            AccessFailedCount = 0,
+                            Age = 16,
+                            ConcurrencyStamp = "6bcf315e-2704-4931-babb-a25b9225f2ce",
+                            Email = "embakks@gmail.com",
+                            EmailConfirmed = false,
+                            FistName = "Emil",
+                            LastName = "Savov",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "embakks@gmail.com",
+                            NormalizedUserName = "embakks@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO3DQ/e9lD+lYoEUEy+8hNatMskflww8Q6oLUbAvEtv3nztpOvOm4gXVbt/joTCOKQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "4d481796-92e7-4105-9902-c4373ab74d4c",
+                            TwoFactorEnabled = false,
+                            UserName = "Car Hipar"
+                        },
+                        new
+                        {
+                            Id = "9db8608b-f8f5-4646-8a9f-e5a5f3441a90",
+                            AccessFailedCount = 0,
+                            Age = 20,
+                            ConcurrencyStamp = "298fc5e9-ac50-49aa-88b3-fbca329def49",
+                            Email = "testuser@gmail.com",
+                            EmailConfirmed = false,
+                            FistName = "Test",
+                            LastName = "User",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "testuser@gmail.com",
+                            NormalizedUserName = "testuser@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAECbN1cxCD793XPbf+as7IkG3mAjaWrXYGeHRIQ3wIFU1Z+A/99Nj/TF2XJA5Ht14YQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "b72a8cd4-3e1e-4454-a2bf-880880529ac6",
+                            TwoFactorEnabled = false,
+                            UserName = "testuser@gmail.com"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "7970acc2-5e9e-4d34-8fc5-5a62033769d3",
+                            ConcurrencyStamp = "245d84ba-01f3-41aa-bf87-a74590a5bf32",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -220,8 +267,8 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "069f4b96-9795-42df-8e06-c4ad5e968055",
-                            RoleId = "a11431d9-6e15-44c3-8600-8c64e3fdf3de"
+                            UserId = "faea5eb5-a96a-4472-b6d1-5ee8a6bff7dd",
+                            RoleId = "7970acc2-5e9e-4d34-8fc5-5a62033769d3"
                         });
                 });
 
@@ -273,22 +320,22 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e0fe10d6-f686-49d8-83d8-1fe40242dd28"),
-                            CountryId = new Guid("5bcfadbe-f984-4856-b888-3d5a43d9b7b5"),
+                            Id = new Guid("3c01fff6-f87e-45a3-a581-76843b7dfd7d"),
+                            CountryId = new Guid("9b391e9c-be11-4338-96f3-95e8f78f2fbf"),
                             Image = "https://camping-gradina-sozopol.booked.net/data/Photos/OriginalPhoto/8480/848032/848032307/Camping-Gradina-Hotel-Sozopol-Exterior.JPEG",
                             Name = "Gradina"
                         },
                         new
                         {
-                            Id = new Guid("ecca4fc8-b255-433a-8fd9-50de28e4cddb"),
-                            CountryId = new Guid("363b7df7-2ce7-4633-929f-fa2b92dbf1ce"),
+                            Id = new Guid("369125c5-d950-4929-9e78-ca4f4bd84da8"),
+                            CountryId = new Guid("6e7cd032-2e6d-4416-9148-d745153b1045"),
                             Image = "https://clubvertical.net/wp-content/uploads/2022/05/20545293_1675421585825456_6037428918988778764_o.jpg",
                             Name = "Saravari"
                         },
                         new
                         {
-                            Id = new Guid("4bbaac7e-d4c6-4dc8-84ee-bb97b05ed17e"),
-                            CountryId = new Guid("77012a3a-fab9-4771-8923-45ba3ecf5d59"),
+                            Id = new Guid("84228ed4-53d4-4b48-a328-bab8ef3b37da"),
+                            CountryId = new Guid("2113bc8d-3132-4150-81bf-e7563d75591a"),
                             Image = "https://www.karavanhayati.com/wp-content/uploads/2021/03/bozcaada-karavan-kamp-alanlari-3.jpg",
                             Name = "Bozcaada"
                         });
@@ -311,27 +358,27 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e1f4a3fc-f705-40a6-8ce1-0b8f8dd8cd0e"),
+                            Id = new Guid("32c96ed8-9b95-485a-9f9f-235a360509ef"),
                             Name = "Tent"
                         },
                         new
                         {
-                            Id = new Guid("09cf2cea-ae76-4dbc-93b6-e4990ecce04e"),
+                            Id = new Guid("78d36457-fce2-4df9-afe7-5eb5f5443b66"),
                             Name = "Hammok"
                         },
                         new
                         {
-                            Id = new Guid("efb113dc-ae8a-46da-9ee8-259c4a5ea319"),
+                            Id = new Guid("ac159412-ddd4-4d4f-840f-6a6eda68d119"),
                             Name = "Caravan"
                         },
                         new
                         {
-                            Id = new Guid("8b017e85-c32e-4eb9-a027-3e4fafc8dbc4"),
+                            Id = new Guid("bbe79e8a-016f-4c05-8bbc-5c6b39509783"),
                             Name = "Camper"
                         },
                         new
                         {
-                            Id = new Guid("841f53b4-1909-41ff-a535-693e4e237906"),
+                            Id = new Guid("2c3a03fe-c6d1-4c72-aafa-511ae5915cd2"),
                             Name = "Bungalow"
                         });
                 });
@@ -354,17 +401,17 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5bcfadbe-f984-4856-b888-3d5a43d9b7b5"),
+                            Id = new Guid("9b391e9c-be11-4338-96f3-95e8f78f2fbf"),
                             Name = "Bulgaria"
                         },
                         new
                         {
-                            Id = new Guid("363b7df7-2ce7-4633-929f-fa2b92dbf1ce"),
+                            Id = new Guid("6e7cd032-2e6d-4416-9148-d745153b1045"),
                             Name = "Greece"
                         },
                         new
                         {
-                            Id = new Guid("77012a3a-fab9-4771-8923-45ba3ecf5d59"),
+                            Id = new Guid("2113bc8d-3132-4150-81bf-e7563d75591a"),
                             Name = "Turkey"
                         });
                 });
@@ -403,8 +450,8 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b3d45ba6-6922-4928-ab6b-cd15e6297c43"),
-                            CreatedOn = new DateTime(2023, 8, 7, 15, 44, 7, 14, DateTimeKind.Local).AddTicks(554),
+                            Id = new Guid("6842067d-3fb6-4d90-b419-8844cb9e30cc"),
+                            CreatedOn = new DateTime(2023, 8, 11, 13, 37, 2, 25, DateTimeKind.Local).AddTicks(8267),
                             Description = "Perfect Hammok for the summer and wild camping or just to put it in the yard to chill.",
                             ImgUrl = "https://www.hammockuniverse.com/cdn/shop/articles/Hammock-Universe-Blog-Featured-Image-YOUR-ULTIMATE-GUIDE-ON-HANGING-HAMMOCKS-OUTDOORS_1600x.jpg?v=1678807426",
                             Name = "Summar Hammok",
@@ -412,8 +459,8 @@ namespace RastafarAppData.Migrations
                         },
                         new
                         {
-                            Id = new Guid("825538bb-5bd7-4b90-b8a2-6ad42341d0a4"),
-                            CreatedOn = new DateTime(2023, 8, 7, 15, 44, 7, 14, DateTimeKind.Local).AddTicks(560),
+                            Id = new Guid("57d7bbdb-bff9-4be2-9182-507056abaaf3"),
+                            CreatedOn = new DateTime(2023, 8, 11, 13, 37, 2, 25, DateTimeKind.Local).AddTicks(8291),
                             Description = "Perfect cup for campers. Just sit, take a sip and enjoy your trip. Perfect for all types of adventurers",
                             ImgUrl = "https://i.etsystatic.com/8120420/r/il/2b9ef1/2889698655/il_570xN.2889698655_6kgg.jpg",
                             Name = "Camping Cup",
@@ -421,8 +468,8 @@ namespace RastafarAppData.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7b48d700-b5fb-424b-809a-a4492b76e726"),
-                            CreatedOn = new DateTime(2023, 8, 7, 15, 44, 7, 14, DateTimeKind.Local).AddTicks(568),
+                            Id = new Guid("699a58ed-58be-4151-9201-74706ad2b67e"),
+                            CreatedOn = new DateTime(2023, 8, 11, 13, 37, 2, 25, DateTimeKind.Local).AddTicks(8302),
                             Description = "Pocket Ashtray for wild smokers. Dont be dirty, get one of our pocket ashtray's and leave your done cigaretes there. Save nature!!!",
                             ImgUrl = "https://i5.walmartimages.com/asr/54a3ba02-3177-4aac-82dd-a6462dfb8d6a.7ece51e52d3dffaf8c8582c0c60c327d.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff",
                             Name = "Pocket Ashtray",
@@ -447,27 +494,27 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4089ae16-68b6-4de7-b356-38b923e7a3b8"),
+                            Id = new Guid("476c562e-a630-4f7b-87c0-2b775cdd3240"),
                             Name = "None"
                         },
                         new
                         {
-                            Id = new Guid("65360d7a-c366-4d11-bdd7-8c3e571a80e6"),
+                            Id = new Guid("1a88991b-7b58-40da-82f9-e7e15b050a9e"),
                             Name = "Train"
                         },
                         new
                         {
-                            Id = new Guid("24a7c045-06b6-437d-a837-97d623614f4a"),
+                            Id = new Guid("c212fbb1-c2cd-4243-97c8-0f33e3031eb1"),
                             Name = "Bus"
                         },
                         new
                         {
-                            Id = new Guid("4ee98e2e-ea0f-44ee-8192-70eab10645b6"),
+                            Id = new Guid("a2f4b0e2-f39a-4d85-af38-bc59f3072906"),
                             Name = "Plain"
                         },
                         new
                         {
-                            Id = new Guid("95fac2e1-cae5-4146-bc5e-19a61485834f"),
+                            Id = new Guid("93c06ff5-de99-462f-b2b1-5c4f4c1d4cd6"),
                             Name = "Share Travel"
                         });
                 });
@@ -543,99 +590,39 @@ namespace RastafarAppData.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("83cf8ae0-4035-4a84-aa44-7141bddc820e"),
-                            CampTypeId = new Guid("e1f4a3fc-f705-40a6-8ce1-0b8f8dd8cd0e"),
-                            CreatedOn = new DateTime(2023, 8, 7, 15, 44, 7, 13, DateTimeKind.Local).AddTicks(9985),
+                            Id = new Guid("6a3b8320-2d42-4513-b3e9-f1f8d04aae3b"),
+                            CampTypeId = new Guid("32c96ed8-9b95-485a-9f9f-235a360509ef"),
+                            CreatedOn = new DateTime(2023, 8, 11, 13, 37, 2, 25, DateTimeKind.Local).AddTicks(7602),
                             Description = "We are going to camp in the forest next to beach Butamqta in Sinemorec",
                             Destination = "Sinemorec",
                             ImgsUrl = "https://i.pinimg.com/originals/48/65/2a/48652a144669c357866fbb75299e95ce.jpg",
                             Name = "Camping in Sinemorets",
-                            OwnerId = "069f4b96-9795-42df-8e06-c4ad5e968055",
-                            TravelTypeId = new Guid("4089ae16-68b6-4de7-b356-38b923e7a3b8")
+                            OwnerId = "faea5eb5-a96a-4472-b6d1-5ee8a6bff7dd",
+                            TravelTypeId = new Guid("476c562e-a630-4f7b-87c0-2b775cdd3240")
                         },
                         new
                         {
-                            Id = new Guid("5c20bc44-66eb-4141-9cb1-3cb70625e917"),
-                            CampTypeId = new Guid("efb113dc-ae8a-46da-9ee8-259c4a5ea319"),
-                            CreatedOn = new DateTime(2023, 8, 7, 15, 44, 7, 14, DateTimeKind.Local).AddTicks(90),
+                            Id = new Guid("9a2a3f1f-f878-41d7-8dda-68d779281da9"),
+                            CampTypeId = new Guid("ac159412-ddd4-4d4f-840f-6a6eda68d119"),
+                            CreatedOn = new DateTime(2023, 8, 11, 13, 37, 2, 25, DateTimeKind.Local).AddTicks(7745),
                             Description = "We are going to camp on the beach in one of the biggest camps in bulgaria.",
                             Destination = "Gradina",
                             ImgsUrl = "https://camping.bg/root/f/gallery/1/c01db28c234b15fe958af37bedb1b67c.jpg",
                             Name = "Campers and chill in Gradina",
-                            OwnerId = "069f4b96-9795-42df-8e06-c4ad5e968055",
-                            TravelTypeId = new Guid("4ee98e2e-ea0f-44ee-8192-70eab10645b6")
+                            OwnerId = "faea5eb5-a96a-4472-b6d1-5ee8a6bff7dd",
+                            TravelTypeId = new Guid("a2f4b0e2-f39a-4d85-af38-bc59f3072906")
                         },
                         new
                         {
-                            Id = new Guid("aaf4c632-9b8d-4834-b794-df95033016a7"),
-                            CampTypeId = new Guid("8b017e85-c32e-4eb9-a027-3e4fafc8dbc4"),
-                            CreatedOn = new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = new Guid("021363a8-5264-4b07-975f-72da77cf1e8a"),
+                            CampTypeId = new Guid("bbe79e8a-016f-4c05-8bbc-5c6b39509783"),
+                            CreatedOn = new DateTime(2023, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "We are going to travel and camp from Varna to Burgas then to Sozopol, Carevo and Ahtopol",
                             Destination = "BlackSea",
                             ImgsUrl = "https://www.racq.com.au/-/media/project/racqgroup/racq/articles/rvs/2018/10/campervan-on-beach.jpg?h=667&iar=0&w=1000&rev=95fea142fe794fb0b6c98c2f8312e097&hash=E8405B2E92C7EFE24947186EEF7DE597",
                             Name = "Travel trough black sea",
-                            OwnerId = "d41725de-66ef-4c1f-ac99-c0ac666157b6",
-                            TravelTypeId = new Guid("4ee98e2e-ea0f-44ee-8192-70eab10645b6")
-                        });
-                });
-
-            modelBuilder.Entity("HiparAppData.Data.Models.ApplicationUser", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FistName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasDiscriminator().HasValue("ApplicationUser");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "069f4b96-9795-42df-8e06-c4ad5e968055",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "8eab01fc-de05-4f72-8a75-420052b8aa1a",
-                            Email = "embakks@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "embakks@gmail.com",
-                            NormalizedUserName = "embakks@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEO83c1bZ1pCs54CQ1pYMls4oOhVPMcugCK5c+Xct8BE8zDKOGQaa7MTyxajEL8uskQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "fea41e14-2d73-4219-8480-17a0c14d289e",
-                            TwoFactorEnabled = false,
-                            UserName = "Car Hipar",
-                            Age = 16,
-                            FistName = "Emil",
-                            LastName = "Savov"
-                        },
-                        new
-                        {
-                            Id = "d41725de-66ef-4c1f-ac99-c0ac666157b6",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e15a59c-1961-459d-aa1b-fe9c4fb89ee1",
-                            Email = "testuser@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "testuser@gmail.com",
-                            NormalizedUserName = "testuser@gmail.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAENn5nTuADgzQM/PaAZZgSdNQqTE32W++StbI2uVXDIcIbgLSPWru9Ja/J6e+bmSo9Q==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "eac219a1-4b20-4f55-a47a-fc25ffd4c633",
-                            TwoFactorEnabled = false,
-                            UserName = "testuser@gmail.com",
-                            Age = 20,
-                            FistName = "Test",
-                            LastName = "User"
+                            OwnerId = "9db8608b-f8f5-4646-8a9f-e5a5f3441a90",
+                            TravelTypeId = new Guid("a2f4b0e2-f39a-4d85-af38-bc59f3072906")
                         });
                 });
 
@@ -650,7 +637,7 @@ namespace RastafarAppData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HiparAppData.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -659,7 +646,7 @@ namespace RastafarAppData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HiparAppData.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -674,7 +661,7 @@ namespace RastafarAppData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HiparAppData.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -683,7 +670,7 @@ namespace RastafarAppData.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("HiparAppData.Data.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

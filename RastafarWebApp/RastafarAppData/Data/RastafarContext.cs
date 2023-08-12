@@ -119,7 +119,7 @@ namespace RastafarWebApp.Data
                 UserName = "Car Hipar",
                 Age = 16,
                 Id = Guid.NewGuid().ToString(),
-                NormalizedUserName = "embakks@gmail.com",
+                NormalizedUserName = "Car Hipar".ToUpper(),
                 Email = "embakks@gmail.com",
                 NormalizedEmail = "embakks@gmail.com"
             };
@@ -133,7 +133,7 @@ namespace RastafarWebApp.Data
                 Age = 20,
                 Id = Guid.NewGuid().ToString(),
                 UserName = "testuser@gmail.com",
-                NormalizedUserName = "testuser@gmail.com",
+                NormalizedUserName = "testuser@gmail.com".ToUpper(),
                 Email = "testuser@gmail.com",
                 NormalizedEmail = "testuser@gmail.com"
             };
