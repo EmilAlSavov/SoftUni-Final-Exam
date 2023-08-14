@@ -201,6 +201,10 @@
       "PackagePath": "staticwebassets\\css\\LoginPage\\loginstyle.css"
     },
     {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\UserPage\\userstyle.css",
+      "PackagePath": "staticwebassets\\css\\UserPage\\userstyle.css"
+    },
+    {
       "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\homePage\\home.css",
       "PackagePath": "staticwebassets\\css\\homePage\\home.css"
     },

@@ -114,6 +114,7 @@ namespace RastafarWebApp.Data
 
             admin = new ApplicationUser()
             {
+                Image = "https://z-p3-scontent.fskg1-1.fna.fbcdn.net/v/t1.15752-9/367483380_254225674190931_6660571953597606357_n.jpg?_nc_cat=108&cb=99be929b-59f725be&ccb=1-7&_nc_sid=510075&_nc_ohc=cP_4NBUNEWAAX-f4BEl&_nc_ht=z-p3-scontent.fskg1-1.fna&oh=03_AdTtHrrDehU39JJDnP0CJ3F9l2R7BiAANbI1pZok2mxZ5A&oe=65016CAA",
                 FistName = "Emil",
                 LastName = "Savov",
                 UserName = "Car Hipar",
@@ -128,6 +129,7 @@ namespace RastafarWebApp.Data
 
             user1 = new ApplicationUser()
             {
+                Image = "https://scontent.xx.fbcdn.net/v/t1.15752-9/367410880_248954934732977_4076882259522423148_n.jpg?stp=dst-jpg_p180x540&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=510075&_nc_ohc=7QXwtqRoJUMAX8SULHh&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRDfvnD_b7noUC6HzF2v4kUmCYjtJdBnrSOKFd_j0bnJg&oe=65016737",
                 FistName = "Test",
                 LastName = "User",
                 Age = 20,

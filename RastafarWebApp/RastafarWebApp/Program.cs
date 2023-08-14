@@ -9,6 +9,8 @@ using HiparAppServices.Services.Admin;
 using HiparAppServices.Admin;
 using HiparAppData.Data.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using HiparAppServices.Services.Authentication;
+using HiparAppServices.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +47,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICampTypeService, CampTypeService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ITraveltypeService, TraveltypeService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddControllersWithViews(options =>
 {
     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();

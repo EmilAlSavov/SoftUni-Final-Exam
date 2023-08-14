@@ -21,5 +21,9 @@ namespace HiparAppData.Data.Models
         [Required]
         [Range(0, 100)]
         public int Age { get; set; }
+
+        [Required]
+        [StringLength(10000)]
+        public string Image { get; set; } = null!;
     }
 }

@@ -23,7 +23,7 @@
 	<link href="~/css/homepage/style.css" rel="stylesheet" />
     <title>Shop Homepage - Start Bootstrap Template</title>
 </head>
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow" style="background-color: rgba(45, 103, 22, 0.68)">
+<nav style="position: relative; top: 0px; width: 100%; background-color: rgba(45, 103, 22, 0.68);" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow" style="background-color: rgba(45, 103, 22, 0.68)">
         <div class="container-fluid">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@ViewData["Title"]</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -94,7 +94,13 @@
         </main>
     </div>
 </body>
-<footer style="" class="home-footer">
+<footer style="display: flex;
+    align-items: center;
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-threeunits);
+    padding-right: var(--dl-space-space-threeunits);
+    padding-bottom: var(--dl-space-space-twounits);
+    justify-content: space-between;" class="home-footer">
     <img alt="logo"
          src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
          class="home-image" />

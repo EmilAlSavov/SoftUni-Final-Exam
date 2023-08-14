@@ -1,4 +1,5 @@
 ﻿using HiparAppData.Data.Models;
+using HiparAppServices.Services.Authentication;
 using HiparAppServices.ViewModels.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,10 +13,11 @@ namespace HiparWebApp.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly IUserService userService;
         public AuthenticatorController(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager, IUserService userService)
         {
-
+            this.userService = userService;
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
@@ -131,6 +133,24 @@ namespace HiparWebApp.Controllers
         {
             await signInManager.SignOutAsync();
             return RedirectToAction("index", "Home");
+        }
+
+        public async Task<IActionResult> User(Guid id)
+        {
+            var user = await userService.GetUserByIdAsync(id.ToString());
+
+            var model = new UserViewModel()
+            {
+                Image = user.Image,
+                FirstName = user.FistName,
+                LastName = user.LastName,
+                Age = user.Age,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Username = user.UserName,
+            };
+
+            return View(model);
         }
     }
 }

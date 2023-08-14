@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hRW7LBNqmlFu0Dw2L0GovfZ0MiMm5/9axIOPTaeTQNQ=",
+  "Hash": "NiyPsI7260FE0NLX0YZtT60kMdEYcs2JKJVnvicYhA8=",
   "Source": "HiparWebApp",
   "BasePath": "_content/HiparWebApp",
   "Mode": "Default",
@@ -1987,6 +1987,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
+      "Identity": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\css\\UserPage\\userstyle.css",
+      "SourceId": "HiparWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\",
+      "BasePath": "_content/HiparWebApp",
+      "RelativePath": "css/UserPage/userstyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\UserPage\\userstyle.css"
     },
     {
       "Identity": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\favicon.ico",
