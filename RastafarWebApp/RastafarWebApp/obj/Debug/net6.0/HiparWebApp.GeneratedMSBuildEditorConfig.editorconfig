@@ -104,6 +104,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/JoinedEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSm9pbmVkRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/MyEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcTXlFdmVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Programming/SoftUni-Final-Exam/RastafarWebApp/RastafarWebApp/Views/Event/Partials/_FilterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcUGFydGlhbHNcX0ZpbHRlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

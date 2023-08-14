@@ -162,6 +162,22 @@ namespace RastafarWebApp.Controllers
             return RedirectToAction("Detail", "Event", new {Id});
         }
 
+        public async Task<IActionResult> JoinedEvents(AllPostQueryModel allPostQueryModel, string userId)
+        {
+			var models = await postService.JoinedEventsAsyc(allPostQueryModel.CampType, allPostQueryModel.SearchingTerm, allPostQueryModel.Sort, allPostQueryModel.CurrentPage, AllPostQueryModel.PostsPerPages, userId);
+
+			allPostQueryModel.TotalEventCount = models.TotalEventCount;
+			allPostQueryModel.Posts = models.Posts;
+			allPostQueryModel.CampTypes = postService.GetCampTypesAsViewModels();
+			allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
+			return View(allPostQueryModel);
+        }
+
+        public async Task<IActionResult> MyEvents(AllPostQueryModel allPostQueryModel, string userId)
+        {
+            return View();
+        }
+
 		private string GetUserId()
 		{
 			return User.FindFirstValue(ClaimTypes.NameIdentifier);

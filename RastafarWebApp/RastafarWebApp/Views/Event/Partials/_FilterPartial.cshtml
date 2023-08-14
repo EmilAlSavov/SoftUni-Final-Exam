@@ -1,77 +1,5 @@
 ﻿@model AllPostQueryModel
-
-
-@*<form method="get" class="row">
-	<div class="row">
-		<div class="form-group col-md-3 d-flex justify-content-between">
-			<div class="form-group pt-2 pb-2">
-				<label class="pb-2" asp-for="CampType"></label>
-				<select asp-for="CampType" class="form-control" data-mdb-filter="true">
-					<option value="">All</option>
-					@foreach (var campType in Model.CampTypes)
-					{
-						<option value="@campType">@campType</option>
-					}
-				</select>
-			</div>
-		</div>
-		<div class="form-group col-md-3 pt-2 pb-2">
-			<label class="pb-2" asp-for="SearchingTerm"></label>
-			<input asp-for="SearchingTerm" class="form-control" placeholder="...">
-		</div>
-		<div class="form-group col-md-3">
-			<div class="form-group pt-2 pb-2">
-				<label class="pb-2" asp-for="Sort"></label>
-				<select asp-for="Sort" class="form-control">
-					@foreach (var sort in Model.Sorts)
-					{
-						<option value="@sort">@sort</option>
-					}
-				</select>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="form-group mt-4 p-2">
-				<input type="submit" value="Search" class="btn btn-primary" />
-			</div>
-		</div>
-	</div>
-</form>
-@{
-	var previousPage = Model.CurrentPage - 1;
-	if (previousPage < 1)
-	{
-		previousPage = 1;
-	}
-	var maxPage = Math.Ceiling((double)Model.TotalEventCount / AllPostQueryModel.PostsPerPages);
-}
-<div class="row mb-5">
-	<div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-start">
-		<a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" :
-string.Empty)"
-		   asp-controller="Event"
-		   asp-action="All"
-		   asp-route-currentPage="@previousPage"
-		   asp-route-category="@Model.CampType"
-		   asp-route-searchTerm="@Model.SearchingTerm"
-		   asp-route-sorting="@((int)Model.Sort)"><<</a>
-	</div>
-	@{
-		var shouldButtonBeDisabled = Model.CurrentPage == maxPage ||
-		!Model.Posts.Any();
-	}
-	<div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end">
-		<a class="btn btn-primary
- @(shouldButtonBeDisabled ? "disabled" : string.Empty)"
-		   asp-controller="event"
-		   asp-action="All"
-		   asp-route-currentPage="@(Model.CurrentPage + 1)"
-		   asp-route-category="@Model.CampType"
-		   asp-route-searchTerm="@Model.SearchingTerm"
-		   asp-route-sorting="@((int)Model.Sort)">>></a>
-	</div>
-</div>*@
-
+@inject UserManager<ApplicationUser> UserManager;
 <link href="~/css/allpage/component.css" rel="stylesheet" />
 
 <div style="display:table; margin: 0 auto; padding-top: 50px	">
@@ -80,6 +8,7 @@ string.Empty)"
 		<form id="filter-form" class="component-form">
 			<div class="component-container1">
 				<div class="component-container2">
+					<input style="display: none" asp-for="UserId" value="@UserManager.GetUserId(User)" />
 					<input style="margin-left: 20px;" asp-for="SearchingTerm"
 						   type="text"
 						   placeholder="Search..."
@@ -101,7 +30,7 @@ string.Empty)"
 							<option value="@sort">@sort</option>
 						}
 					</select>
-					<button id="filterSearch" @*type="submit"*@ class="component-button button">
+					<button id="filterSearch" class="component-button button">
 						<span>
 							<span>Search</span>
 							<br />

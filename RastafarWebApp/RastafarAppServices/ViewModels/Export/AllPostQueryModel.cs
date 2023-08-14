@@ -12,6 +12,7 @@ namespace RastafarAppServices.ViewModels.Export
 	{
 		public const int PostsPerPages = 8;
 
+        public string UserId { get; set; }
         public CampTypeViewModel CampType { get; set; }
 
         public List<CampTypeViewModel> CampTypes { get; set; }
