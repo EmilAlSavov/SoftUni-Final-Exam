@@ -44,9 +44,12 @@ namespace RastafarWebApp.Data
 
         private IdentityUserRole<string> userRoleAdmin { get; set; }
 
-        public RastafarContext(DbContextOptions<RastafarContext> options)
+        private bool seed { get; set; }
+
+        public RastafarContext(DbContextOptions<RastafarContext> options, bool seed = true)
             : base(options)
         {
+            this.seed = seed;
         }
 
         public DbSet<Post> Posts { get; set; }
@@ -70,42 +73,45 @@ namespace RastafarWebApp.Data
             builder.Entity<IdentityUserPosts>()
                 .HasKey(ip => new { ip.PostId, ip.ParticipantId });
 
-            SeedUsers();
-            builder.Entity<ApplicationUser>()
-                .HasData(admin, user1);
+            if (this.seed)
+            {
+				SeedUsers();
+				builder.Entity<ApplicationUser>()
+					.HasData(admin, user1);
 
-            SeedRoles();
-            builder.Entity<IdentityRole>()
-                .HasData(adminRole);
+				SeedRoles();
+				builder.Entity<IdentityRole>()
+					.HasData(adminRole);
 
-            SeedUserRoles();
-            builder.Entity<IdentityUserRole<string>>()
-                .HasData(userRoleAdmin);
+				SeedUserRoles();
+				builder.Entity<IdentityUserRole<string>>()
+					.HasData(userRoleAdmin);
 
-            SeedCampTypes();
-            builder.Entity<CampType>()
-                .HasData(tent, hammok, caravan, camper, bungalow);
+				SeedCampTypes();
+				builder.Entity<CampType>()
+					.HasData(tent, hammok, caravan, camper, bungalow);
 
-            SeedTravelTypes();
-            builder.Entity<TravelType>()
-                .HasData(none, train, bus, plain, shareTravel);
+				SeedTravelTypes();
+				builder.Entity<TravelType>()
+					.HasData(none, train, bus, plain, shareTravel);
 
-            SeedEvents();
+				SeedEvents();
 
-            builder.Entity<Post>()
-                .HasData(testPost1, testPost2, testPost3);
+				builder.Entity<Post>()
+					.HasData(testPost1, testPost2, testPost3);
 
-            SeedCountries();
-            builder.Entity<Country>()
-                .HasData(bulgaria, greece, turkey);
+				SeedCountries();
+				builder.Entity<Country>()
+					.HasData(bulgaria, greece, turkey);
 
-            SeedCamps();
-            builder.Entity<Camp>()
-                .HasData(gradina, saravari, boshkaada);
+				SeedCamps();
+				builder.Entity<Camp>()
+					.HasData(gradina, saravari, boshkaada);
 
-            SeedProducts();
-            builder.Entity<Product>()
-                .HasData(product1, product2, product3);
+				SeedProducts();
+				builder.Entity<Product>()
+					.HasData(product1, product2, product3);
+			}
         }
 
         private void SeedUsers()
