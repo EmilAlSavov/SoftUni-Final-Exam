@@ -15,7 +15,6 @@ namespace RastafarAppServices.Services
     {
         public AllPostQueryModel All(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage);
 
-        public List<PostPreviewViewModel> MyEvents();
 
         public List<PostPreviewViewModel> Fauvorite();
 

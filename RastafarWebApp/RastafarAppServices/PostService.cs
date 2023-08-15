@@ -97,15 +97,12 @@ namespace RastafarAppServices
             throw new NotImplementedException();
         }
 
-        public List<PostPreviewViewModel> MyEvents()
-        {
-            throw new NotImplementedException();
-        }
 
 		public AllPostQueryModel All(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
 		{
             int totalEvents = context.Posts.Count();
             var postsQuery = context.Posts.Where(p => true);
+            var postsQuerytest = context.Posts.Where(p => true).ToList();
 
             postsQuery = FilterPosts(postsQuery, campType, searchTerm, sort);
             
@@ -210,6 +207,11 @@ namespace RastafarAppServices
             };
 
             var post = GetPostById(postId);
+
+			if (context.UsersPosts.Contains(userPost))
+			{
+				return;
+			}
 
             context.UsersPosts.Add(userPost);
             post.Participants.Add(userPost);
