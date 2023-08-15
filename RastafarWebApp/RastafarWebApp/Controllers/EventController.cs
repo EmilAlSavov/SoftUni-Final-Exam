@@ -175,8 +175,14 @@ namespace RastafarWebApp.Controllers
 
         public async Task<IActionResult> MyEvents(AllPostQueryModel allPostQueryModel, string userId)
         {
-            return View();
-        }
+			var models = await postService.MyEventsAsync(allPostQueryModel.CampType, allPostQueryModel.SearchingTerm, allPostQueryModel.Sort, allPostQueryModel.CurrentPage, AllPostQueryModel.PostsPerPages, userId);
+
+			allPostQueryModel.TotalEventCount = models.TotalEventCount;
+			allPostQueryModel.Posts = models.Posts;
+			allPostQueryModel.CampTypes = postService.GetCampTypesAsViewModels();
+			allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
+			return View(allPostQueryModel);
+		}
 
 		private string GetUserId()
 		{

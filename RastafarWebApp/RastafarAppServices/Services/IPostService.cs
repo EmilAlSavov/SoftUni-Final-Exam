@@ -32,6 +32,7 @@ namespace RastafarAppServices.Services
         public PostPreviewViewModel Detail(Guid postId);
 
 		public Task<AllPostQueryModel> JoinedEventsAsyc(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage, string userId);
+		public Task<AllPostQueryModel> MyEventsAsync(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage, string userId);
 
 		public List<string> GetEnumList<T>();
 		public Post GetPostById(Guid id);

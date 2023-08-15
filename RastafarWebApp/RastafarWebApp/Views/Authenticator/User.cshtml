@@ -4,6 +4,13 @@
 @inject UserManager<ApplicationUser> UserManager
 <style>
 
+
+#background{
+		display: flex;
+		background-size: cover;
+		background-image: url(https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8c2VhcmNofDZ8fGNhbXBpbmd8ZW58MHx8fHwxNjg5MDM3MDk3fDA&ixlib=rb-4.0.3&q=80&w=1500);
+}
+
 h3 {
 	margin: 10px 0;
 }
@@ -19,6 +26,10 @@ p {
 }
 
 .card-container {
+	margin: auto;
+	margin-bottom: 100px;
+	margin-top: 100px;
+	padding-bottom: 50px;
 	background-color: #231E39;
 	border-radius: 5px;
 	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
@@ -49,6 +60,10 @@ p {
 }
 
 a.primary {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-right: 20px;
+	text-decoration: none;
 	background-color: #03BFCB;
 	border: 1px solid #03BFCB;
 	border-radius: 3px;
@@ -59,6 +74,7 @@ a.primary {
 }
 
 a.primary.ghost {
+	text-decoration: none;
 	background-color: transparent;
 	color: #02899C;
 }
@@ -86,19 +102,21 @@ a.primary.ghost {
 }
 </style>
 
-<div class="card-container">
-	<img class="round" src="@Model.Image" alt="user" />
-	<h3>@Model.FirstName @Model.LastName</h3>
-	<h6>@Model.Username</h6>
-	<p>@Model.Age</p>
-	<p>@Model.Email</p>
-	<p>@Model.PhoneNumber</p>
-	<div class="buttons">
-		<a asp-action="JoinedEvents" asp-controller="Event" asp-route-userId="@UserManager.GetUserId(User)	" class="primary">
-			Joined Events
-		</a>
-		<a asp-action="MyEvents" asp-controller="Event" class="primary ghost">
-			My Events
-		</a>
+<div id="background">
+	<div class="card-container">
+		<img class="round" src="@Model.Image" alt="user" />
+		<h3>@Model.FirstName @Model.LastName</h3>
+		<h6>@Model.Username</h6>
+		<p>@Model.Age</p>
+		<p>@Model.Email</p>
+		<p>@Model.PhoneNumber</p>
+		<div class="buttons">
+			<a asp-action="JoinedEvents" asp-controller="Event" asp-route-userId="@UserManager.GetUserId(User)" class="primary">
+				Joined Events
+			</a>
+			<a asp-action="MyEvents" asp-controller="Event" asp-route-userId="@UserManager.GetUserId(User)" class="primary ghost">
+				My Events
+			</a>
+		</div>
 	</div>
 </div>

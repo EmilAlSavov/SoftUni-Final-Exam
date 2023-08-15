@@ -309,5 +309,47 @@ namespace RastafarAppServices
 				CurrentPage = currentPage
 			};
 		}
+
+		public async Task<AllPostQueryModel> MyEventsAsync(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage, string userId)
+		{
+			int totalEvents = context.Posts.Count();
+			var postsQuery = context.Posts.Where(p => true);
+
+			postsQuery = FilterPosts(postsQuery, campType, searchTerm, sort);
+
+			postsQuery = postsQuery.Skip(eventsPerPage * (currentPage - 1))
+				.Take(eventsPerPage)
+				.Include(p => p.Participants)
+				.Where(p => p.OwnerId == userId.Trim());
+
+
+
+			var posts = postsQuery.Select(p => new PostPreviewViewModel()
+			{
+				Id = p.Id,
+				Name = p.Name,
+				Image = p.ImgsUrl,
+				Description = p.Description,
+				Destination = p.Destination,
+				CampType = p.CampType.Name,
+				OwnerName = p.Owner.UserName,
+				TravelType = p.TravelType.Name,
+				ParticipantCount = p.Participants.Count(),
+				Participants = p.Participants.Select(up => new UserPostsViewModel()
+				{
+					PostId = up.PostId,
+					UserId = up.ParticipantId,
+					UserName = up.Participant.UserName
+				}).ToList()
+			}).ToList();
+
+
+			return new AllPostQueryModel()
+			{
+				Posts = posts,
+				TotalEventCount = totalEvents,
+				CurrentPage = currentPage
+			};
+		}
 	}
 }

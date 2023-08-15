@@ -1,24 +1,32 @@
 ﻿
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 29vw;
+.center-form {
+    position: relative;
+    margin:auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 35%;
     background: white;
     border-radius: 10px;
 }
 
-    .center h1 {
+    .center-form h1 {
         text-align: center;
         padding: 0 0 20px 0;
         border-bottom: 1px solid silver;
     }
 
-    .center form {
+    .center-form form {
         padding: 0 40px;
         box-sizing: border-box;
     }
+
+#background {
+    display: flex;
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTMyMXwwfDF8c2VhcmNofDZ8fGNhbXBpbmd8ZW58MHx8fHwxNjg5MDM3MDk3fDA&ixlib=rb-4.0.3&q=80&w=1500);
+}
 
 form .txt_field {
     position: relative;
@@ -115,6 +123,3 @@ input[type="Submit"] {
     height: 25vh;
 }
 
-footer {
-    position: absolute;
-}
