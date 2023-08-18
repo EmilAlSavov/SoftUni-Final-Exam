@@ -18,8 +18,6 @@ namespace RastafarAppServices.Services
 
         public CampViewModel Detail(Guid id);
 
-        public AllPostQueryModel Events(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage);
-
 		public Task AddAsync(AddCampViewModel model);
 
         public Task EditAsync(Guid Id, AddCampViewModel model);

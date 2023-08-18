@@ -88,11 +88,6 @@ namespace RastafarAppServices
             return model;
         }
 
-        public AllPostQueryModel Events(CampTypeViewModel campType, string searchTerm, EventSort sort, int currentPage, int eventsPerPage)
-        {
-            throw new NotImplementedException();
-        }
-
 		public List<string> GetEnumList<T>()
 		{
 			if (typeof(T).Name == "CampType")
