@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HiparAppServices.Admin
 {
-	public class CountryService : ICountryService
+	public class CountryService : ITravelTypeService
 	{
 		private readonly RastafarContext context;
 

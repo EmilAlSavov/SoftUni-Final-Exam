@@ -45,7 +45,7 @@ builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddScoped<ICampService, CampService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICampTypeService, CampTypeService>();
-builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<ITravelTypeService, CountryService>();
 builder.Services.AddScoped<ITraveltypeService, TraveltypeService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddControllersWithViews(options =>

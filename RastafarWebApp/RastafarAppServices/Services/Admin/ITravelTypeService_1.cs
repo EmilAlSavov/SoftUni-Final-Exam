@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HiparAppServices.Services.Admin
 {
-	public interface ICountryService
+	public interface ITravelTypeService
 	{
 		public List<ViewModels.CountryViewModel> All();
 

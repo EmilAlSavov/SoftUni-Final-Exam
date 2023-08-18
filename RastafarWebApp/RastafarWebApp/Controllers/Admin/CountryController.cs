@@ -8,9 +8,9 @@ namespace HiparWebApp.Controllers.Admin
 {
 	public class CountryController : Controller
 	{
-		private readonly ICountryService countryService;
+		private readonly ITravelTypeService countryService;
 
-		public CountryController(ICountryService countryService)
+		public CountryController(ITravelTypeService countryService)
 		{
 			this.countryService = countryService;
 		}
