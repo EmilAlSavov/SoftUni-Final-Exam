@@ -40,5 +40,8 @@ namespace HiparAppServices.ViewModels.Authentication
         [Required(ErrorMessage = "Username is required")]
         [StringLength(50)]
         public string Username { get; set; } = null!;
+
+        [Required(ErrorMessage = "Image is required")]
+        public string Image { get; set; }
     }
 }

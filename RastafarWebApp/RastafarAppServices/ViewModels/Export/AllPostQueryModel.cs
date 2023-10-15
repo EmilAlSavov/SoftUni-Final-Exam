@@ -20,6 +20,8 @@ namespace RastafarAppServices.ViewModels.Export
         [DisplayName("Search by text")]
         public string SearchingTerm { get; set; }
 
+        public int ResultCount { get; set; }
+
         public EventSort Sort { get; set; }
 
         public List<string> Sorts { get; set; }

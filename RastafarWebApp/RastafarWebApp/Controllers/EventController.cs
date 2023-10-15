@@ -32,6 +32,7 @@ namespace RastafarWebApp.Controllers
             allPostQueryModel.Posts = models.Posts;
             allPostQueryModel.CampTypes = postService.GetCampTypesAsViewModels();
             allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
+            allPostQueryModel.ResultCount = models.ResultCount;
             return View(allPostQueryModel);
         }
 
@@ -39,7 +40,7 @@ namespace RastafarWebApp.Controllers
         [AllowAnonymous]
         public IActionResult Detail(Guid Id)
         {
-            var post = postService.Detail(Id);
+                var post = postService.Detail(Id);
 
             return View(post);
         }
@@ -74,7 +75,10 @@ namespace RastafarWebApp.Controllers
 
 				if (post.OwnerId != GetUserId())
 				{
-                    throw new UnauthorizedAccessException();
+                    if (!User.IsInRole("Admin"))
+                    {
+                        throw new UnauthorizedAccessException();
+                    }
 				}
 
 				var model = new AddPostViewModel()
@@ -113,7 +117,16 @@ namespace RastafarWebApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    postService.Edit(model, Id, GetUserId());
+					if (GetUserId() != Id.ToString())
+					{
+						if (!User.IsInRole("Admin"))
+						{
+							var ex = new UnauthorizedAccessException("401");
+							ex.Data.Add("401", "dadasdas");
+							throw ex;
+						}
+					}
+					postService.Edit(model, Id, GetUserId());
                 }
                 else
                 {

@@ -46,6 +46,7 @@ namespace HiparWebApp.Controllers
                 {
                     var user = new ApplicationUser
                     {
+                        Image = request.Image,
                         Id = Guid.NewGuid().ToString(),
                         FistName = request.FirstName,
                         LastName = request.LastName,
@@ -76,7 +77,6 @@ namespace HiparWebApp.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("message", "Email already exists.");
                     return View(request);
                 }
             }
