@@ -22,6 +22,8 @@ namespace RastafarAppServices.ViewModels.Export
 
         public CampSort Sort { get; set; }
 
+        public int ResultCount { get; set; }
+
         public List<string> Sorts { get; set; }
 
         public int CurrentPage { get; set; } = 1;

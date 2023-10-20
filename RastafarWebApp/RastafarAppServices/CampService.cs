@@ -33,8 +33,8 @@ namespace RastafarAppServices
 
 			campQuary = FilterCamps(campQuary, country, searchTerm, sort);
 
-			campQuary = campQuary.Skip(eventsPerPage * (currentPage - 1))
-				.Take(eventsPerPage);
+			//campQuary = campQuary.Skip(eventsPerPage * (currentPage - 1))
+			//	.Take(eventsPerPage);
 
 			var camps = campQuary
 							.Select(c => new CampViewModel()
@@ -53,12 +53,16 @@ namespace RastafarAppServices
 								}).ToList(),
 							}).ToList();
 
+			var resultCount = camps.Count();
+
+			camps = camps.Skip(eventsPerPage * (currentPage - 1)).Take(eventsPerPage).ToList();
 
 			return new AllCampQueryModel()
 			{
 				Camps = camps,
 				TotalEventCount = totalCamps,
-				CurrentPage = currentPage
+				CurrentPage = currentPage,
+				ResultCount = resultCount
 			};
 		}
 

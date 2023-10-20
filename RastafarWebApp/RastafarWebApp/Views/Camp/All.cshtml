@@ -13,10 +13,75 @@
 
 <partial name="Partials/_FilterPartial" model="@Model" />
 
+
+
 <div class="row">
 	<section class="py-5">
 		<div class="container px-4 px-lg-5 mt-5">
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+				@{
+					var previousPage = Model.CurrentPage - 1;
+					if (previousPage < 1)
+					{
+						previousPage = 1;
+					}
+					var maxPage = (int)Math.Ceiling((double)Model.ResultCount / AllCampQueryModel.CampsPerPages);
+
+					var nextPage = Model.CurrentPage + 1;
+					if (nextPage > maxPage)
+					{
+						nextPage = maxPage;
+					}
+
+					if (Model.Country == null)
+					{
+						Model.Country = new HiparAppServices.ViewModels.CountryViewModel()
+						{
+							Id = Guid.Empty
+						};
+					}
+				}
+				<div class="row mb-5" style="height: 45px;width: 0px;">
+
+					<a style="position: absolute; left: 50px; width: 50px;" class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" :
+string.Empty)"
+					   asp-controller="Camp"
+					   asp-action="All"
+					   asp-route-currentPage="@previousPage"
+					   asp-route-SearchingTerm="@Model.SearchingTerm"
+					   asp-route-Country.Id="@Model.Country.Id"
+					   asp-route-Sort="@((int)Model.Sort)"><<</a>@*
+					<div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-start" style="height: 45px;">
+
+					</div> *@
+					@{
+						var shouldButtonBeDisabled = Model.CurrentPage == maxPage ||
+						!Model.Camps.Any();
+					}
+
+					<div style="
+    position: absolute;
+    left: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+">
+						<p style="font-weight: 500">@Model.CurrentPage</p>
+					</div>
+					<a style="position: absolute; right: 50px; width: 50px;" class="btn btn-primary
+ @(shouldButtonBeDisabled ? "disabled" : string.Empty)"
+					   asp-controller="Camp"
+					   asp-action="All"
+					   asp-route-currentPage="@nextPage"
+					   asp-route-Country.Id="@Model.Country.Id"
+					   asp-route-SearchingTerm="@Model.SearchingTerm"
+					   asp-route-Sort="@((int)Model.Sort)">>></a>@*
+					<div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-end" style="height: 45px;">
+
+					</div> *@
+				</div>
+
 				@foreach (var camp in Model.Camps)
 				{
 

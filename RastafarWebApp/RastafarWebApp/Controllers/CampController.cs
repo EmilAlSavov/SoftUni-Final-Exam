@@ -28,6 +28,7 @@ namespace RastafarWebApp.Controllers
 
 			campQueryModel.TotalEventCount = model.TotalEventCount;
 			campQueryModel.Camps = model.Camps;
+            campQueryModel.ResultCount = model.ResultCount;
 			campQueryModel.Countries = campService.GetCountriesTypesAsViewModels();
 			campQueryModel.Sorts = campService.GetEnumList<CampSort>();
 

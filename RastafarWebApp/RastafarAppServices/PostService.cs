@@ -276,8 +276,7 @@ namespace RastafarAppServices
 
 			postsQuery = FilterPosts(postsQuery, campType, searchTerm, sort);
 
-			postsQuery = postsQuery.Skip(eventsPerPage * (currentPage - 1))
-				.Take(eventsPerPage)
+			postsQuery = postsQuery
                 .Include(p => p.Participants)
                 .Where(p => p.Participants.Any(pt => pt.ParticipantId == userId.Trim()));
 
@@ -302,12 +301,17 @@ namespace RastafarAppServices
 								}).ToList()
 							}).ToList();
 
+			var resultCount = posts.Count();
+
+			posts = posts.Skip(eventsPerPage * (currentPage - 1))
+				.Take(eventsPerPage).ToList();
 
 			return new AllPostQueryModel()
 			{
 				Posts = posts,
 				TotalEventCount = totalEvents,
-				CurrentPage = currentPage
+				CurrentPage = currentPage,
+				ResultCount = resultCount
 			};
 		}
 
@@ -318,8 +322,7 @@ namespace RastafarAppServices
 
 			postsQuery = FilterPosts(postsQuery, campType, searchTerm, sort);
 
-			postsQuery = postsQuery.Skip(eventsPerPage * (currentPage - 1))
-				.Take(eventsPerPage)
+			postsQuery = postsQuery
 				.Include(p => p.Participants)
 				.Where(p => p.OwnerId == userId.Trim());
 
@@ -344,12 +347,17 @@ namespace RastafarAppServices
 				}).ToList()
 			}).ToList();
 
+			var resultCount = posts.Count();
+
+			posts = posts.Skip(eventsPerPage * (currentPage - 1))
+				.Take(eventsPerPage).ToList();
 
 			return new AllPostQueryModel()
 			{
 				Posts = posts,
 				TotalEventCount = totalEvents,
-				CurrentPage = currentPage
+				CurrentPage = currentPage,
+				ResultCount = resultCount
 			};
 		}
 	}

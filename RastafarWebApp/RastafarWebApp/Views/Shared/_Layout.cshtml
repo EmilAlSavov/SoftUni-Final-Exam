@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Hipar.com";
 }
+@inject UserManager<ApplicationUser> UserManager
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -44,10 +46,7 @@
                     @if (this.User.Identity.IsAuthenticated == true)
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="MyEvents">My Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Fauvorite">Fauvorite Events</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="MyEvents" asp-route-userId="@UserManager.GetUserId(User)">My Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Event" asp-action="Add">Add Event</a>

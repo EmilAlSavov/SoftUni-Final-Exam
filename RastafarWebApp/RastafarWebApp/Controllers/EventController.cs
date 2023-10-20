@@ -149,7 +149,10 @@ namespace RastafarWebApp.Controllers
             var post = postService.GetPostById(Id);
 			if (post.OwnerId != GetUserId())
 			{
-				throw new UnauthorizedAccessException();
+                if (!User.IsInRole("Admin"))
+                {
+				    throw new UnauthorizedAccessException();
+                }
 			}
 
 			postService.Delete(Id);
@@ -183,6 +186,7 @@ namespace RastafarWebApp.Controllers
 			allPostQueryModel.Posts = models.Posts;
 			allPostQueryModel.CampTypes = postService.GetCampTypesAsViewModels();
 			allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
+            allPostQueryModel.ResultCount = models.ResultCount;
 			return View(allPostQueryModel);
         }
 
@@ -194,6 +198,7 @@ namespace RastafarWebApp.Controllers
 			allPostQueryModel.Posts = models.Posts;
 			allPostQueryModel.CampTypes = postService.GetCampTypesAsViewModels();
 			allPostQueryModel.Sorts = postService.GetEnumList<EventSort>();
+            allPostQueryModel.ResultCount = models.ResultCount;
 			return View(allPostQueryModel);
 		}
 
