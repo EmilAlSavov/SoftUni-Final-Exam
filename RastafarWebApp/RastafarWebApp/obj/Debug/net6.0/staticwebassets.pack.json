@@ -229,6 +229,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\imgs\\20545293_1675421585825456_6037428918988778764_o.jpg",
+      "PackagePath": "staticwebassets\\imgs\\20545293_1675421585825456_6037428918988778764_o.jpg"
+    },
+    {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\imgs\\54a3ba02-3177-4aac-82dd-a6462dfb8d6a.7ece51e52d3dffaf8c8582c0c60c327d.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\54a3ba02-3177-4aac-82dd-a6462dfb8d6a.7ece51e52d3dffaf8c8582c0c60c327d.jpeg"
+    },
+    {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\imgs\\Campervan_on_beach.jpg",
+      "PackagePath": "staticwebassets\\imgs\\Campervan_on_beach.jpg"
+    },
+    {
       "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\js\\scripts.js",
       "PackagePath": "staticwebassets\\js\\scripts.js"
     },

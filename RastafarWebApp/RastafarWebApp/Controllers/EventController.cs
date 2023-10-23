@@ -56,7 +56,8 @@ namespace RastafarWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                postService.Add(model, GetUserId());
+                var context = HttpContext;
+                postService.Add(model, GetUserId(), context);
             }
             else
             {
@@ -86,7 +87,6 @@ namespace RastafarWebApp.Controllers
 					Name = post.Name,
 					Description = post.Description,
 					Destination = post.Destination,
-					ImgsUrl = post.ImgsUrl,
 					campType = new CampTypeViewModel()
                     {
                        Id = post.CampTypeId,

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using RastafarAppServices.Services;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using RastafarAppServices.ViewModels.Export;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace RastafarAppServices.ViewModels.Import
 {
@@ -25,7 +27,7 @@ namespace RastafarAppServices.ViewModels.Import
 		public string Description { get; set; } = null!;
 
 		[Required]
-		public string ImgsUrl { get; set; } = null!;
+		public IFormFile ImgsUrl { get; set; } = null!;
 
 		[Required]
 		[StringLength(100)]

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
@@ -12,8 +14,10 @@ using RastafarWebApp.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace RastafarAppServices
 {
@@ -21,14 +25,22 @@ namespace RastafarAppServices
     {
         private RastafarContext context { get; set; }
 
-        public PostService(RastafarContext context)
+		private IHostingEnvironment Environment { get; set; }
+
+        public PostService(RastafarContext context, IHostingEnvironment environment)
         {
-                this.context = context;
+            this.context = context;
+			this.Environment = environment;
         }
 
-        public void Add(AddPostViewModel model, string id)
+        public void Add(AddPostViewModel model, string id, HttpContext httpContext)
         {
-            var post = new Post()
+
+			var path = SaveImageFile(model.ImgsUrl, httpContext);
+
+			
+
+			var post = new Post()
 			{
 				Name = model.Name,
 				Description = model.Description,
@@ -36,7 +48,7 @@ namespace RastafarAppServices
 				CampTypeId = model.campType.Id,
 				TravelTypeId = model.travelType.Id,
 				CreatedOn = DateTime.Now,
-				ImgsUrl = model.ImgsUrl,
+				ImgsUrl = path,
 				OwnerId = id,
 				Participants = new List<IdentityUserPosts>()
 
@@ -72,7 +84,7 @@ namespace RastafarAppServices
             realPost.Name = model.Name;
             realPost.Description = model.Description;
             realPost.Destination = model.Destination;
-            realPost.ImgsUrl = model.ImgsUrl;
+            realPost.ImgsUrl = model.ImgsUrl.FileName;
             realPost.CampTypeId = model.campType.Id;
             realPost.TravelTypeId = model.travelType.Id;
 
@@ -359,6 +371,31 @@ namespace RastafarAppServices
 				CurrentPage = currentPage,
 				ResultCount = resultCount
 			};
+		}
+
+		private string SaveImageFile(IFormFile imageFile, HttpContext httpContext)
+		{
+			string wwwPath = this.Environment.WebRootPath;
+			string contentPath = this.Environment.ContentRootPath;
+
+			string path = Path.Combine(wwwPath, "imgs");
+
+			if (!Directory.Exists(path))
+			{
+				Directory.CreateDirectory(path);
+			}
+
+			string fileName = Path.GetFileName(imageFile.FileName);
+
+			using (FileStream stream = new FileStream(Path.Combine(path, fileName), FileMode.Create))
+			{
+				imageFile.CopyTo(stream);
+			}
+
+			var pathScheme = httpContext.Request.Scheme + $":\\\\{httpContext.Request.Host.ToString()}";
+			var pathReturn = Path.Combine(pathScheme, "imgs",imageFile.FileName).ToString();
+
+			return pathReturn;
 		}
 	}
 }

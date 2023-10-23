@@ -1,4 +1,5 @@
-﻿using RastafarAppData.Data.Models.Enums;
+﻿using Microsoft.AspNetCore.Http;
+using RastafarAppData.Data.Models.Enums;
 using RastafarAppServices.ViewModels;
 using RastafarAppServices.ViewModels.Export;
 using RastafarAppServices.ViewModels.Import;
@@ -18,7 +19,7 @@ namespace RastafarAppServices.Services
 
         public List<PostPreviewViewModel> Fauvorite();
 
-        public void Add(AddPostViewModel model, string id);
+        public void Add(AddPostViewModel model, string id, HttpContext HttpContext);
 
         public void Edit(AddPostViewModel model, Guid Id, string currUserId);
 
