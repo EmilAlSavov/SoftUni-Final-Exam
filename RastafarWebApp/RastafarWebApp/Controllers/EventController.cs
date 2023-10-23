@@ -117,14 +117,15 @@ namespace RastafarWebApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-					if (GetUserId() != Id.ToString())
+
+					var post = postService.GetPostById(Id);
+
+					if (GetUserId() != post.OwnerId && !User.IsInRole("Admin"))
 					{
-						if (!User.IsInRole("Admin"))
-						{
+
 							var ex = new UnauthorizedAccessException("401");
 							ex.Data.Add("401", "dadasdas");
 							throw ex;
-						}
 					}
 					postService.Edit(model, Id, GetUserId());
                 }
@@ -147,12 +148,10 @@ namespace RastafarWebApp.Controllers
         public IActionResult Delete(Guid Id)
         {
             var post = postService.GetPostById(Id);
-			if (post.OwnerId != GetUserId())
+			if (post.OwnerId != GetUserId() && !User.IsInRole("Admin"))
 			{
-                if (!User.IsInRole("Admin"))
-                {
+
 				    throw new UnauthorizedAccessException();
-                }
 			}
 
 			postService.Delete(Id);

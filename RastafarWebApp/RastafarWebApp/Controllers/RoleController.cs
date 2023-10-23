@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using HiparAppData.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using RastafarAppServices.ViewModels.Import;
@@ -8,9 +9,9 @@ namespace RastafarWebApp.Controllers
 	public class RoleController : BaseController
 	{
 		private readonly RoleManager<IdentityRole> roleManager;
-		private readonly UserManager<IdentityUser> userManager;
+		private readonly UserManager<ApplicationUser> userManager;
 
-        public RoleController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager)
+        public RoleController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
 			this.roleManager = roleManager;
 			this.userManager = userManager;
