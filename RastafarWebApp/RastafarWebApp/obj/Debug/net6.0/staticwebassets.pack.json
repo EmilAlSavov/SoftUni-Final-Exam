@@ -241,6 +241,18 @@
       "PackagePath": "staticwebassets\\imgs\\Campervan_on_beach.jpg"
     },
     {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\imgs\\Camping-Gradina-Hotel-Sozopol-Exterior.JPEG",
+      "PackagePath": "staticwebassets\\imgs\\Camping-Gradina-Hotel-Sozopol-Exterior.JPEG"
+    },
+    {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\imgs\\il_570xN.2889698655_6kgg.jpg",
+      "PackagePath": "staticwebassets\\imgs\\il_570xN.2889698655_6kgg.jpg"
+    },
+    {
+      "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\imgs\\photo-1478131143081-80f7f84ca84d.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\photo-1478131143081-80f7f84ca84d.jpeg"
+    },
+    {
       "Id": "D:\\Programming\\SoftUni-Final-Exam\\RastafarWebApp\\RastafarWebApp\\wwwroot\\js\\scripts.js",
       "PackagePath": "staticwebassets\\js\\scripts.js"
     },

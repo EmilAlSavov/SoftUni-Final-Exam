@@ -7,7 +7,7 @@
 
 <div class="row">
 	<div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
-		<form method="post">
+		<form method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label asp-for="Name"></label>
 				<input asp-for="Name" class="form-control" placeholder="Name..." value="@Model.Name">
@@ -26,7 +26,7 @@
 			</div>
 			<div class="form-group">
 				<label asp-for="ImgsUrl"></label>
-				<input asp-for="ImgsUrl" class="form-control" placeholder="Your
+				<input type="file" accept=".jpeg,.jpg,.png" name="ImgsUrl" asp-for="ImgsUrl" class="form-control" placeholder="Your
 fine URL here..." value="@Model.ImgsUrl">
 				<span asp-validation-for="ImgsUrl" class="small textdanger"></span>
 			</div>

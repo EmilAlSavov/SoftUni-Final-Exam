@@ -70,21 +70,26 @@ namespace RastafarAppServices
         {
             var post = this.GetPostById(id);
 
+			this.DeleteImageFile(post.ImgsUrl);
             context.Posts.Remove(post);
 
             context.SaveChanges();
         }
 
-        public void Edit(AddPostViewModel model, Guid Id, string currUserId)
+        public void Edit(AddPostViewModel model, Guid Id, string currUserId, HttpContext httpContext)
         {
             var realPost = this.GetPostById(Id);
 
-            
+
+			this.DeleteImageFile(realPost.ImgsUrl);
+
+			var imgPath = this.SaveImageFile(model.ImgsUrl, httpContext);
+
 
             realPost.Name = model.Name;
             realPost.Description = model.Description;
             realPost.Destination = model.Destination;
-            realPost.ImgsUrl = model.ImgsUrl.FileName;
+            realPost.ImgsUrl = imgPath;
             realPost.CampTypeId = model.campType.Id;
             realPost.TravelTypeId = model.travelType.Id;
 
@@ -396,6 +401,23 @@ namespace RastafarAppServices
 			var pathReturn = Path.Combine(pathScheme, "imgs",imageFile.FileName).ToString();
 
 			return pathReturn;
+		}
+
+		private void DeleteImageFile(string imagePath)
+		{
+			string webRootPath = this.Environment.WebRootPath;
+			string fileName = Path.GetFileName(imagePath);
+			string path = Path.Combine(webRootPath, "imgs", fileName);
+
+			try
+			{
+				File.Delete(path);
+			}
+			catch
+			{
+				return;
+			}
+
 		}
 	}
 }

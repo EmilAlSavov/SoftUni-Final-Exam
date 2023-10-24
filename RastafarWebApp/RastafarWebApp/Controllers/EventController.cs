@@ -127,7 +127,8 @@ namespace RastafarWebApp.Controllers
 							ex.Data.Add("401", "dadasdas");
 							throw ex;
 					}
-					postService.Edit(model, Id, GetUserId());
+					var context = HttpContext;
+					postService.Edit(model, Id, GetUserId(), context);
                 }
                 else
                 {
